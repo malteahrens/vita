@@ -1,2 +1,6 @@
 ./idea/*
 .idea/workspace.xml
+
+.idea/webResources.xml
+
+.idea/malteahrens.github.io.iml
