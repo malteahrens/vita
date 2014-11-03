@@ -19,10 +19,11 @@ install:
 
 script:
   - grunt build
+  - git remote set-url origin https://malteahrens:${GH_TOKEN}@github.com/malteahrens/malteahrens.github.io.git
   - git checkout --orphan gh-pages # go to the gh-pages branch
   - git add ./app/* # bring gh-pages up to date with master
   - git commit -m "GitHub Pages Site" # commit the changes
-  - git push -u origin gh-pages 
+  - git push -u origin gh-pages
   - git checkout master # return to the master branch
 
 env:
