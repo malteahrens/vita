@@ -22,7 +22,7 @@ script:
   - git remote set-url origin https://malteahrens:${GH_TOKEN}@github.com/malteahrens/malteahrens.github.io.git
   - git push origin --delete gh-pages # Deleting gh-pages branch
   - git checkout -b gh-pages # create gh-pages branch
-  - git add ./app/* # bring gh-pages up to date with master
+  - git add ./dist/* # bring gh-pages up to date with master
   - git commit -m "[skip ci] GitHub Pages Site" # commit the changes
   - git push origin template >> /dev/null
   - git checkout master # return to the master branch
