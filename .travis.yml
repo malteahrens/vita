@@ -9,6 +9,7 @@ branches:
 # install grunt globally
 before_install:
   - npm install -g grunt-cli
+  - npm install -g bower
 
 # install dev dependencies
 install:
