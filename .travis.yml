@@ -21,4 +21,4 @@ before_script:
 env:
   global:
     # this is for Travis to be able to commit to github to prepare the template branch
-    - secure:
+    - secure: "eDBjS1tFGZRbvpmxC2V0TrYGY+RW8dtwLROCDRpcF7KpU15KWJBwJzlCoPkWezxMubfhhOfdQdYPd+ZEHdfcrJD0YM0qmDDEGce5NZfH4wp5JAQxgS8WSoKRvRnFpATza3f/nnyXCJrOgc/tVlU5EGdEe/Bg/qk1uITd/AWomjY="
