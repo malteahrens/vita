@@ -16,6 +16,9 @@ install:
   - npm install
   - bower install
 
+before_script:
+  - mkdir dist
+
 script:
   - grunt build
   - git config --global user.name "Travis CI"
