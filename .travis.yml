@@ -19,9 +19,10 @@ install:
 
 script:
   - grunt build
-  - git checkout gh-pages # go to the gh-pages branch
-  - git rebase master # bring gh-pages up to date with master
-  - git push origin gh-pages # commit the changes
+  - git checkout --orphan gh-pages # go to the gh-pages branch
+  - git add ./app/* # bring gh-pages up to date with master
+  - git commit -m "GitHub Pages Site" # commit the changes
+  - git push -u origin gh-pages 
   - git checkout master # return to the master branch
 
 env:
