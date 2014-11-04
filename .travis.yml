@@ -21,6 +21,7 @@ before_script:
 # remove dist folder from .gitignore file
   - echo 'remove dist folder from .gitignore'
   - sed -i '/dist=/d' .gitignore > .gitignore
+  - grunt test
   - grunt build
 
 script:
