@@ -26,7 +26,7 @@ script:
   - git add dist && git commit -m "Initial dist subtree commit"
   - git push origin `git subtree split --prefix dist gh-pages`:gh-pages --force
   - git subtree push --prefix dist origin gh-pages
-
+  
 env:
   global:
     # this is for Travis to be able to push to github to assemble gh-branch
