@@ -18,6 +18,8 @@ install:
   - bower install
 
 before_script:
+# remove dist folder from .gitignore file
+  - sed -i '/dist=/d' .gitignore
   - grunt build
 
 script:
