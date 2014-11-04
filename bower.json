@@ -1,5 +1,5 @@
 {
-  "name": "test-grunt",
+  "name": "test-grunt", 
   "private": true,
   "dependencies": {
     "bootstrap": "~3.2.0"
