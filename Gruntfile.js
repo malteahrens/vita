@@ -292,6 +292,7 @@ module.exports = function (grunt) {
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*',
 			'CNAME',
+			'_config.yml'
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
