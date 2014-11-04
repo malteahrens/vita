@@ -32,13 +32,21 @@ angular
         redirectTo: '/'
       });
 
-    $translateProvider.translations('de', {
+    $translateProvider.translations('de_DE', {
         APP_HEADLINE:  'Großartige AngularJS App',
             NAV_HOME:  'Zur Startseite',
             NAV_ABOUT: 'Über',
             APP_TEXT:  'Irgendein Text über eine großartige AngularJS App.'
     });
 
+    // englische Sprache
+    $translateProvider.translations('en_US', {
+        APP_HEADLINE:  'Awesome AngularJS App',
+        NAV_HOME:      'Start',
+        NAV_ABOUT:     'About',
+        APP_TEXT:      'Some text about the awesome AngularJS app.'
+    });
+
     // Default Language
-    $translateProvider.preferredLanguage('de');
+    $translateProvider.preferredLanguage('de_DE');
   });

@@ -24,13 +24,12 @@
     <!-- Add your site or application content here -->
     <div class="wrapper">
         <header>
-            <h1>Minimal</h1>
+            <h1>{{ 'APP_HEADLINE' | translate }}</h1>
             <p>A Theme for GitHub Pages</p>
             <p class="view"><a href="http://github.com/orderedlist/minimal">View the Project on GitHub <small>orderedlist/minimal</small></a></p>
-            <ul>
-                <li><a href="https://github.com/orderedlist/minimal/zipball/master">Download <strong>ZIP File</strong></a></li>
-                <li><a href="https://github.com/orderedlist/minimal/tarball/master">Download <strong>TAR Ball</strong></a></li>
-                <li><a href="http://github.com/orderedlist/minimal">Fork On <strong>GitHub</strong></a></li>
+            <ul ng-controller="LangCtrl">
+                <li><a href="" ng-click="changeLang('en_US')">Englisch</a></li>
+                <li><a href="" ng-click="changeLang('de_DE')">German</li>
             </ul>
         </header>
         <section>
@@ -171,6 +170,7 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/scale.fix.js"></script>
+    <script src="scripts/controllers/lang.js"></script>
     <!-- endbuild -->
 </body>
 </html>
