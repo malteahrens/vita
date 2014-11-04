@@ -1,7 +1,0 @@
-./idea/*
-.idea/workspace.xml
-.idea/webResources.xml
-.idea/malteahrens.github.io.iml
-.tmp/*
-bower_components/*
-node_modules/*
