@@ -15,11 +15,8 @@ angular.module('angularApp')
 		},
         link: function ($scope, element, attrs) {
             element.bind('mouseover', function ($event) {
-				var attribute = attrs.mouseover;	
-				var source = "images/"+attribute+".png";
-				console.log("set image source to "+ source);
 				$scope.$apply(function() {
-					$scope.imgSrc = source;
+					$scope.imgSrc = attrs.mouseover;
 				});
             });
         }
