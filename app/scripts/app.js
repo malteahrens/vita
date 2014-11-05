@@ -44,6 +44,7 @@ angular
     $translateProvider.translations('en_US', {
         APP_HEADLINE:  'Job Application',
         SUB_HEADLINE: 'Master of Cartography',
+        PARA2: 'English Translation',
         HEADING1:      'Heading for new shores'
     });
 

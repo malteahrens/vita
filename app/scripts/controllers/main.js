@@ -8,8 +8,7 @@
  * Controller of the angularApp
  */
 angular.module('angularApp')
-  .controller('MainCtrl', function ($scope, $attrs) {
-	$scope.imgSrc = "images/yeoman.png";
+  .controller('MainCtrl', function ($scope) {
 	
 	$scope.awesomeThings = [
       'HTML5 Boilerplate',

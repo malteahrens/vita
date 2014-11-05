@@ -11,7 +11,7 @@ angular.module('angularApp')
     return {
 		restrict: 'EA',
 		controller: function ($scope) {
-			$scope.imgSrc = {}
+			$scope.imgSrc = "images/yeoman.png"
 		},
         link: function ($scope, element, attrs) {		
             element.bind('mouseover', function ($event) {
