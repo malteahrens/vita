@@ -19,6 +19,10 @@ angular.module('angularApp')
 					$scope.imgSrc = attrs.mouseover;
 				});
             });
+            element.addClass("ng-hide-remove");
+            element.on('load', function() {
+                $element.addClass("ng-hide-add");
+            });
         }
     };
   });
