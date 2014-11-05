@@ -4,3 +4,5 @@ dist
 .sass-cache
 .idea
 bower_components
+npm-debug.log
+report

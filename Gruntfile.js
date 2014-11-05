@@ -352,6 +352,18 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    plato: {
+      options: {
+          // Task-specific options go here.
+      },
+      your_target: {
+          files: {
+              // Target-specific file lists and/or options go here.
+              'report/plato': ['app/scripts/**/*.js', 'test/**/*.js']
+          }
+      }
     }
   });
 
@@ -398,7 +410,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'plato'
   ]);
 
   grunt.registerTask('default', [
