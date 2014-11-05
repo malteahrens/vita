@@ -361,7 +361,7 @@ module.exports = function (grunt) {
       your_target: {
           files: {
               // Target-specific file lists and/or options go here.
-              'report/plato': ['app/scripts/**/*.js', 'test/**/*.js']
+              'dist/report/plato': ['app/scripts/**/*.js', 'test/**/*.js']
           }
       }
     }
