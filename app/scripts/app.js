@@ -51,4 +51,5 @@ angular
 
     // Default Language
     $translateProvider.preferredLanguage('de_DE');
+	$translateProvider.fallbackLanguage(['de_DE']);
   });
