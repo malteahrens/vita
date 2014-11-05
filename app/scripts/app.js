@@ -36,7 +36,7 @@ angular
         APP_HEADLINE:  'Bewerbung',
         SUB_HEADLINE: 'Dipl.-Ing. (FH) Kartographie',
         HEADING1:  'Auf zu neuen Ufern',
-        Text1: 'Über',
+        PARA1: 'Über',
         APP_TEXT:  'Irgendein Text über eine großartige AngularJS App.'
     });
 
@@ -44,9 +44,7 @@ angular
     $translateProvider.translations('en_US', {
         APP_HEADLINE:  'Job Application',
         SUB_HEADLINE: 'Master of Cartography',
-        HEADING1:      'Heading for new shores',
-        Text1:     'About',
-        APP_TEXT:      'Some text about the awesome AngularJS app.'
+        HEADING1:      'Heading for new shores'
     });
 
     // Default Language
