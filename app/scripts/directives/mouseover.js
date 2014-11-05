@@ -10,7 +10,9 @@ angular.module('angularApp')
   .directive('mouseover', function () {
     return {
 		restrict: 'EA',
-        scope:
+		controller: function ($scope) {
+			$scope.imgSrc = "images/yeoman.png";
+		},
         link: function ($scope, element, attrs) {
             element.bind('mouseover', function ($event) {
 				var attribute = attrs.mouseover;	
