@@ -12,17 +12,17 @@ angular.module('angularApp')
 		restrict: 'EA',
 		controller: function ($scope) {
 			$scope.imgSrc = "images/yeoman.png";
+			$scope.hideSwitch = false;
 		},
         link: function ($scope, element, attrs) {
             element.bind('mouseover', function ($event) {
 				$scope.$apply(function() {
-					$scope.imgSrc = attrs.mouseover;
+					$scope.hideSwitch = true;
+					// start animation to make the image visible...
+					//$scope.imgSrc = attrs.mouseover;
 				});
-            });
-            element.addClass("ng-hide-remove");
-            element.on('load', function() {
-                $element.addClass("ng-hide-add");
             });
         }
     };
+	
   });
