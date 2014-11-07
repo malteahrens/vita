@@ -10,21 +10,11 @@ angular.module('angularApp')
   .directive('mouseover', function () {
     return {
 		restrict: 'EA',
-		controller: function ($scope) {
-			$scope.imgSrc = "images/yeoman.png";
-            $scope.fadeIn = true;
-		},
         link: function ($scope, element, attrs) {
             element.bind('mouseenter', function ($event) {
 				$scope.$apply(function() {
 					$scope.imgSrc = attrs.mouseover;
 				});
-            });
-
-            element.bind('mouseleave', function ($event) {
-                $scope.$apply(function() {
-                    $scope.fadeIn = false;
-                });
             });
         }
     };
@@ -36,13 +26,13 @@ angular.module('angularApp')
         return {
             restrict: 'A',
             scope: {
-                ngSrc: '@',
-                fadeIn: '@'
+                ngSrc: "@"
             },
             link: function(scope, element, attrs) {
 
                 element.on('load', function() {
-                    console.log("load");
+
+
                 }).on('error', function() {
                     console.log("error loading image");
                 });
@@ -50,18 +40,28 @@ angular.module('angularApp')
                 scope.$watch('ngSrc', function(newVal) {
                     console.clear();
                     console.log("change");
-                    // trigger animation and wait until it is finshed... then reset
-                    $animate.removeClass(element, 'fadein');
-                        var promise = $animate.addClass(element, 'fadein');
-                        console.log(element);
-                        promise.then(function () {
-                            // if we are in here, the animation is complete
-                            console.log("animation finished");
-                            console.log(element);
-                            $animate.removeClass(element, 'fadein');
-                            console.log(element);
-                        });
+                    var promise;
 
+                    if(promise != undefined) {
+                        $animate.cancel(promise);
+                        $animate.removeClass(element, 'fadein');
+                        console.log("animation canceld");
+                    }
+
+                    promise = $animate.addClass(element, 'fadein');
+                    console.log("animation started");
+                    promise.then(function () {
+                        // if we are in here, the animation is complete
+                        console.log("animation finished");
+                        console.log("before remove class");
+                        console.log(element);
+                        $animate.removeClass(element, 'fadein');
+                        console.log("AFTER remove class and BEFORE apply");
+                        console.log(element);
+                        scope.$apply();
+                        console.log("AFTER remove class and AFTER apply");
+                        console.log(element);
+                    });
                 });
             }
         };
