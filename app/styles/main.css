@@ -262,11 +262,11 @@ footer {
 }
 
 .fadein {
-    -webkit-animation:2s opacity;
-    animation:2s opacity;
+    -webkit-animation:1s opacity;
+    animation:1s opacity;
 }
 
 @keyframes opacity {
-    from { opacity:0.4; }
+    from { opacity:0.2; }
     to { opacity:1; }
 }
