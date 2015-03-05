@@ -6,7 +6,7 @@ deploy_branch=gh-pages
 
 #if no user identity is already set in the current git environment, use this:
 default_username=deploy.sh
-default_email=
+default_email=xyz@test.de
 
 #repository to deploy to. must be readable and writable.
 repo=https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
