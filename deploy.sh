@@ -9,7 +9,7 @@ default_username=deploy.sh
 default_email=
 
 #repository to deploy to. must be readable and writable.
-repo=origin
+repo=https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
 
 # Parse arg flags
 while : ; do
