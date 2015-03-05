@@ -33,7 +33,7 @@ angular
       });
 
     $translateProvider.translations('de_DE', {
-        APP_HEADLINE:  'Bewerbung',
+        APP_HEADLINE:  'Reference',
         SUB_HEADLINE: 'Dipl.-Ing. (FH) Kartographie',
         HEADING1:  'Meine Grundwerte',
         PARA1: 'When I was 5 years old, my mom always told me that happiness was the key to life. When I went to school, they asked me what I wanted to be when I grew up. I wrote down \'happy\'. They told me I didn’t understand the assignment and I told them that they didn’t understand life. -John Lennon',
