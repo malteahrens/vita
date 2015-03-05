@@ -26,6 +26,7 @@ before_script:
   - grunt build
 
 script:
+  - git config --global user.email "you@example.com"
   - git config --global user.name "Travis CI"
   - git remote set-url origin https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
   - git add dist && git commit -m "Initial dist subtree commit"
