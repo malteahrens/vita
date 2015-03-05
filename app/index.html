@@ -9,12 +9,16 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
       <!-- build:css(.tmp) styles/main.css -->
       <link rel="stylesheet" href="styles/main.css">
       <link rel="stylesheet" href="styles/pygment_trac.css">
       <!-- endbuild -->
+      <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/Leaflet.fullscreen.min.js'></script>
+      <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css' rel='stylesheet' />
   </head>
   <body ng-app="angularApp">
     <!--[if lt IE 7]>
@@ -35,8 +39,8 @@
             </div>
             <div mouseover="images/yeoman.png">
                 <h2>Headline 2</h2>
-                <p>
-                    Hier. Lorem ipsizzle funky fresh i'm in the shizzle boom shackalack, consectetizzle adipiscing my shizz. Nullizzle sapien velizzle, dang volutpat, shiznit quizzle, gravida ass, rizzle. Pot get down get down tortor. Sed erizzle. Black go to hizzle dolizzle dapibizzle turpis fo shizzle my nizzle yo. Maurizzle pellentesque nibh et check it out. Bow wow wow check it out tortizzle. Pellentesque for sure rhoncizzle bow wow wow. In owned habitasse brizzle dictumst. Nizzle dapibizzle. Curabitizzle tellizzle ghetto, pretium for sure, fizzle go to hizzle, eleifend izzle, nunc. Dope suscipizzle. Integizzle boom shackalack velit ass purus.
+                <p ng-controller="MapCtrl">
+                    <leaflet center="center" defaults="defaults" height="350px" width="100%"></leaflet>
                 </p>
             </div>
             <div mouseover="images/grunt.png">
@@ -91,6 +95,9 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -100,6 +107,7 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/lang.js"></script>
     <script src="scripts/directives/mouseover.js"></script>
+    <script src="scripts/controllers/map.js"></script>
     <!-- endbuild -->
 </body>
 </html>

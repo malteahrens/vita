@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'leaflet-directive'
   ])
   .config(function ($routeProvider, $translateProvider) {
     $routeProvider
@@ -35,7 +36,7 @@ angular
     $translateProvider.translations('de_DE', {
         APP_HEADLINE:  'Bewerbung',
         SUB_HEADLINE: 'Dipl.-Ing. (FH) Kartographie',
-        HEADING1:  'Auf zu neuen Ufern',
+        HEADING1:  'Ja ja ja',
         PARA1: 'Über',
         APP_TEXT:  'Irgendein Text über eine großartige AngularJS App.'
     });
@@ -45,7 +46,7 @@ angular
         APP_HEADLINE:  'Job Application',
         SUB_HEADLINE: 'Master of Cartography',
         PARA2: 'English Translation',
-        HEADING1:      'Heading for new shores'
+        HEADING1:      'Nothing here'
     });
 
     // Default Language
