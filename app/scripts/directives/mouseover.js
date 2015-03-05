@@ -10,16 +10,19 @@ angular.module('angularApp')
   .directive('mouseover', function () {
     return {
 		restrict: 'EA',
+        scope: {
+            setImgSrc: function(imgSrc) {
+                console.log("set new image src: "+imgSrc)
+                $scope.imgSrc = imgSrc;
+            }
+        },
         link: function ($scope, element, attrs) {
-            element.bind('mouseover', function ($event) {
-				$scope.$apply(function() {
-					$scope.imgSrc = attrs.mouseover;
-				});
+            element.bind('mouseenter', function ($event) {
+                console.log("mouseover");
+			    $scope.setImgSrc(attrs.mouseover);
             });
         }
-    };
-	
-  });
+    }});
 
 angular.module('angularApp')
     .directive('fadeIn', function ($animate) {
