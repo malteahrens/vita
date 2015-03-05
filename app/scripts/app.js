@@ -33,22 +33,19 @@ angular
       });
 
     $translateProvider.translations('de_DE', {
-        APP_HEADLINE:  'Reference',
+        APP_HEADLINE:  'Bewerbung',
         SUB_HEADLINE: 'Dipl.-Ing. (FH) Kartographie',
-        HEADING1:  'dsfasd',
-        PARA1: 'dsf',
-        HEADING2:  'Nasdf',
-        PARA2: 'xy',
-        HEADING3:  'dsfsa',
-        PARA3: 'dsfadsf'
+        HEADING1:  'Auf zu neuen Ufern',
+        PARA1: 'Über',
+        APP_TEXT:  'Irgendein Text über eine großartige AngularJS App.'
     });
 
     // englische Sprache
     $translateProvider.translations('en_US', {
-        APP_HEADLINE:  'adsf',
-        SUB_HEADLINE: 'adsf',
+        APP_HEADLINE:  'Job Application',
+        SUB_HEADLINE: 'Master of Cartography',
         PARA2: 'English Translation',
-        HEADING1:      'dfasdf'
+        HEADING1:      'Heading for new shores'
     });
 
     // Default Language

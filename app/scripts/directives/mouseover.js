@@ -10,19 +10,16 @@ angular.module('angularApp')
   .directive('mouseover', function () {
     return {
 		restrict: 'EA',
-        scope: {
-            setImgSrc: function(imgSrc) {
-                console.log("set new image src: "+imgSrc)
-                $scope.imgSrc = imgSrc;
-            }
-        },
         link: function ($scope, element, attrs) {
             element.bind('mouseenter', function ($event) {
-                console.log("mouseover");
-			    $scope.setImgSrc(attrs.mouseover);
+				$scope.$apply(function() {
+					$scope.imgSrc = attrs.mouseover;
+				});
             });
         }
-    }});
+    };
+	
+  });
 
 angular.module('angularApp')
     .directive('fadeIn', function ($animate) {
@@ -32,14 +29,38 @@ angular.module('angularApp')
                 ngSrc: "@"
             },
             link: function(scope, element, attrs) {
+
+                element.on('load', function() {
+
+
+                }).on('error', function() {
+                    console.log("error loading image");
+                });
+
                 scope.$watch('ngSrc', function(newVal) {
-                    // this demonstrates to manually kickstart an animation in
-                    // AngularJS. After the animation finishes it removes the
-                    // trigger CSS to prepare to animate again
-                    var promise = $animate.addClass(element, 'fadein');
-                    promise.then(function () {
+                    console.clear();
+                    console.log("change");
+                    var promise;
+
+                    if(promise != undefined) {
+                        $animate.cancel(promise);
                         $animate.removeClass(element, 'fadein');
+                        console.log("animation canceld");
+                    }
+
+                    promise = $animate.addClass(element, 'fadein');
+                    console.log("animation started");
+                    promise.then(function () {
+                        // if we are in here, the animation is complete
+                        console.log("animation finished");
+                        console.log("before remove class");
+                        console.log(element);
+                        $animate.removeClass(element, 'fadein');
+                        console.log("AFTER remove class and BEFORE apply");
+                        console.log(element);
                         scope.$apply();
+                        console.log("AFTER remove class and AFTER apply");
+                        console.log(element);
                     });
                 });
             }

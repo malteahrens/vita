@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+  - "0.10"
+
+branches:
+  only:
+  - master
+  - gh-pages
+
+# install grunt globally
+before_install:
+  - npm install -g npm@2
+  - npm install -g grunt-cli
+  - npm install -g bower
+
+# install dev dependencies
+install:
+  - npm install
+  - bower install
+
+before_script:
+# remove dist folder from .gitignore file
+  - echo 'remove dist folder from .gitignore'
+  - sed -i '/dist=/d' .gitignore > .gitignore
+  - grunt test
+  - grunt build
+
+script:
+  - git config --global user.name "Travis CI"
+  - git remote set-url origin https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
+  - git add dist && git commit -m "Initial dist subtree commit"
+  - git push origin `git subtree split --prefix dist gh-pages`:gh-pages --force
+  - git subtree push --prefix dist origin gh-pages
+  
+env:
+  global:
+    # this is for Travis to be able to push to github to assemble gh-branch
+    - secure: "P0SFVXYMJhNb3dX/Hx4rxjL/toViP0Vo0yXbMK/vwOsSrixkU84ltMGykBYTUztdAFJvsO0xrhKsdPbBmdjEF48emrmoymknxKYPIJ6NL1N6fy0EUoE6o7vBX+agthD/uhSNCJgXRK+giqxP5Htz3BkrU9VgdFdVrSqU9bsm4Bc="
