@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Plato - test/karma.conf.js</title>
+  <title>Plato - app/scripts/controllers/map.js</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -36,7 +36,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>test/karma.conf.js</h1>
+    <h1>app/scripts/controllers/map.js</h1>
   </div>
 </div>
 
@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">61.72</p>
+      <p class="stat">66.12</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">72</p>
+      <p class="stat">26</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">4.42</p>
+      <p class="stat">3.84</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.13</p>
+      <p class="stat">0.09</p>
     </div>
   </div>
 </div>
@@ -89,83 +89,32 @@
 
 <div class="container">
   <div class="row">
-    <textarea id="file-source" class="col-md-12">// Karma configuration
-// http://karma-runner.github.io/0.12/config/configuration-file.html
-// Generated on 2014-11-04 using
-// generator-karma 0.8.3
+    <textarea id="file-source" class="col-md-12">&#039;use strict&#039;;
 
-module.exports = function(config) {
-  &#039;use strict&#039;;
-
-  config.set({
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
-
-    // base path, that will be used to resolve files and exclude
-    basePath: &#039;../&#039;,
-
-    // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: [&#039;jasmine&#039;],
-
-    // list of files / patterns to load in the browser
-    files: [
-      &#039;bower_components/angular/angular.js&#039;,
-      &#039;bower_components/angular-mocks/angular-mocks.js&#039;,
-      &#039;bower_components/angular-animate/angular-animate.js&#039;,
-      &#039;bower_components/angular-cookies/angular-cookies.js&#039;,
-      &#039;bower_components/angular-resource/angular-resource.js&#039;,
-      &#039;bower_components/angular-route/angular-route.js&#039;,
-      &#039;bower_components/angular-sanitize/angular-sanitize.js&#039;,
-      &#039;bower_components/angular-touch/angular-touch.js&#039;,
-      &#039;bower_components/angular-translate/angular-translate.js&#039;,
-      &#039;bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js&#039;,
-      &#039;bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js&#039;,
-      &#039;app/scripts/**/*.js&#039;,
-      &#039;test/spec/**/*.js&#039;
-    ],
-
-    // list of files / patterns to exclude
-    exclude: [],
-
-    // web server port
-    port: 8080,
-
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
-    browsers: [
-      &#039;PhantomJS&#039;
-    ],
-
-    // Which plugins to enable
-    plugins: [
-      &#039;karma-phantomjs-launcher&#039;,
-      &#039;karma-jasmine&#039;
-    ],
-
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: true,
-
-    colors: true,
-
-    // level of logging
-    // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
-
-    // Uncomment the following lines if you are using grunt&#039;s server to run the tests
-    // proxies: {
-    //   &#039;/&#039;: &#039;http://localhost:9000/&#039;
-    // },
-    // URL root prevent conflicts with the site root
-    // urlRoot: &#039;_karma_&#039;
-  });
-};</textarea>
+/**
+ * @ngdoc function
+ * @name angularApp.controller:LangCtrl
+ * @description
+ * # LangCtrl
+ * Controller of the angularApp
+ */
+angular.module(&#039;angularApp&#039;)
+.controller(&#039;MapCtrl&#039;, [ &#039;$scope&#039;, function($scope) {
+    angular.extend($scope, {
+        center: {
+            lat: 48.14882451158226,
+            lng: 11.451873779296875,
+            zoom: 13
+        },
+        defaults: {
+            tileLayer: &quot;http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg&quot;,
+            maxZoom: 14,
+            map: {
+                fullscreenControl:true
+            }
+        }
+    });
+}]);</textarea>
   </div>
 </div>
 
