@@ -19,7 +19,7 @@ angular.module('angularApp')
             tileLayer: "http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
             maxZoom: 14,
             map: {
-                fullscreenControl: true
+                fullscreenControl:true
             }
         }
     });
