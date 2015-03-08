@@ -1,0 +1,2351 @@
+{
+    "type": "FeatureCollection",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Waldrebe",
+                "bssid": "c0:25:06:6f:f5:73",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1656406272",
+                "type": "W",
+                "bestlevel": "-56"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45124923,
+                    48.15087701
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-D41596",
+                "bssid": "00:1d:19:d4:15:4c",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-1331661904",
+                "type": "W",
+                "bestlevel": "-77"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45125741,
+                    48.15095183
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "ALICE-WLAN68",
+                "bssid": "74:31:70:0a:89:e1",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537487272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45118404,
+                    48.15097348
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "silviaundmarc",
+                "bssid": "9c:c7:a6:0c:ff:ee",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1401913904",
+                "type": "W",
+                "bestlevel": "-89"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45125219,
+                    48.15083793
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "HoWo313",
+                "bssid": "00:1c:f0:e4:34:e3",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-TKIP][WPS][ESS]",
+                "lasttime": "-537487272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45118404,
+                    48.15097348
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "HP-nomodel.D0DD4D",
+                "bssid": "02:2a:4a:b6:c4:b4",
+                "capabilities": "[IBSS]",
+                "lasttime": "-1401838904",
+                "type": "W",
+                "bestlevel": "-94"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45124661,
+                    48.15084005
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WR6313BAH003679",
+                "bssid": "00:09:5b:88:87:a6",
+                "capabilities": "[WPA-PSK-TKIP][ESS]",
+                "lasttime": "-537797272",
+                "type": "W",
+                "bestlevel": "-86"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45244404,
+                    48.15015006
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Freelancer MUC",
+                "bssid": "00:1f:3f:c3:57:57",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537756272",
+                "type": "W",
+                "bestlevel": "-87"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.459626269999983,
+                    48.15290809999997
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 7330 SL",
+                "bssid": "c0:25:06:78:73:9e",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-986615272",
+                "type": "W",
+                "bestlevel": "-68"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45056281,
+                    48.15041235
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-073145",
+                "bssid": "d4:21:22:02:df:53",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537487272",
+                "type": "W",
+                "bestlevel": "-87"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45118404,
+                    48.15097348
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 6840 LTE",
+                "bssid": "34:31:c4:58:24:3c",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537782272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45139637,
+                    48.15098207
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "ALICE-WLAN50",
+                "bssid": "00:1c:28:67:97:27",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537777272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45055072,
+                    48.15035183
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Endoplasmatisches-Retikulum",
+                "bssid": "88:03:55:fb:0b:27",
+                "capabilities": "[WPA2-PSK-CCMP-preauth][ESS]",
+                "lasttime": "-537777272",
+                "type": "W",
+                "bestlevel": "-78"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45129103,
+                    48.15096953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 7312",
+                "bssid": "24:65:11:f9:9a:44",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-906155272",
+                "type": "W",
+                "bestlevel": "-75"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45081409,
+                    48.15097466
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 6360 Cable",
+                "bssid": "08:96:d7:66:e0:4d",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537777272",
+                "type": "W",
+                "bestlevel": "-75"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45126058,
+                    48.15067405
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box WLAN 3270",
+                "bssid": "24:65:11:b8:0a:98",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537762272",
+                "type": "W",
+                "bestlevel": "-78"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45105175,
+                    48.14986586
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "STOERSENDER MAULI",
+                "bssid": "00:04:0e:2e:57:ee",
+                "capabilities": "[WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-1326242272",
+                "type": "W",
+                "bestlevel": "-80"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44946799,
+                    48.15076384
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "USCHI-PC_Netzwerk",
+                "bssid": "02:23:08:41:68:41",
+                "capabilities": "[WPA2-PSK-CCMP-preauth][WPS][ESS]",
+                "lasttime": "-537777272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45057901,
+                    48.1503982
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-ESEW5Y",
+                "bssid": "88:e3:ab:2b:ea:47",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537762272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4507006,
+                    48.15096402
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "o2-WLAN49",
+                "bssid": "50:7e:5d:53:11:51",
+                "capabilities": "[WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-986590272",
+                "type": "W",
+                "bestlevel": "-77"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45044461,
+                    48.15073693
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "xxxxx",
+                "bssid": "08:96:d7:92:08:f0",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537782272",
+                "type": "W",
+                "bestlevel": "-69"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45109927,
+                    48.15072267
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "ALICE-WLAN93",
+                "bssid": "88:25:2c:90:65:3f",
+                "capabilities": "[WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-906155272",
+                "type": "W",
+                "bestlevel": "-76"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4503671,
+                    48.15092194
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "banderas",
+                "bssid": "18:83:bf:82:6a:6e",
+                "capabilities": "[WEP][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-91"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45099259,
+                    48.15103941
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-53DE12",
+                "bssid": "84:9c:a6:53:de:22",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-978275272",
+                "type": "W",
+                "bestlevel": "-75"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4505321,
+                    48.15051694
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "ALICE-WLAN95",
+                "bssid": "00:1c:28:6c:4d:ef",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537762272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45104371,
+                    48.15082474
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN--10",
+                "bssid": "18:83:bf:ac:70:04",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]",
+                "lasttime": "-986650272",
+                "type": "W",
+                "bestlevel": "-75"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44994431,
+                    48.1504746
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 7330 SL",
+                "bssid": "c0:25:06:58:6f:c8",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-986600272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45042122,
+                    48.15066946
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box WLAN 3270",
+                "bssid": "24:65:11:9c:85:76",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-85"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45042122,
+                    48.15066946
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "CHN (CatHorseNet)",
+                "bssid": "9c:c7:a6:58:e7:96",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326246272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45018644,
+                    48.15084726
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "gehacktes Modem",
+                "bssid": "c0:25:06:67:d6:47",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326245272",
+                "type": "W",
+                "bestlevel": "-80"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45018644,
+                    48.15084726
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "",
+                "bssid": "82:c7:a6:9a:ab:2d",
+                "capabilities": "[WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-1854812272",
+                "type": "W",
+                "bestlevel": "-82"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45019785,
+                    48.1508207
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "KDG-5CEB7",
+                "bssid": "5c:35:3b:f5:ce:bc",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-906155272",
+                "type": "W",
+                "bestlevel": "-75"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4504859,
+                    48.15053856
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "DIRECT-xy40\" Philips 8008",
+                "bssid": "26:fd:52:7f:9f:49",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1910518272",
+                "type": "W",
+                "bestlevel": "-84"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45026104,
+                    48.1507757
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Acer Z200",
+                "bssid": "02:1e:ad:87:25:8d",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1909431272",
+                "type": "W",
+                "bestlevel": "-81"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44923695,
+                    48.15055876
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "SME 84",
+                "bssid": "00:24:fe:a0:e9:e6",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-1326073272",
+                "type": "W",
+                "bestlevel": "-80"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45002263,
+                    48.15047727
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-94DC47",
+                "bssid": "84:a8:e4:f5:94:dc",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1854804272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44993208,
+                    48.15061307
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 7362 SL",
+                "bssid": "34:81:c4:3d:36:3b",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326242272",
+                "type": "W",
+                "bestlevel": "-81"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44993208,
+                    48.15061307
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box WLAN 3270",
+                "bssid": "00:24:fe:49:f5:7e",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1854795272",
+                "type": "W",
+                "bestlevel": "-75"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44995267,
+                    48.15060626
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "EasyBox-2012-05",
+                "bssid": "74:31:70:67:ad:f2",
+                "capabilities": "[WPA-PSK-TKIP][ESS]",
+                "lasttime": "-1854789272",
+                "type": "W",
+                "bestlevel": "-87"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44995703,
+                    48.15060635
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "HIT-RADIO-FFH-HESSEN",
+                "bssid": "c0:25:06:9c:ca:fe",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326112272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44981624,
+                    48.15052985
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Mellon Net",
+                "bssid": "34:31:c4:5c:90:68",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326115272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44978243,
+                    48.15050637
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "KD WLAN Hotspot+",
+                "bssid": "bc:14:01:c5:8a:ca",
+                "capabilities": "[ESS]",
+                "lasttime": "-1326235272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44938913,
+                    48.15070893
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Schnuffelnetz",
+                "bssid": "00:24:fe:88:d7:b3",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1854674272",
+                "type": "W",
+                "bestlevel": "-80"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44968255,
+                    48.15078302
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "EasyBox-652302",
+                "bssid": "00:23:08:65:23:c0",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-1326238272",
+                "type": "W",
+                "bestlevel": "-82"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44972213,
+                    48.15044423
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-1E6D29",
+                "bssid": "88:25:2c:1e:6d:3f",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-1854792272",
+                "type": "W",
+                "bestlevel": "-82"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44972213,
+                    48.15044423
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "HITRON-8AC0",
+                "bssid": "bc:14:01:c5:8a:c8",
+                "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326235272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44938913,
+                    48.15070893
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 7362 SL",
+                "bssid": "34:81:c4:24:47:a9",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326239272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44958452,
+                    48.15040667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "ALICE-WLAN00",
+                "bssid": "00:1c:28:78:e1:e7",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326071272",
+                "type": "W",
+                "bestlevel": "-74"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45006396,
+                    48.15048185
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "EasyBox-285328",
+                "bssid": "84:9c:a6:28:53:82",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-1854750272",
+                "type": "W",
+                "bestlevel": "-84"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44958452,
+                    48.15040667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "HITRON-C670",
+                "bssid": "78:8d:f7:30:c6:78",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-906110272",
+                "type": "W",
+                "bestlevel": "-75"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44918741,
+                    48.1503003
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 7330",
+                "bssid": "9c:c7:a6:e3:57:14",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326240272",
+                "type": "W",
+                "bestlevel": "-77"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44949061,
+                    48.15038094
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "AndroidAP",
+                "bssid": "b0:ee:45:f7:05:c1",
+                "capabilities": "[WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-1854761272",
+                "type": "W",
+                "bestlevel": "-85"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44949061,
+                    48.15038094
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Banschi",
+                "bssid": "02:26:4d:23:af:bb",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-1326223272",
+                "type": "W",
+                "bestlevel": "-80"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44945165,
+                    48.15033705
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-FVY2MJ",
+                "bssid": "14:b9:68:e8:2c:e9",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326229272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44945165,
+                    48.15033705
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Ente",
+                "bssid": "00:8e:f2:f9:9d:32",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326232272",
+                "type": "W",
+                "bestlevel": "-88"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44945165,
+                    48.15033705
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Juli",
+                "bssid": "24:65:11:f0:3d:bc",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1854729272",
+                "type": "W",
+                "bestlevel": "-78"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44940771,
+                    48.15022284
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 7362 SL",
+                "bssid": "34:81:c4:1d:a0:04",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-89"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45099259,
+                    48.15103941
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box WLAN 3270",
+                "bssid": "c0:25:06:77:39:69",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-986655272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44951321,
+                    48.15031847
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "05ddf6",
+                "bssid": "38:60:77:d2:eb:cd",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-1326149272",
+                "type": "W",
+                "bestlevel": "-82"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44954259,
+                    48.15032916
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "dlink",
+                "bssid": "00:26:5a:b1:59:42",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-986645272",
+                "type": "W",
+                "bestlevel": "-78"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45018427,
+                    48.15013609
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "ALICE-WLAN63",
+                "bssid": "84:9c:a6:ca:c7:a0",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1326118272",
+                "type": "W",
+                "bestlevel": "-74"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44961498,
+                    48.15036086
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-6AF725",
+                "bssid": "00:26:4d:6a:f7:31",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-986645272",
+                "type": "W",
+                "bestlevel": "-76"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44961498,
+                    48.15036086
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "EasyBox-C66823",
+                "bssid": "02:23:08:b2:f3:e1",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-906125272",
+                "type": "W",
+                "bestlevel": "-77"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44964921,
+                    48.15037555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box WLAN 3370",
+                "bssid": "9c:c7:a6:bd:6e:e4",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1854670272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44975136,
+                    48.15040014
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box WLAN BEMUC",
+                "bssid": "00:24:fe:a8:91:b2",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-986575272",
+                "type": "W",
+                "bestlevel": "-74"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44974565,
+                    48.14988836
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-B6F433",
+                "bssid": "00:26:4d:b6:f4:8c",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-1910420272",
+                "type": "W",
+                "bestlevel": "-78"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44983407,
+                    48.15044081
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box Fon WLAN 7270",
+                "bssid": "c0:25:06:99:f4:92",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-1910420272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44983407,
+                    48.15044081
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box WLAN 3170",
+                "bssid": "00:24:fe:ac:c0:af",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-1326073272",
+                "type": "W",
+                "bestlevel": "-81"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44989432,
+                    48.15046056
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Brain",
+                "bssid": "00:12:bf:85:60:1b",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]",
+                "lasttime": "-906125272",
+                "type": "W",
+                "bestlevel": "-81"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44997603,
+                    48.15047949
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Casa",
+                "bssid": "02:26:4d:d1:30:2c",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-986670272",
+                "type": "W",
+                "bestlevel": "-75"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45056927,
+                    48.14984068
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-9B3F19",
+                "bssid": "00:26:4d:9b:3f:67",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-986645272",
+                "type": "W",
+                "bestlevel": "-77"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45003545,
+                    48.15048684
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "ALICE-WLAN67",
+                "bssid": "00:1c:28:79:3f:df",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-986650272",
+                "type": "W",
+                "bestlevel": "-77"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45060934,
+                    48.15029256
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "7b032a",
+                "bssid": "38:60:77:7d:1c:ef",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-986635272",
+                "type": "W",
+                "bestlevel": "-80"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45003545,
+                    48.15048684
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "",
+                "bssid": "38:60:77:7d:7d:77",
+                "capabilities": "[WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-1326065272",
+                "type": "W",
+                "bestlevel": "-74"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45016409,
+                    48.15051427
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "KoMoDo",
+                "bssid": "c0:25:06:bc:74:0d",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-986635272",
+                "type": "W",
+                "bestlevel": "-74"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45016409,
+                    48.15051427
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Pasing-Gaeste",
+                "bssid": "36:81:c4:ad:05:94",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-73"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.44999059,
+                    48.15047268
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Pasing",
+                "bssid": "34:81:c4:ad:05:94",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-80"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45010376,
+                    48.150484
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Telekom_FON",
+                "bssid": "00:0e:8f:16:7f:84",
+                "capabilities": "[ESS]",
+                "lasttime": "-986665272",
+                "type": "W",
+                "bestlevel": "-72"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45044864,
+                    48.14994583
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 7330 SL",
+                "bssid": "9c:c7:a6:5f:06:cc",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-986645272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45028747,
+                    48.15055443
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "thereisnogod",
+                "bssid": "34:31:c4:21:dc:e4",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-76"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4503732,
+                    48.15057516
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "springsee",
+                "bssid": "c0:c1:c0:20:36:cf",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-986620272",
+                "type": "W",
+                "bestlevel": "-76"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45050118,
+                    48.15059833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "8ebaae",
+                "bssid": "e8:40:f2:45:1b:56",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-537762272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45088556,
+                    48.15067225
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "045034",
+                "bssid": "38:60:77:cc:37:ae",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-537777272",
+                "type": "W",
+                "bestlevel": "-78"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45126584,
+                    48.15105573
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Tollpatsch",
+                "bssid": "00:24:d1:87:75:1f",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-81"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45099259,
+                    48.15103941
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "ALICE-WLAN07",
+                "bssid": "00:1c:28:4c:f3:4d",
+                "capabilities": "[WPA-PSK-TKIP][ESS]",
+                "lasttime": "-537782272",
+                "type": "W",
+                "bestlevel": "-82"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45109983,
+                    48.15072414
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Zugriff Verboten!",
+                "bssid": "82:c7:a6:d6:e8:0f",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-85"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45099259,
+                    48.15103941
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Tech_D0054181",
+                "bssid": "88:f7:c7:9b:21:05",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45099259,
+                    48.15103941
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-YHMLQ8_EXT",
+                "bssid": "e8:fc:af:93:59:c2",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537770272",
+                "type": "W",
+                "bestlevel": "-89"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45099259,
+                    48.15103941
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box o2 DSL",
+                "bssid": "00:24:fe:ee:89:b6",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-644766272",
+                "type": "W",
+                "bestlevel": "-76"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45162573,
+                    48.15108488
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "ALICE-WLAN95",
+                "bssid": "50:7e:5d:04:aa:34",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-537777272",
+                "type": "W",
+                "bestlevel": "-74"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45128835,
+                    48.15072354
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "uwfklSkGNthCUrMdMQUZNba",
+                "bssid": "08:96:d7:78:96:5c",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541829272",
+                "type": "W",
+                "bestlevel": "-91"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4589132,
+                    48.15483415
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "StuelpiNET",
+                "bssid": "00:03:9d:4f:2a:00",
+                "capabilities": "[WEP][ESS]",
+                "lasttime": "-541829272",
+                "type": "W",
+                "bestlevel": "-87"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4589132,
+                    48.15483415
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Homenet",
+                "bssid": "24:65:11:d8:d1:53",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541829272",
+                "type": "W",
+                "bestlevel": "-90"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4589132,
+                    48.15483415
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "EasyBox-FE0606",
+                "bssid": "02:23:08:82:a5:6d",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-541824272",
+                "type": "W",
+                "bestlevel": "-87"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45900356,
+                    48.15461809
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-B8B445",
+                "bssid": "1c:c6:3c:b8:b4:80",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541824272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45900356,
+                    48.15461809
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-958454",
+                "bssid": "00:23:08:95:84:fb",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-541824272",
+                "type": "W",
+                "bestlevel": "-85"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45900356,
+                    48.15461809
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box Fon WLAN 7360",
+                "bssid": "34:81:c4:06:96:9e",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541824272",
+                "type": "W",
+                "bestlevel": "-87"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45900356,
+                    48.15461809
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-ROSE",
+                "bssid": "00:23:08:27:7a:bc",
+                "capabilities": "[WPA-PSK-TKIP][WPS][ESS]",
+                "lasttime": "-541824272",
+                "type": "W",
+                "bestlevel": "-89"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45900356,
+                    48.15461809
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box 7312",
+                "bssid": "24:65:11:f0:b9:6c",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541818272",
+                "type": "W",
+                "bestlevel": "-87"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45891368,
+                    48.15428419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!WLAN Repeater 450E",
+                "bssid": "08:96:d7:96:52:52",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-541818272",
+                "type": "W",
+                "bestlevel": "-80"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45891368,
+                    48.15428419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Aquisi_Easy",
+                "bssid": "9c:80:df:88:87:f2",
+                "capabilities": "[WPA2-PSK-CCMP][ESS]",
+                "lasttime": "-541818272",
+                "type": "W",
+                "bestlevel": "-80"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45891368,
+                    48.15428419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Cookiecutter",
+                "bssid": "00:18:e7:e8:05:d0",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-541794272",
+                "type": "W",
+                "bestlevel": "-77"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45891368,
+                    48.15428419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-46C601",
+                "bssid": "84:a8:e4:fa:46:c6",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541794272",
+                "type": "W",
+                "bestlevel": "-93"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45829596,
+                    48.15319876
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "manfred",
+                "bssid": "7c:4f:b5:c6:a3:c9",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-541818272",
+                "type": "W",
+                "bestlevel": "-83"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45891368,
+                    48.15428419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-863154",
+                "bssid": "d4:21:22:d2:63:63",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541818272",
+                "type": "W",
+                "bestlevel": "-79"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45891368,
+                    48.15428419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "o2-WLAN61",
+                "bssid": "00:1c:28:9a:f2:57",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]",
+                "lasttime": "-541818272",
+                "type": "W",
+                "bestlevel": "-88"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45891368,
+                    48.15428419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-935376",
+                "bssid": "1c:c6:3c:93:53:30",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541794272",
+                "type": "W",
+                "bestlevel": "-81"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45891368,
+                    48.15428419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box Fon WLAN 7050",
+                "bssid": "00:04:0e:7f:55:0d",
+                "capabilities": "[WEP][ESS]",
+                "lasttime": "-541809272",
+                "type": "W",
+                "bestlevel": "-84"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45851221,
+                    48.15397089
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-E5A656",
+                "bssid": "84:9c:a6:e5:a6:7c",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541809272",
+                "type": "W",
+                "bestlevel": "-89"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45851221,
+                    48.15397089
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN-4E3D96",
+                "bssid": "84:a8:e4:5d:4e:3d",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541809272",
+                "type": "W",
+                "bestlevel": "-93"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45851221,
+                    48.15397089
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "FRITZ!Box Martina",
+                "bssid": "34:31:c4:76:52:d9",
+                "capabilities": "[WPA-PSK-TKIP][WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541794272",
+                "type": "W",
+                "bestlevel": "-95"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45829596,
+                    48.15319876
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "devolo-bcf2af935080",
+                "bssid": "bc:f2:af:93:50:80",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541788272",
+                "type": "W",
+                "bestlevel": "-88"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45814649,
+                    48.15305401
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "0815NET",
+                "bssid": "00:18:4d:48:58:c0",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]",
+                "lasttime": "-541774272",
+                "type": "W",
+                "bestlevel": "-95"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45787334,
+                    48.15274165
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "EasyBox-27C956",
+                "bssid": "84:9c:a6:27:c9:be",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP-preauth][WPS][ESS]",
+                "lasttime": "-541769272",
+                "type": "W",
+                "bestlevel": "-89"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4579097,
+                    48.15252362
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "WLAN LIEBAUF",
+                "bssid": "24:65:11:e3:20:1d",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541716272",
+                "type": "W",
+                "bestlevel": "-82"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45752559,
+                    48.15010171
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "Novum-Habitat Immobilien",
+                "bssid": "9c:80:df:8c:d8:5e",
+                "capabilities": "[WPA2-PSK-CCMP][WPS][ESS]",
+                "lasttime": "-541716272",
+                "type": "W",
+                "bestlevel": "-87"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45752559,
+                    48.15010171
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "x": null,
+                "y": null,
+                "ssid": "MB WLAN 24110",
+                "bssid": "9c:df:03:9e:95:e7",
+                "capabilities": "[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]",
+                "lasttime": "-537886272",
+                "type": "W",
+                "bestlevel": "-84"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.45582756,
+                    48.15020327
+                ]
+            }
+        }
+    ]
+}

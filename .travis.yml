@@ -17,6 +17,7 @@ before_install:
 install:
   - npm install
   - bower install
+  - apt-get install gdal-bin
 
 before_script:
 # remove dist folder from .gitignore file
@@ -27,6 +28,7 @@ before_script:
 
 script:
 # this script branches the dist folder to the gh-pages branch
+  - ogr2ogr -f "GEOJSON" virtualFileStadtbezirk21.geojson virtualFileStadtbezirk21.vrt
   - ./deploy.sh
   
 env:
