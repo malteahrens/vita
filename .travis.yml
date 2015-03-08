@@ -17,7 +17,7 @@ before_install:
 install:
   - npm install
   - bower install
-  - apt-get install gdal-bin
+  - sudo apt-get install gdal-bin
 
 before_script:
 # remove dist folder from .gitignore file
