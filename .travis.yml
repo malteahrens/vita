@@ -26,9 +26,7 @@ before_script:
   - grunt test
   - grunt build
 # preprocess geodata
-  - ls dist
-  - ogr2ogr --version
-  - ogr2ogr -f 'GEOJSON' dist/PasingWlan.geojson app/data/PasingWlan.vrt
+  - node Vrt2Geojson.js
 
 script:
 # this script branches the dist folder to the gh-pages branch
