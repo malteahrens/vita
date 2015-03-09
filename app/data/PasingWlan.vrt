@@ -1,6 +1,6 @@
 <OGRVRTDataSource>
     <OGRVRTLayer name="network">
-        <SrcDataSource relativeToVRT="1">app/data/PasingWlan.sqlite</SrcDataSource>
+        <SrcDataSource relativeToVRT="1">./PasingWlan.sqlite</SrcDataSource>
         <SrcLayer>network</SrcLayer> 
         <SrcSQL>SELECT * FROM NETWORK WHERE type = 'W'</SrcSQL>
         <GeometryType>wkbPoint</GeometryType>
