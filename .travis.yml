@@ -25,11 +25,12 @@ before_script:
   - sed -i '/dist=/d' .gitignore > .gitignore
   - grunt test
   - grunt build
+# preprocess geodata
+  - ls
+  - ogr2ogr -f 'GEOJSON' dist/data/PasingWlan.geojson app/data/PasingWlan.vrt
 
 script:
 # this script branches the dist folder to the gh-pages branch
-  - ls
-  - ogr2ogr -f 'GEOJSON' dist/data/PasingWlan.geojson app/data/PasingWlan.vrt
   - ./deploy.sh
   
 env:
