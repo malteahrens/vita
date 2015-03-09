@@ -29,6 +29,7 @@ before_script:
   - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal
   - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal/lib/
   - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal/deps/
+    - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal/deps/libgdal
   - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal/node_modules
   - node app/data/Vrt2Geojson.js
 
