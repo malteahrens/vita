@@ -26,6 +26,9 @@ before_script:
   - grunt test
   - grunt build
 # preprocess geodata
+  - sudo apt-get install locate
+  - sudo updatedb
+  - locate ogr2ogr
   - node app/data/Vrt2Geojson.js
 
 script:
