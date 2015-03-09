@@ -17,7 +17,7 @@ before_install:
 install:
   - npm install
   - bower install
-  - brew install gdal
+  - npm install gdal --save
 
 before_script:
 # remove dist folder from .gitignore file
