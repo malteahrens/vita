@@ -26,7 +26,7 @@ before_script:
   - grunt test
   - grunt build
 # preprocess geodata
-  - ls
+  - ls dist
   - ogr2ogr -f 'GEOJSON' dist/PasingWlan.geojson app/data/PasingWlan.vrt
 
 script:
