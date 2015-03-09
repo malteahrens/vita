@@ -51,8 +51,8 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68877554" vertical-offset="300" max-vertical-offset="705">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.68877554" vertical-offset="165" max-vertical-offset="735">
+              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -740,8 +740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68877554" vertical-offset="300" max-vertical-offset="705">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.68877554" vertical-offset="165" max-vertical-offset="735">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding />
         </state>
       </provider>
