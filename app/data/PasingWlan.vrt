@@ -1,11 +1,12 @@
 <OGRVRTDataSource>
     <OGRVRTLayer name="network">
-        <SrcDataSource relativeToVRT="1">./PasingWlan.sqlite</SrcDataSource>
+        <SrcDataSource relativeToVRT="1">PasingWlan.sqlite</SrcDataSource>
         <SrcLayer>network</SrcLayer> 
         <SrcSQL>SELECT * FROM NETWORK WHERE type = 'W'</SrcSQL>
         <GeometryType>wkbPoint</GeometryType>
             <LayerSRS>WGS84</LayerSRS>
         <GeometryField encoding="PointFromColumns" x="bestlon" y="bestlat"/>
+        <!-- http://arthur-e.github.io/Wicket/sandbox-gmaps3.html -->
         <Field name="x" />
         <Field name="y" />
         <Field name="ssid" type="String"/>
