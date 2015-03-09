@@ -29,7 +29,7 @@ before_script:
 script:
 # this script branches the dist folder to the gh-pages branch
   - ls
-  - ogr2ogr -f 'GEOJSON' /dist/data/PasingWlan.geojson /app/data/PasingWlan.vrt
+  - ogr2ogr -f 'GEOJSON' dist/data/PasingWlan.geojson app/data/PasingWlan.vrt
   - ./deploy.sh
   
 env:
