@@ -18,7 +18,7 @@ install:
   - npm install
   - bower install
   - npm install gdal --save
-  -- npm install ogr2ogr --save
+  - npm install ogr2ogr --save
 
 before_script:
 # remove dist folder from .gitignore file
