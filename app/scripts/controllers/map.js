@@ -9,52 +9,56 @@
  */
 angular.module('angularApp')
 .controller('MapCtrl', [ '$scope', '$http', function($scope, $http) {
-        $scope.loadGeojson = function () {
-           $http.get("PasingWlan.geojson").success(function(data, status) {
-               // Put the countries on an associative array
-               angular.extend($scope, {
-                   geojson: {
-                       data: data
-                   }
-               });
-           });
+    $scope.dataPoints = [];
 
-
-        };
-
-        //Load geojson
-        $scope.loadGeojson();
-
-   angular.extend($scope, {
-        center: {
-            lat: 48.14882451158226,
-            lng: 11.451873779296875,
-            zoom: 13
-        },
-        defaults: {
-            tileLayer: "http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
-            maxZoom: 14,
-            map: {
-                fullscreenControl:true
+        angular.extend($scope, {
+            center: {
+                lat: 48.14882451158226,
+                lng: 11.451873779296875,
+                zoom: 13
             },
             layers: {
-                overlays: {
-                    "geojson": {
-                        "name": "Real world data",
-                        "type": "markercluster",
-                        "visible": true,
-                        "layerOptions": {
-                            "chunkedLoading": true,
-                            "showCoverageOnHover": false,
-                            "removeOutsideVisibleBounds": true
-                        },
-                        "layerParams": {}
+                baselayers: {
+                    osm: {
+                        name: 'OpenStreetMap',
+                        url: 'http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg',
+                        type: 'xyz'
                     }
-
                 }
             }
-        }
-    });
+        });
+
+    $scope.loadGeojson = function () {
+       $http.get("PasingWlan.geojson").success(function(data, status) {
+           var arr = new Array();
+           angular.forEach(data.features, function(value, key) {
+               var x = value.geometry.coordinates[0];
+               var y = value.geometry.coordinates[1];
+               var featArr = new Array(y, x, 1);
+               arr.push(featArr);
+           });
+
+           angular.extend($scope, {
+               layers: {
+                   overlays: {
+                       heatmap: {
+                           name: 'Heat Map',
+                           type: 'heatmap',
+                           data: arr,
+                           visible: true,
+                           layerOptions: {
+                               size: 120
+                           }
+                       }
+                   }
+               }
+           });
+
+       });
 
 
+    };
+
+    //Load geojson
+    $scope.loadGeojson();
 }]);

@@ -38,8 +38,14 @@
             <div mouseover="images/yeoman.png">
                 <h2>Headline 2</h2>
                 <p ng-controller="MapCtrl">
-                    <leaflet center="center" defaults="defaults" geojson="geojson" height="350px" width="100%"></leaflet>
+                    <leaflet center="center" layers="layers" height="350px" width="100%"></leaflet>
+                    <tbody>
+                    <tr>
+                        <td>{{dataPoints}}</td>
+                    </tr>
+                    </tbody>
                 </p>
+
             </div>
             <div mouseover="images/grunt.png">
                 <h3>Headline 3</h3>
@@ -112,5 +118,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css' rel='stylesheet' />
   <script src='bower_components/leaflet.markercluster/dist/leaflet.markercluster.js'></script>
     <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="bower_components/webgl-heatmap-leaflet/js/webgl-heatmap.js"></script>
+    <script src="bower_components/webgl-heatmap-leaflet/js/webgl-heatmap-leaflet.js"></script>
 </body>
 </html>
