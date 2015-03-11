@@ -38,6 +38,7 @@ angular.module('angularApp')
                arr.push(featArr);
            });
 
+           $scope.dataPoints = arr;
            angular.extend($scope, {
                layers: {
                    overlays: {
@@ -47,7 +48,7 @@ angular.module('angularApp')
                            data: arr,
                            visible: true,
                            layerOptions: {
-                               size: 120
+                               size: 100
                            }
                        }
                    }
