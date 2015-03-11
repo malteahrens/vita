@@ -17,9 +17,7 @@ before_install:
 install:
   - npm install
   - bower install
-  - npm install gdal --save
-  - npm install ogr2ogr --save
-  - sudo find / -name ogr2ogr
+  - sudo apt-get install gdal-bin
 
 before_script:
 # remove dist folder from .gitignore file
@@ -27,17 +25,10 @@ before_script:
   - sed -i '/dist=/d' .gitignore > .gitignore
   - grunt test
   - grunt build
-# preprocess geodata
-  - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal
-  - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal/lib/
-  - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal/deps/
-  - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal/deps/libgdal/
-  - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal/deps/libgdal/gdal/ogr
-  - ls -lah /home/travis/build/malteahrens/vita/node_modules/gdal/node_modules
-  - node app/data/Vrt2Geojson.js
 
 script:
 # this script branches the dist folder to the gh-pages branch
+  - ogr2ogr --version
   - ./deploy.sh
   
 env:
