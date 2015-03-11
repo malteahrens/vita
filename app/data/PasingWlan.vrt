@@ -9,7 +9,5 @@
         <Field name="x" src="bestlon" />
         <Field name="y" src="bestlat" />
         <Field name="ssid" type="String"/>
-        <Field name="capabilities" type="String"/>
-        <Field name="bestlevel" type="String"/>
     </OGRVRTLayer>
 </OGRVRTDataSource>
