@@ -101,7 +101,7 @@
 angular.module(&#039;angularApp&#039;)
 .controller(&#039;MapCtrl&#039;, [ &#039;$scope&#039;, &#039;$http&#039;, function($scope, $http) {
         $scope.loadGeojson = function () {
-           $http.get(&quot;data/PasingWlan.geojson&quot;).success(function(data, status) {
+           $http.get(&quot;PasingWlan.geojson&quot;).success(function(data, status) {
                // Put the countries on an associative array
                angular.extend($scope, {
                    geojson: {
