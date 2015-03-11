@@ -1,6 +1,6 @@
 'use strict';
 
-//L.Icon.Default.imagePath='typo3conf/ext/ods_osm/res/leaflet/images';
+L.Icon.Default.imagePath='/leaflet/dist/images';
 L.GeoJSON = L.GeoJSON.extend({
     addTo: function(map) {
         var self = this;
