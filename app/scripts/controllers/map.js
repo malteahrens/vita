@@ -1,5 +1,6 @@
 'use strict';
 
+L.Icon.Default.imagePath='typo3conf/ext/ods_osm/res/leaflet/images';
 /**
  * @ngdoc function
  * @name angularApp.controller:LangCtrl
