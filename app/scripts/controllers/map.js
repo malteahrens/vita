@@ -1,6 +1,35 @@
 'use strict';
 
-L.Icon.Default.imagePath='typo3conf/ext/ods_osm/res/leaflet/images';
+//L.Icon.Default.imagePath='typo3conf/ext/ods_osm/res/leaflet/images';
+L.GeoJSON = L.GeoJSON.extend({
+    addTo: function(map) {
+        var self = this;
+        map.addLayer(this.markers);
+        var parentRemove = L.GeoJSON.prototype.onRemove;
+        L.GeoJSON.prototype.onRemove = function (map) {
+            self.markers.removeLayer(self);
+            delete self.markers;
+            parentRemove(map);
+        };
+        return this;
+    }
+});
+L.geoJson = function (geojson, options) {
+    var geoJSON = new L.GeoJSON(geojson, options);
+    var markers = new L.MarkerClusterGroup({
+        spiderfyOnMaxZoom: false,
+        showCoverageOnHover: true,
+        zoomToBoundsOnClick: true,
+        disableClusteringAtZoom: 18
+    });
+    markers.setGeoJSON = function(data) {
+        geoJSON.setGeoJSON(data);
+    };
+    markers.addLayer(geoJSON);
+    geoJSON.markers = markers;
+    return  markers;
+};
+
 /**
  * @ngdoc function
  * @name angularApp.controller:LangCtrl
