@@ -28,7 +28,6 @@ angular.module('angularApp')
             }
         });
 
-    $scope.loadGeojson = function () {
        $http.get("PasingWlan.geojson").success(function(data, status) {
            var arr = new Array();
            angular.forEach(data.features, function(value, key) {
@@ -56,10 +55,4 @@ angular.module('angularApp')
            });
 
        });
-
-
-    };
-
-    //Load geojson
-    $scope.loadGeojson();
 }]);
