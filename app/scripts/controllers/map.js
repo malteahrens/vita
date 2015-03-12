@@ -40,11 +40,6 @@ angular.module('angularApp')
 
            $scope.dataPoints = arr;
            angular.extend($scope, {
-               defaults: {
-                   map: {
-                       fullscreenControl: true
-                   }
-               },
                layers: {
                    overlays: {
                        heatmap: {
@@ -54,8 +49,7 @@ angular.module('angularApp')
                            visible: true,
                            layerOptions: {
                                size: 100,
-                               opacity: 0.5,
-                               autoresize: true
+                               opacity: 0.5
                            }
                        }
                    }
