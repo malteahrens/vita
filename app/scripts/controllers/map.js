@@ -48,7 +48,9 @@ angular.module('angularApp')
                            data: arr,
                            visible: true,
                            layerOptions: {
-                               size: 100
+                               size: 100,
+                               opacity: 0.5,
+                               autoresize: true
                            }
                        }
                    }
