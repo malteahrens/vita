@@ -26,6 +26,7 @@ before_script:
   - grunt test
   - grunt build
 # generate vector tiles
+  - npm install tilelive
   - npm install tilelive-bridge
 
 script:
