@@ -61,5 +61,5 @@ angular.module('angularApp')
     };
 
     //Load geojson
-    //$scope.loadGeojson();
+    $scope.loadGeojson();
 }]);
