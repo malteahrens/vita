@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the angularApp
  */
-angular.module('angularApp', ["leaflet-directive"])
+angular.module('angularApp')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

@@ -28,31 +28,4 @@ angular.module('angularApp')
             }
         });
 
-       $http.get("PasingWlan.geojson").success(function(data, status) {
-           var arr = new Array();
-           angular.forEach(data.features, function(value, key) {
-               var x = value.geometry.coordinates[0];
-               var y = value.geometry.coordinates[1];
-               var featArr = new Array(y, x, 1);
-               arr.push(featArr);
-           });
-
-           $scope.dataPoints = arr;
-           angular.extend($scope, {
-               layers: {
-                   overlays: {
-                       heatmap: {
-                           name: 'Heat Map',
-                           type: 'heatmap',
-                           data: arr,
-                           visible: true,
-                           layerOptions: {
-                               size: 100
-                           }
-                       }
-                   }
-               }
-           });
-
-       });
 }]);
