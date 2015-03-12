@@ -33,7 +33,7 @@ script:
   - ogr2ogr --version
   - ogr2ogr -f 'GEOJSON' dist/PasingWlan.geojson app/data/PasingWlan.vrt
   - node ./deploy/scripts/Geojson2VectorTiles.js
-  - ./deploy.sh
+  - ./deploy/scripts/github.sh
   
 env:
   global:
