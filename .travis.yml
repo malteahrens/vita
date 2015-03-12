@@ -25,6 +25,8 @@ before_script:
   - sed -i '/dist=/d' .gitignore > .gitignore
   - grunt test
   - grunt build
+# generate vector tiles
+  - npm install tilelive-bridge
 
 script:
 # this script branches the dist folder to the gh-pages branch
