@@ -44,7 +44,7 @@ angular.module('angularApp')
                    map: {
                        fullscreenControl: true
                    }
-               }
+               },
                layers: {
                    overlays: {
                        heatmap: {
