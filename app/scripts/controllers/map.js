@@ -8,8 +8,16 @@
  * Controller of the angularApp
  */
 angular.module('angularApp')
-.controller('MapCtrl', [ '$scope', '$http', function($scope, $http) {
+.controller('MapCtrl', [ '$scope', '$http', 'leafletData', function($scope, $http, leafletData) {
     $scope.dataPoints = [];
+
+        leafletData.getMap().then(function(map) {
+            L.mapbox.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
+            L.mapbox.featureLayer()
+                .loadURL('PasingWlan.geojson')
+                .addTo(map);
+        });
+
 
         angular.extend($scope, {
             center: {
@@ -45,7 +53,7 @@ angular.module('angularApp')
                        heatmap: {
                            name: 'Heat Map',
                            type: 'heatmap',
-                           data: arr,
+                           data: $scope.dataPoints,
                            visible: true,
                            layerOptions: {
                                size: 100,
@@ -62,5 +70,5 @@ angular.module('angularApp')
     };
 
     //Load geojson
-    $scope.loadGeojson();
+    //$scope.loadGeojson();
 }]);

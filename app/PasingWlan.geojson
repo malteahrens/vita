@@ -4945,7 +4945,7 @@
 { "type": "Feature", "properties": { "x": "11.48753561", "y": "48.14122226", "ssid": "MHPLAN" }, "geometry": { "type": "Point", "coordinates": [ 11.48753561, 48.14122226 ] } },
 { "type": "Feature", "properties": { "x": "11.48753561", "y": "48.14122226", "ssid": "ALBERT15902" }, "geometry": { "type": "Point", "coordinates": [ 11.48753561, 48.14122226 ] } },
 { "type": "Feature", "properties": { "x": "11.48558144", "y": "48.14148126", "ssid": "puehler.info" }, "geometry": { "type": "Point", "coordinates": [ 11.48558144, 48.14148126 ] } },
-{ "type": "Feature", "properties": { "x": "11.48672032", "y": "48.14124684", "ssid": "TP-LINK_D0B7F8" }, "geometry": { "type": "Point", "coordinates": [ 11.48672032, 48.14124684 ] } },
+{ "type": "Feature", "properties ": { "x": "11.48672032", "y": "48.14124684", "ssid": "TP-LINK_D0B7F8" }, "geometry": { "type": "Point", "coordinates": [ 11.48672032, 48.14124684 ] } },
 { "type": "Feature", "properties": { "x": "11.48558144", "y": "48.14148126", "ssid": "WLAN-1B5D05" }, "geometry": { "type": "Point", "coordinates": [ 11.48558144, 48.14148126 ] } },
 { "type": "Feature", "properties": { "x": "11.48558144", "y": "48.14148126", "ssid": "CASA-PC_Network" }, "geometry": { "type": "Point", "coordinates": [ 11.48558144, 48.14148126 ] } },
 { "type": "Feature", "properties": { "x": "11.48672032", "y": "48.14124684", "ssid": "devolo-f4068d20bb00" }, "geometry": { "type": "Point", "coordinates": [ 11.48672032, 48.14124684 ] } },
