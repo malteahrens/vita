@@ -23,6 +23,6 @@ angular.module('angularApp')
         {item: 'three'}];
 
     $scope.mouseOverThing = function(event) {
-        console.log(event);
+        //console.log(event);
     }
   });

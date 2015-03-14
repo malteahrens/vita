@@ -39,7 +39,8 @@
             <div mouseover="images/yeoman.png">
                 <h2>Headline 2</h2>
                 <p ng-controller="MapCtrl">
-                    <leaflet center="center" layers="layers" defaults="defaults" height="350px" width="100%"></leaflet>
+                    <div id="map" height="500"></div>
+
                 </p>
 
             </div>
@@ -111,12 +112,9 @@
     <script src="scripts/controllers/map.js"></script>
     <!-- endbuild -->
 
-    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/Leaflet.fullscreen.min.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css' rel='stylesheet' />
-    <script src="bower_components/webgl-heatmap-leaflet/js/webgl-heatmap.js"></script>
-    <script src="bower_components/webgl-heatmap-leaflet/js/webgl-heatmap-leaflet.js"></script>
-  <script src='bower_components/leaflet.markercluster/dist/leaflet.markercluster.js'></script>
-    <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
+    <script src="scripts/lib/mapbox-gl.js"></script>
+
 
 </body>
 </html>

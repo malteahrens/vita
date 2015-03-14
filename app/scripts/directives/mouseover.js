@@ -38,29 +38,29 @@ angular.module('angularApp')
                 });
 
                 scope.$watch('ngSrc', function(newVal) {
-                    console.clear();
-                    console.log("change");
+                    //console.clear();
+                    //console.log("change");
                     var promise;
 
                     if(promise != undefined) {
                         $animate.cancel(promise);
                         $animate.removeClass(element, 'fadein');
-                        console.log("animation canceld");
+                        //console.log("animation canceld");
                     }
 
                     promise = $animate.addClass(element, 'fadein');
-                    console.log("animation started");
+                    //console.log("animation started");
                     promise.then(function () {
                         // if we are in here, the animation is complete
-                        console.log("animation finished");
-                        console.log("before remove class");
-                        console.log(element);
+                        //console.log("animation finished");
+                        //console.log("before remove class");
+                        //console.log(element);
                         $animate.removeClass(element, 'fadein');
-                        console.log("AFTER remove class and BEFORE apply");
-                        console.log(element);
+                        //console.log("AFTER remove class and BEFORE apply");
+                        //console.log(element);
                         scope.$apply();
-                        console.log("AFTER remove class and AFTER apply");
-                        console.log(element);
+                        //console.log("AFTER remove class and AFTER apply");
+                        //console.log(element);
                     });
                 });
             }
