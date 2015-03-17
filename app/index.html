@@ -37,10 +37,15 @@
             </div>
             <div mouseover="images/yeoman.png">
                 <h2>Headline 2</h2>
-                <p ng-controller="MapCtrl">
+                <div ng-controller="MapCtrl">
+                    <pre id='features'></pre>
                     <div id="map" style="height:500px"></div>
-                </p>
 
+                    <pre>{{username}}</pre>
+                    <button ng-click="grid()">Create Grid</button>
+                    <button ng-click="json()">Load JSON</button>
+                    <button ng-click="hexTopology(20, 960, 700)">Create Hexagon</button>
+                </div>
             </div>
             <div mouseover="images/grunt.png">
                 <h3>Headline 3</h3>
@@ -109,9 +114,19 @@
     <script src="scripts/controllers/map.js"></script>
     <!-- endbuild -->
 
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css' rel='stylesheet' />
+    <script src="bower_components/webgl-heatmap-leaflet/js/webgl-heatmap.js"></script>
+    <script src="bower_components/webgl-heatmap-leaflet/js/webgl-heatmap-leaflet.js"></script>
+    <script src='bower_components/leaflet.markercluster/dist/leaflet.markercluster.js'></script>
+    <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
     <link href='styles/mapbox-gl.css' rel='stylesheet' />
     <script src="scripts/lib/mapbox-gl.js"></script>
 
-
+    <!-- https://github.com/mbostock/topojson/wiki/API-Reference -->
+    <!-- http://bl.ocks.org/mbostock/5249328 -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
 </body>
 </html>
