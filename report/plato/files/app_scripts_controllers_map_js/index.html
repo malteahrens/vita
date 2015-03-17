@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">63.47</p>
+      <p class="stat">55.94</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">43</p>
+      <p class="stat">157</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">6.43</p>
+      <p class="stat">38.28</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.23</p>
+      <p class="stat">1.81</p>
     </div>
   </div>
 </div>
@@ -89,48 +89,162 @@
 
 <div class="container">
   <div class="row">
-    <textarea id="file-source" class="col-md-12">&#039;use strict&#039;;
-
-/**
- * @ngdoc function
- * @name angularApp.controller:LangCtrl
- * @description
- * # LangCtrl
- * Controller of the angularApp
- */
-angular.module(&#039;angularApp&#039;)
-.controller(&#039;MapCtrl&#039;, [ &#039;$scope&#039;, &#039;$http&#039;, &#039;leafletData&#039;, function($scope, $http, leafletData) {
+    <textarea id="file-source" class="col-md-12">angular.module(&#039;angularApp&#039;)
+.controller(&#039;MapCtrl&#039;, [ &#039;$scope&#039;, &#039;$http&#039;, function($scope, $http) {
     $scope.dataPoints = [];
     $scope.map = {};
-
-        mapboxgl.accessToken = &#039;pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q&#039;;
-
-        var map = new mapboxgl.Map({
-            container: &#039;map&#039;,
-            zoom: 12.5,
-            center: [48.14882451158226, 11.451873779296875],
-            style: &#039;https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json&#039;,
-            hash: true
+    $scope.username = &#039;Press a button...&#039;;
+    $scope.grid = function() {
+        $scope.username = &quot;should load grid layer&quot;;
+    }
+    $scope.json = function() {
+        $scope.username = &quot;should load json layer&quot;;
+        map.addSource(&quot;markers&quot;, {
+            &quot;type&quot;: &quot;geojson&quot;,
+            &quot;maxzoom&quot;: 14,
+            &quot;data&quot;: &quot;/PasingWlan.geojson&quot;
         });
 
-        map.addControl(new mapboxgl.Navigation());
+        map.addLayer({
+            &quot;id&quot;: &quot;markers&quot;,
+            &quot;type&quot;: &quot;symbol&quot;,
+            &quot;source&quot;: &quot;markers&quot;,
+            &quot;interactive&quot;: true,
+            &quot;layout&quot;: {
+                &quot;icon-image&quot;: &quot;marker-24&quot;,
+                &quot;icon-allow-overlap&quot;: true
+            }
+        });
+    }
 
-        map.on(&#039;style.load&#039;, function() {
-            map.addSource(&quot;markers&quot;, {
-                &quot;type&quot;: &quot;geojson&quot;,
-                &quot;maxzoom&quot;: 14,
-                &quot;data&quot;: &quot;/PasingWlan.geojson&quot;
-            });
+    mapboxgl.accessToken = &#039;pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q&#039;;
 
-            map.addLayer({
-                &quot;id&quot;: &quot;markers&quot;,
-                &quot;type&quot;: &quot;symbol&quot;,
-                &quot;source&quot;: &quot;markers&quot;,
-                &quot;layout&quot;: {
-                    &quot;icon-image&quot;: &quot;harbor-12&quot;,
+    var map = new mapboxgl.Map({
+        container: &#039;map&#039;,
+        zoom: 12.5,
+        center: [48.14882451158226, 11.451873779296875],
+        style: &#039;https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json&#039;,
+        hash: true
+    });
+
+    map.addControl(new mapboxgl.Navigation());
+
+    map.on(&#039;mousemove&#039;, function(e) {
+        map.featuresAt(e.point, {radius: 1}, function(err, features) {
+            if (err) throw err;
+            if(features.length &gt; 0) {
+                var ssid = &quot;&quot;;
+                for(var i=0; i&lt;features.length; i++) {
+                    //ssid += JSON.stringify(features[i].geometry.coordinates, null, 2)+&quot; &quot;;
+                    $scope.highlight(features[i].geometry.coordinates);
                 }
-            });
+                document.getElementById(&#039;features&#039;).innerHTML = ssid;
+            }
         });
+    });
+
+    $scope.jsonHighlight = {
+        &quot;type&quot;: &quot;Feature&quot;,
+        &quot;geometry&quot;: {
+            &quot;type&quot;: &quot;Polygon&quot;,
+            &quot;coordinates&quot;: [[[11.44200325012207,48.124994388698326],[11.44399881362915,48.12599700035483],[11.44399881362915,48.126999592440086],[11.44200325012207,48.12800216495421],[11.44000768661499,48.126999592440086],[11.44000768661499,48.12599700035483],[11.44200325012207,48.124994388698326]]]
+        }
+    };
+        
+    $scope.highlight = function(features) {
+        console.log(JSON.stringify(features));
+        $scope.jsonHighlight = {
+            &quot;type&quot;: &quot;Feature&quot;,
+            &quot;geometry&quot;: {
+                &quot;type&quot;: &quot;Polygon&quot;,
+                &quot;coordinates&quot;: features
+            }
+        }
+    }
+
+    $scope.hexTopology = function(radius, width, height) {
+        $scope.username = &quot;started&quot;;
+
+        var test = function(radius, width, height) {
+            console.log(&quot;radius: &quot;+radius);
+            console.log(&quot;width: &quot;+width);
+            console.log(&quot;height: &quot;+height);
+            var dx = radius * 2 * Math.sin(Math.PI / 3),
+                dy = radius * 2,
+                m = Math.ceil((height + radius) / dy) + 1,
+                n = Math.ceil(width / dx) + 1,
+                geometries = [],
+                arcs = [];
+
+            for (var j = -1; j &lt;= m; ++j) {
+                for (var i = -1; i &lt;= n; ++i) {
+                    var y = j * 2, x = (i + (j &amp; 1) / 2) * 2;
+                    arcs.push([[x, y - 1], [1, 1]], [[x + 1, y], [0, 1]], [[x + 1, y + 1], [-1, 1]]);
+                }
+            }
+
+            for (var j = 0, q = 3; j &lt; m; ++j, q += 6) {
+                for (var i = 0; i &lt; n; ++i, q += 3) {
+                    geometries.push({
+                        type: &quot;Polygon&quot;,
+                        arcs: [[q, q + 1, q + 2, ~(q + (n + 2 - (j &amp; 1)) * 3), ~(q - 2), ~(q - (n + 2 + (j &amp; 1)) * 3 + 2)]],
+                        fill: Math.random() &gt; i / n * 2
+                    });
+                }
+            }
+
+            return {
+                transform: {translate: [11.4, 48.12], scale: [0.002, 0.001]},
+                objects: {hexagons: {type: &quot;GeometryCollection&quot;, geometries: geometries}},
+                arcs: arcs
+            };
+        };
+
+        var topo = test(radius, width, height);
+        //console.log(topo);
+        //console.log(JSON.stringify(topo));
+
+        var geojson = topojson.feature(topo, topo.objects.hexagons).features
+        var final = {
+            &quot;type&quot;: &quot;FeatureCollection&quot;,
+            &quot;features&quot;: geojson
+        }
+        $scope.username = final;
+        map.addSource(&quot;grid&quot;, {
+            &quot;type&quot;: &quot;geojson&quot;,
+            &quot;maxzoom&quot;: 14,
+            &quot;data&quot;: final
+        });
+
+        map.addLayer({
+            &quot;id&quot;: &quot;poly&quot;,
+            &quot;type&quot;: &quot;fill&quot;,
+            &quot;source&quot;: &quot;grid&quot;,
+            &quot;interactive&quot;: true,
+            &quot;paint&quot;: {
+                &quot;fill-color&quot;: &quot;transparent&quot;,
+                &quot;fill-outline-color&quot;: &quot;#ff0000&quot;,
+                &quot;fill-opacity&quot;: 1
+            }
+        });
+
+        map.addSource(&quot;json&quot;, {
+            &quot;type&quot;: &quot;geojson&quot;,
+            &quot;maxzoom&quot;: 14,
+            &quot;data&quot;: $scope.jsonHighlight
+        });
+
+        map.addLayer({
+            &quot;type&quot;: &quot;fill&quot;,
+            &quot;source&quot;: &quot;json&quot;,
+            &quot;interactive&quot;: true,
+            &quot;paint&quot;: {
+                &quot;fill-color&quot;: &quot;#ff0000&quot;,
+                &quot;fill-outline-color&quot;: &quot;#ff0000&quot;,
+                &quot;fill-opacity&quot;: 1
+            }
+        });
+    }
 }]);</textarea>
   </div>
 </div>
