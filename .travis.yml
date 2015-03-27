@@ -35,6 +35,7 @@ before_script:
   - npm install mbtiles
 # sqlite
   - npm install sqlite3
+  - npm install node-sqlite3
 
 script:
 # this script branches the dist folder to the gh-pages branch
