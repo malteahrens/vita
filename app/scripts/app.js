@@ -16,8 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'pascalprecht.translate',
-    'leaflet-directive'
+    'pascalprecht.translate'
   ])
   .config(function ($routeProvider, $translateProvider) {
     $routeProvider

@@ -33,11 +33,14 @@ before_script:
   - npm install mapnik@3.x
 # node-mbtiles (alternative to node-mapnik)
   - npm install mbtiles
+# sqlite
+  - npm install sqlite3
 
 script:
 # this script branches the dist folder to the gh-pages branch
   - ogr2ogr --version
   - ogr2ogr -f 'GEOJSON' dist/PasingWlan.geojson app/data/PasingWlan.vrt
+  - ogr2ogr -f 'GEOJSON' dist/PasingLocation.geojson app/data/PasingLocation.vrt
   - node ./deploy/scripts/Geojson2VectorTiles.js
   - ./deploy/scripts/github.sh
   

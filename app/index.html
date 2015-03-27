@@ -9,8 +9,6 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
       <!-- build:css(.tmp) styles/main.css -->
@@ -42,10 +40,10 @@
                     <div id="map" style="height:500px"></div>
 
                     <pre>{{username}}</pre>
+                    <pre>{{jsonHighlight}}</pre>
                     <button ng-click="grid()">Create Grid</button>
                     <button ng-click="json()">Load JSON</button>
-                    <button ng-click="hexTopology(20, 960, 700)">Create Hexagon</button>
-                </div>
+                    <button ng-click="hexTopology(20, 960, 900)">Create Hexagon</button>
             </div>
             <div mouseover="images/grunt.png">
                 <h3>Headline 3</h3>
@@ -99,9 +97,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
-    <script src="bower_components/leaflet/dist/leaflet.js"></script>
-    <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
-    <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+    <script src="bower_components/topojson/topojson.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -114,19 +110,13 @@
     <script src="scripts/controllers/map.js"></script>
     <!-- endbuild -->
 
-    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/Leaflet.fullscreen.min.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css' rel='stylesheet' />
-    <script src="bower_components/webgl-heatmap-leaflet/js/webgl-heatmap.js"></script>
-    <script src="bower_components/webgl-heatmap-leaflet/js/webgl-heatmap-leaflet.js"></script>
-    <script src='bower_components/leaflet.markercluster/dist/leaflet.markercluster.js'></script>
-    <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" />
-
     <link href='styles/mapbox-gl.css' rel='stylesheet' />
     <script src="scripts/lib/mapbox-gl.js"></script>
 
     <!-- https://github.com/mbostock/topojson/wiki/API-Reference -->
-    <!-- http://bl.ocks.org/mbostock/5249328 -->
+    <!-- http://bl.ocks.org/mbostock/5249328
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://d3js.org/d3.hexbin.v0.min.js"></script>-->
 </body>
 </html>
