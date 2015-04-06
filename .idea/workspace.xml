@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16398e78-1bc0-4dfc-afe4-5ff2957d108c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/map.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/map.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" afterPath="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data/geojson/PasingWlan_BestLatLon.geojson" afterPath="$PROJECT_DIR$/app/data/geojson/PasingWlan_BestLatLon.geojson" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data/geojson/PasingWlan_Centroid.geojson" afterPath="$PROJECT_DIR$/app/data/geojson/PasingWlan_Centroid.geojson" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data/geojson/PasingWlan_DifVector.geojson" afterPath="$PROJECT_DIR$/app/data/geojson/PasingWlan_DifVector.geojson" />
     </list>
     <ignored path="malteahrens.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,15 +70,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sqlite2geojson.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sqlite2geojson.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45810056" vertical-offset="436" max-vertical-offset="3510">
+            <state vertical-scroll-proportion="-3.3863637" vertical-offset="436" max-vertical-offset="3510">
               <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
               <folding>
                 <marker date="1428344196000" expanded="true" signature="2916:3046" placeholder="//..." />
                 <marker date="1428344196000" expanded="true" signature="3107:3461" placeholder="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PasingWlan_DifVector.vrt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/data/PasingWlan_DifVector.vrt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.63432837" vertical-offset="0" max-vertical-offset="825">
+              <caret line="4" column="1690" selection-start-line="4" selection-start-column="1690" selection-end-line="4" selection-end-column="1690" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,18 +109,6 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Geojson2VectorTiles.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deploy/scripts/Geojson2VectorTiles.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -322,6 +321,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="malteahrens.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vita" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="malteahrens.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vita" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="malteahrens.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vita" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="geojson" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -792,12 +845,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45810056" vertical-offset="436" max-vertical-offset="3510">
+        <state vertical-scroll-proportion="-3.3863637" vertical-offset="436" max-vertical-offset="3510">
           <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
           <folding>
             <marker date="1428344196000" expanded="true" signature="2916:3046" placeholder="//..." />
             <marker date="1428344196000" expanded="true" signature="3107:3461" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data/geojson/PasingWlan_BestLatLon.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7812285">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data/PasingWlan_DifVector.vrt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63432837" vertical-offset="0" max-vertical-offset="825">
+          <caret line="4" column="1690" selection-start-line="4" selection-start-column="1690" selection-end-line="4" selection-end-column="1690" />
+          <folding />
         </state>
       </provider>
     </entry>
