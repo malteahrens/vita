@@ -43,8 +43,8 @@ script:
   #- ogr2ogr -f 'GEOJSON' dist/PasingWlan.geojson app/data/PasingWlan.vrt
   #- ogr2ogr -f 'GEOJSON' dist/PasingLocation.geojson app/data/PasingLocation.vrt
   - node ./deploy/scripts/Geojson2VectorTiles.js
-  - mkdir /dist/data
-  - mkdir /dist/data/geojson
+  - mkdir dist/data
+  - mkdir dist/data/geojson
   - node ./deploy/scripts/sqlite2geojson.js
   - ./deploy/scripts/github.sh
   
