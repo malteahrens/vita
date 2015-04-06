@@ -38,7 +38,7 @@ if(exists) {
             // replace lat/lon (weighted centroid)
             for (var i=0;i<resGeojson.features.length; i++) {
                 resGeojson.features[i].geometry.coordinates[0] = resGeojson.features[i].properties.bestlon;
-                resGeojson.features[i].geometry.coordinates[1] = resGeojson.features[i].properties.bestlat;
+                resGeojson.features[i].geometry.coordinates[1] = resGeojson.features[i].properties.bestlat; 
             }
             writeGeojsonToFile(resGeojson, outputFile);
         } else {
