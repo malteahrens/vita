@@ -24,16 +24,16 @@ if(exists) {
             }
             var resGeojson = fillFeatures('Point');
             //console.log(resultPointGeojson);
-            var outputFile = "dist/data/PasingWlan_Centroid.geojson";
+            var outputFile = "./app/data/geojson/PasingWlan_Centroid.geojson";
             writeGeojsonToFile(resGeojson, outputFile);
 
             resGeojson = fillFeatures('LineString');
-            outputFile = "dist/data/PasingWlan_DifVector.geojson";
+            outputFile = "./app/data/geojson/PasingWlan_DifVector.geojson";
             writeGeojsonToFile(resGeojson, outputFile);
 
             // write geojson for values bestlon / bestlat
             resGeojson = fillFeatures('Point');
-            outputFile = "dist/data/PasingWlan_BestLatLon.geojson";
+            outputFile = "./app/data/geojson/PasingWlan_BestLatLon.geojson";
             //console.log(resGeojson.OGRGeoJSON.features.length);
             // replace lat/lon (weighted centroid)
             for (var i=0;i<resGeojson.OGRGeoJSON.features.length; i++) {
