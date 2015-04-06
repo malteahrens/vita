@@ -40,10 +40,10 @@ before_script:
 script:
 # this script branches the dist folder to the gh-pages branch
   - ogr2ogr --version
-  - ogr2ogr -f 'GEOJSON' dist/PasingWlan.geojson app/data/PasingWlan.vrt
-  - ogr2ogr -f 'GEOJSON' dist/PasingLocation.geojson app/data/PasingLocation.vrt
+  #- ogr2ogr -f 'GEOJSON' dist/PasingWlan.geojson app/data/PasingWlan.vrt
+  #- ogr2ogr -f 'GEOJSON' dist/PasingLocation.geojson app/data/PasingLocation.vrt
   - node ./deploy/scripts/Geojson2VectorTiles.js
-  - node ./deploy/scripts/sqlite.js
+  - node ./deploy/scripts/sqlite2geojson.js
   - ./deploy/scripts/github.sh
   
 env:
