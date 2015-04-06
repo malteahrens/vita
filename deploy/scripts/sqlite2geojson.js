@@ -36,9 +36,9 @@ if(exists) {
             outputFile = "./app/data/geojson/PasingWlan_BestLatLon.geojson";
             //console.log(resGeojson.OGRGeoJSON.features.length);
             // replace lat/lon (weighted centroid)
-            for (var i=0;i<resGeojson.OGRGeoJSON.features.length; i++) {
-                resGeojson.OGRGeoJSON.features[i].geometry.coordinates[0] = resGeojson.OGRGeoJSON.features[i].properties.bestlon;
-                resGeojson.OGRGeoJSON.features[i].geometry.coordinates[1] = resGeojson.OGRGeoJSON.features[i].properties.bestlat;
+            for (var i=0;i<resGeojson.features.length; i++) {
+                resGeojson.features[i].geometry.coordinates[0] = resGeojson.features[i].properties.bestlon;
+                resGeojson.features[i].geometry.coordinates[1] = resGeojson.features[i].properties.bestlat;
             }
             writeGeojsonToFile(resGeojson, outputFile);
         } else {
@@ -206,10 +206,8 @@ var addFeature = function(geojson) {
 
 var fillFeatures = function(featureType) {
     var resultGeojson = {
-        "OGRGeoJSON": {
-            "type": "FeatureCollection",
-            "features": []
-        }
+        "type": "FeatureCollection",
+        "features": []
     }
     var count = 0;
     for (key in hit) {
@@ -219,7 +217,7 @@ var fillFeatures = function(featureType) {
         // returns geojson feature, weighted-centroid triangulation
         var centroidResult = weightedCentroid(features, featureType);
         // adds the feature to a feature collection
-        resultGeojson.OGRGeoJSON.features.push(centroidResult);
+        resultGeojson.features.push(centroidResult);
         if(count===0) {
             //console.log(centroidResult);
         };
