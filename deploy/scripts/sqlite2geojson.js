@@ -22,16 +22,16 @@ if(exists) {
             }
             var resGeojson = fillFeatures('Point');
             //console.log(resultPointGeojson);
-            var outputFile = "../../dist/PasingWlan_Centroid.geojson";
+            var outputFile = "dist/PasingWlan_Centroid.geojson";
             writeGeojsonToFile(resGeojson, outputFile);
 
             resGeojson = fillFeatures('LineString');
-            outputFile = "../../dist/PasingWlan_DifVector.geojson";
+            outputFile = "dist/PasingWlan_DifVector.geojson";
             writeGeojsonToFile(resGeojson, outputFile);
 
             // write geojson for values bestlon / bestlat
             resGeojson = fillFeatures('Point');
-            outputFile = "../../dist/PasingWlan_BestLatLon.geojson";
+            outputFile = "dist/PasingWlan_BestLatLon.geojson";
             //console.log(resGeojson.OGRGeoJSON.features.length);
             // replace lat/lon (weighted centroid)
             for (var i=0;i<resGeojson.OGRGeoJSON.features.length; i++) {
@@ -181,7 +181,7 @@ var initGeojsonArray = function(geojson) {
 
 var addFeature = function(geojson) {
     if(geojson._id === 1) {
-        console.log(geojson);
+        //console.log(geojson);
     };
     // convert row from wigle wifi sqlite db to geojson feature
     hit[geojson.bssid].features.push({
