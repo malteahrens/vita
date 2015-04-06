@@ -5,6 +5,51 @@ var file = "./app/data/PasingWlan.sqlite";
 var exists = fs.existsSync(file);
 var geojson = new Array();
 
+if(exists) {
+    var db = new sqlite3.Database(file);
+    db.each("SELECT * FROM location, network WHERE location.bssid = network.bssid", function(err, row) {
+        geojson.push(row);
+    }, function(err, row) {
+
+        if(!err) {
+            for(var i=0; i<geojson.length; i++) {
+                // test if the bssid is already in database
+                var testHit = hit[geojson[i].bssid];
+                if(typeof testHit === 'undefined') {
+                    initGeojsonArray(geojson[i]);
+                }
+                addFeature(geojson[i]);
+            }
+            var resGeojson = fillFeatures('Point');
+            //console.log(resultPointGeojson);
+            var outputFile = "../../dist/PasingWlan_Centroid.geojson";
+            writeGeojsonToFile(resGeojson, outputFile);
+
+            resGeojson = fillFeatures('LineString');
+            outputFile = "../../dist/PasingWlan_DifVector.geojson";
+            writeGeojsonToFile(resGeojson, outputFile);
+
+            // write geojson for values bestlon / bestlat
+            resGeojson = fillFeatures('Point');
+            outputFile = "../../dist/PasingWlan_BestLatLon.geojson";
+            //console.log(resGeojson.OGRGeoJSON.features.length);
+            // replace lat/lon (weighted centroid)
+            for (var i=0;i<resGeojson.OGRGeoJSON.features.length; i++) {
+                resGeojson.OGRGeoJSON.features[i].geometry.coordinates[0] = resGeojson.OGRGeoJSON.features[i].properties.bestlon;
+                resGeojson.OGRGeoJSON.features[i].geometry.coordinates[1] = resGeojson.OGRGeoJSON.features[i].properties.bestlat;
+            }
+            writeGeojsonToFile(resGeojson, outputFile);
+        } else {
+            console.log("There was an error: "+err);
+        }
+
+    });
+
+    db.close();
+} else {
+    console.log("database not found...");
+}
+
 var weightedCentroid = function(features, featureType) {
     var lat = 0.0;
     var lon = 0.0;
@@ -35,8 +80,8 @@ var weightedCentroid = function(features, featureType) {
         }
 
         if(features[0].properties.bssid == 'c0:25:06:6f:f5:73'){
-            console.log("lon1: "+lon);
-            console.log("lat1: "+lat);
+            //console.log("lon1: "+lon);
+            //console.log("lat1: "+lat);
         }
 
         if(j==features.length-1) {
@@ -47,11 +92,11 @@ var weightedCentroid = function(features, featureType) {
             var latTri = features[j].geometry.coordinates[1];
             //console.log(features[0]);
             if(features[0].properties.bssid == 'c0:25:06:6f:f5:73'){
-                console.log("lat: "+lat);
+                /**console.log("lat: "+lat);
                 console.log("lon: "+lon);
                 console.log("latTri: "+latTri);
                 console.log("lonTri: "+lonTri);
-                console.log("lev: "+lev);
+                console.log("lev: "+lev);*//
             }
 
             try {
@@ -62,8 +107,8 @@ var weightedCentroid = function(features, featureType) {
             }
 
             if(features[0].properties.bssid == 'c0:25:06:6f:f5:73'){
-                console.log(lonTri);
-                console.log(latTri);
+                //console.log(lonTri);
+                //console.log(latTri);
             }
 
             // check if bestlat is available
@@ -174,55 +219,10 @@ var fillFeatures = function(featureType) {
         // adds the feature to a feature collection
         resultGeojson.OGRGeoJSON.features.push(centroidResult);
         if(count===0) {
-            console.log(centroidResult);
+            //console.log(centroidResult);
         };
         count++;
     }
 
     return resultGeojson;
-}
-
-if(exists) {
-    var db = new sqlite3.Database(file);
-        db.each("SELECT * FROM location, network WHERE location.bssid = network.bssid", function(err, row) {
-            geojson.push(row);
-        }, function(err, row) {
-
-            if(!err) {
-                for(var i=0; i<geojson.length; i++) {
-                    // test if the bssid is already in database
-                    var testHit = hit[geojson[i].bssid];
-                    if(typeof testHit === 'undefined') {
-                        initGeojsonArray(geojson[i]);
-                   }
-                   addFeature(geojson[i]);
-                }
-                var resGeojson = fillFeatures('Point');
-                //console.log(resultPointGeojson);
-                var outputFile = "../../dist/PasingWlan_Centroid.geojson";
-                writeGeojsonToFile(resGeojson, outputFile);
-
-                resGeojson = fillFeatures('LineString');
-                outputFile = "../../dist/PasingWlan_DifVector.geojson";
-                writeGeojsonToFile(resGeojson, outputFile);
-
-                // write geojson for values bestlon / bestlat
-                resGeojson = fillFeatures('Point');
-                outputFile = "../../dist/PasingWlan_BestLatLon.geojson";
-                console.log(resGeojson.OGRGeoJSON.features.length);
-                // replace lat/lon (weighted centroid)
-                for (var i=0;i<resGeojson.OGRGeoJSON.features.length; i++) {
-                    resGeojson.OGRGeoJSON.features[i].geometry.coordinates[0] = resGeojson.OGRGeoJSON.features[i].properties.bestlon;
-                    resGeojson.OGRGeoJSON.features[i].geometry.coordinates[1] = resGeojson.OGRGeoJSON.features[i].properties.bestlat;
-                }
-                writeGeojsonToFile(resGeojson, outputFile);
-            } else {
-                console.log("There was an error: "+err);
-            }
-
-        });
-
-    db.close();
-} else {
-    console.log("database not found...");
 }
