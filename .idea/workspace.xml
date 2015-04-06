@@ -41,11 +41,11 @@
       <file leaf-file-name="sqlite2geojson.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92224234" vertical-offset="270" max-vertical-offset="3525">
-              <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.5424955" vertical-offset="1230" max-vertical-offset="3555">
+              <caret line="100" column="19" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="19" />
               <folding>
-                <marker date="1428337439000" expanded="true" signature="2764:2894" placeholder="//..." />
-                <marker date="1428337439000" expanded="true" signature="2955:3309" placeholder="{...}" />
+                <marker date="1428337961000" expanded="true" signature="2764:2894" placeholder="//..." />
+                <marker date="1428337961000" expanded="true" signature="2955:3309" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -729,11 +729,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92224234" vertical-offset="270" max-vertical-offset="3525">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.5424955" vertical-offset="1230" max-vertical-offset="3555">
+          <caret line="100" column="19" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="19" />
           <folding>
-            <marker date="1428337439000" expanded="true" signature="2764:2894" placeholder="//..." />
-            <marker date="1428337439000" expanded="true" signature="2955:3309" placeholder="{...}" />
+            <marker date="1428337961000" expanded="true" signature="2764:2894" placeholder="//..." />
+            <marker date="1428337961000" expanded="true" signature="2955:3309" placeholder="{...}" />
           </folding>
         </state>
       </provider>

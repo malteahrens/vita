@@ -92,11 +92,13 @@ var weightedCentroid = function(features, featureType) {
             var latTri = features[j].geometry.coordinates[1];
             //console.log(features[0]);
             if(features[0].properties.bssid == 'c0:25:06:6f:f5:73'){
-                /**console.log("lat: "+lat);
+                <!--
+                 * console.log("lat: "+lat);
                 console.log("lon: "+lon);
                 console.log("latTri: "+latTri);
                 console.log("lonTri: "+lonTri);
-                console.log("lev: "+lev);*//
+                console.log("lev: "+lev);
+                -->
             }
 
             try {
