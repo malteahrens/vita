@@ -23,6 +23,7 @@ before_script:
 # remove dist folder from .gitignore file
   - echo 'remove dist folder from .gitignore'
   - sed -i '/dist=/d' .gitignore > .gitignore
+  - mkdir dist/data
   - grunt test
   - grunt build
 # generate vector tiles
