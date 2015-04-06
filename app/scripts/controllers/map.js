@@ -11,7 +11,7 @@ angular.module('angularApp')
         map.addSource("markers", {
             "type": "geojson",
             "maxzoom": 14,
-            "data": "/PasingWlan.geojson"
+            "data": "/data/geojson/PasingWlan_BestLatLon.geojson"
         });
 
         map.addLayer({
