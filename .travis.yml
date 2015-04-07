@@ -41,7 +41,9 @@ script:
 # this script branches the dist folder to the gh-pages branch
   - node ./deploy/scripts/Geojson2VectorTiles.js
 
-  # Convert wigle wifi sqlite db to different geojson flavours...
+  # Convert wigle wifi sqlite db to different geojson flavours... if the folders do not exist the script fails
+  - mkdir dist/data
+  - mkdir dist/data/geojson
   - node ./deploy/scripts/sqlite2geojson.js
 
   # Clip geojson to Pasing area and copy the result to the dist dir to make it available in the app

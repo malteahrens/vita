@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16398e78-1bc0-4dfc-afe4-5ff2957d108c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" afterPath="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="malteahrens.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="588" max-vertical-offset="1005">
-              <caret line="50" column="3" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.14179105" vertical-offset="588" max-vertical-offset="1035">
+              <caret line="43" column="110" selection-start-line="43" selection-start-column="110" selection-end-line="43" selection-end-column="110" />
               <folding />
             </state>
           </provider>
@@ -101,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sqlite2geojson.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sqlite2geojson.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33519554" vertical-offset="0" max-vertical-offset="3630">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state vertical-scroll-proportion="66.86364" vertical-offset="3062" max-vertical-offset="3630">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="14" />
               <folding>
                 <marker date="1428397594000" expanded="true" signature="3025:3155" placeholder="//..." />
                 <marker date="1428397594000" expanded="true" signature="3216:3570" placeholder="{...}" />
@@ -182,8 +182,8 @@
         <option value="$PROJECT_DIR$/deploy/README.md" />
         <option value="$PROJECT_DIR$/deploy/scripts/Vrt2Geojson.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -860,22 +860,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="588" max-vertical-offset="1005">
-          <caret line="50" column="3" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33519554" vertical-offset="0" max-vertical-offset="3630">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state vertical-scroll-proportion="66.86364" vertical-offset="3062" max-vertical-offset="3630">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="14" />
           <folding>
             <marker date="1428397594000" expanded="true" signature="3025:3155" placeholder="//..." />
             <marker date="1428397594000" expanded="true" signature="3216:3570" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14179105" vertical-offset="588" max-vertical-offset="1035">
+          <caret line="43" column="110" selection-start-line="43" selection-start-column="110" selection-end-line="43" selection-end-column="110" />
+          <folding />
         </state>
       </provider>
     </entry>
