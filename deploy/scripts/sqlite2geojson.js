@@ -1,6 +1,5 @@
 var fs = require("fs");
 var sqlite3 = require('sqlite3').verbose();
-var gdal = require("gdal");
 // https://www.npmjs.com/package/ogr2ogr
 var ogr2ogr = require('ogr2ogr');
 
