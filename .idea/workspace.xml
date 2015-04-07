@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16398e78-1bc0-4dfc-afe4-5ff2957d108c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy/scripts/Vrt2Geojson.js" afterPath="$PROJECT_DIR$/deploy/scripts/Vrt2Geojson.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" afterPath="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="malteahrens.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,8 +56,8 @@
       <file leaf-file-name="Vrt2Geojson.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deploy/scripts/Vrt2Geojson.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="33" />
+            <state vertical-scroll-proportion="-2.3076923" vertical-offset="0" max-vertical-offset="570">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -104,11 +106,11 @@
       <file leaf-file-name="sqlite2geojson.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12569833" vertical-offset="0" max-vertical-offset="3555">
-              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.33519554" vertical-offset="360" max-vertical-offset="3570">
+              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
               <folding>
-                <marker date="1428393485000" expanded="true" signature="3069:3199" placeholder="//..." />
-                <marker date="1428393485000" expanded="true" signature="3260:3614" placeholder="{...}" />
+                <marker date="1428393644000" expanded="true" signature="3113:3243" placeholder="//..." />
+                <marker date="1428393644000" expanded="true" signature="3304:3658" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -186,13 +188,13 @@
         <option value="$PROJECT_DIR$/app/data/PasingLocation.vrt" />
         <option value="$PROJECT_DIR$/app/data/PasingLocationDistinct.vrt" />
         <option value="$PROJECT_DIR$/test/karma.conf.js" />
-        <option value="$PROJECT_DIR$/deploy/scripts/Vrt2Geojson.js" />
         <option value="$PROJECT_DIR$/deploy/scripts/sqlite.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/map.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/app/data/PasingWlan_BestLatLon.vrt" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/deploy/README.md" />
+        <option value="$PROJECT_DIR$/deploy/scripts/Vrt2Geojson.js" />
         <option value="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" />
       </list>
     </option>
@@ -279,6 +281,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="malteahrens.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vita" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="malteahrens.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vita" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -756,14 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/scripts/github.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1563" max-vertical-offset="2070">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deploy/README.md">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -775,21 +801,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/deploy/scripts/github.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1563" max-vertical-offset="2070">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deploy/scripts/Vrt2Geojson.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="33" />
+        <state vertical-scroll-proportion="-2.3076923" vertical-offset="0" max-vertical-offset="570">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12569833" vertical-offset="0" max-vertical-offset="3555">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.33519554" vertical-offset="360" max-vertical-offset="3570">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding>
-            <marker date="1428393485000" expanded="true" signature="3069:3199" placeholder="//..." />
-            <marker date="1428393485000" expanded="true" signature="3260:3614" placeholder="{...}" />
+            <marker date="1428393644000" expanded="true" signature="3113:3243" placeholder="//..." />
+            <marker date="1428393644000" expanded="true" signature="3304:3658" placeholder="{...}" />
           </folding>
         </state>
       </provider>

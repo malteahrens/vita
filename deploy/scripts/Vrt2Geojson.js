@@ -10,7 +10,7 @@ if (driver_metadata['DCAP_VECTOR'] !== 'YES') {
     console.error('Source file is not a vector');
     process.exit(1);
 }
-console.log('Driver = ' + driver.description);
+console.log('Driver = ' + driver.dexscription);
 console.log('');
 // layers
 var i = 0;
