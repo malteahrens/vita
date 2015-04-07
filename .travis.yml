@@ -47,7 +47,10 @@ script:
   - mkdir dist/data/geojson
   - node ./deploy/scripts/sqlite2geojson.js
   - ls app/data/geojson
+  # Clipping for Pasing and copy the result to the dist dir to make it available in the app
   - ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_BestLatLon.geojson app/data/PasingWlan_BestLatLon.vrt
+  - ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_Centroid.geojson app/data/PasingWlan_Centroid.vrt
+  - ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
   - ./deploy/scripts/github.sh
   
 env:
