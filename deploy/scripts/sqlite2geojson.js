@@ -6,6 +6,7 @@ var ogr2ogr = require('ogr2ogr');
 var file = "./app/data/PasingWlan.sqlite";
 var exists = fs.existsSync(file);
 var geojson = new Array();
+var outputPath = './dist/data/geojson/';
 
 console.log("generates different geojson files from wigle wifi sqlite database. An alternative way to do this is to use gdal and vrt file format encapsulating the sqlite database");
 
@@ -26,16 +27,16 @@ if(exists) {
             }
             var resGeojson = fillFeatures('Point');
             //console.log(resultPointGeojson);
-            var outputFile = "./app/data/geojson/PasingWlan_Centroid.geojson";
+            var outputFile = "PasingWlan_Centroid.geojson";
             writeGeojsonToFile(resGeojson, outputFile);
 
             resGeojson = fillFeatures('LineString');
-            outputFile = "./app/data/geojson/PasingWlan_DifVector.geojson";
+            outputFile = "PasingWlan_DifVector.geojson";
             writeGeojsonToFile(resGeojson, outputFile);
 
             // write geojson for values bestlon / bestlat
             resGeojson = fillFeatures('Point');
-            outputFile = "./app/data/geojson/PasingWlan_BestLatLon.geojson";
+            outputFile = "PasingWlan_BestLatLon.geojson";
             //console.log(resGeojson.OGRGeoJSON.features.length);
             // replace lat/lon (weighted centroid)
             for (var i=0;i<resGeojson.features.length; i++) {
@@ -163,10 +164,10 @@ var measureDistance = function (lat1, lon1, lat2, lon2){  // generally used geo 
     return d * 1000; // meters
 }
 
-var writeGeojsonToFile = function(geojson, outputFile) {
-    console.log("GeoJson saved to file: "+outputFile);
+var writeGeojsonToFile = function(geojson, outputFileName) {
+    console.log("GeoJson saved to file: "+outputFileName);
     var ogr = ogr2ogr(geojson).stream();
-    ogr.pipe(fs.createWriteStream(outputFile));
+    ogr.pipe(fs.createWriteStream(outputPath+outputFileName));
     /**
      * fs.writeFile(outputFile, JSON.stringify(geojson, null, 4), function(err) {
      *  if(err) {
