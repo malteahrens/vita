@@ -29,7 +29,6 @@ if(exists) {
             //console.log(resultPointGeojson);
             var outputFile = "./app/data/geojson/PasingWlan_Centroid.geojson";
             writeGeojsonToFile(resGeojson, outputFile);
-            var ogr2 = ogr2ogr(outputFile);
 
             resGeojson = fillFeatures('LineString');
             outputFile = "./app/data/geojson/PasingWlan_DifVector.geojson";
@@ -171,6 +170,11 @@ var writeGeojsonToFile = function(geojson, outputFile) {
             console.log(err);
         } else {
             console.log("GeoJson saved to file: "+outputFile);
+            var ogr = ogr2ogr(outputFile);
+            ogr.exec(function (er, data) {
+                if (er) console.error(er)
+                console.log(data)
+            })
         }
     });
 };
