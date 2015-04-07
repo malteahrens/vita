@@ -164,18 +164,18 @@ var measureDistance = function (lat1, lon1, lat2, lon2){  // generally used geo 
 }
 
 var writeGeojsonToFile = function(geojson, outputFile) {
-    fs.writeFile(outputFile, JSON.stringify(geojson, null, 4), function(err) {
-        if(err) {
-            console.log(err);
-        } else {
-            console.log("GeoJson saved to file: "+outputFile);
-            var ogr = ogr2ogr(outputFile);
-            ogr.exec(function (er, data) {
-                if (er) console.error(er)
-                console.log(data)
-            })
-        }
-    });
+    console.log("GeoJson saved to file: "+outputFile);
+    var ogr = ogr2ogr(geojson).stream();
+    ogr.pipe(fs.createWriteStream(outputFile));
+    /**
+     * fs.writeFile(outputFile, JSON.stringify(geojson, null, 4), function(err) {
+     *  if(err) {
+     *      console.log(err);
+     *  } else {
+     *      console.log("GeoJson saved to file: "+outputFile);
+     *  }
+     * });
+     **/
 };
 
 var hit = new Array();
