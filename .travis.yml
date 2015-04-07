@@ -39,18 +39,18 @@ before_script:
 
 script:
 # this script branches the dist folder to the gh-pages branch
-  - ogr2ogr --version
-  #- ogr2ogr -f 'GEOJSON' dist/PasingWlan.geojson app/data/PasingWlan.vrt
-  #- ogr2ogr -f 'GEOJSON' dist/PasingLocation.geojson app/data/PasingLocation.vrt
   - node ./deploy/scripts/Geojson2VectorTiles.js
-  - mkdir dist/data
-  - mkdir dist/data/geojson
+
+  # Convert wigle wifi sqlite db to different geojson flavours...
   - node ./deploy/scripts/sqlite2geojson.js
-  - ls app/data/geojson
-  # Clipping for Pasing and copy the result to the dist dir to make it available in the app
+
+  # Clip geojson to Pasing area and copy the result to the dist dir to make it available in the app
+  - ogr2ogr --version
   - ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_BestLatLon.geojson app/data/PasingWlan_BestLatLon.vrt
   - ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_Centroid.geojson app/data/PasingWlan_Centroid.vrt
   - ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
+
+  # Copy dist folder to gh-pages branch
   - ./deploy/scripts/github.sh
   
 env:
