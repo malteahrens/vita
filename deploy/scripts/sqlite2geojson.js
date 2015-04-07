@@ -7,8 +7,10 @@ var file = "./app/data/PasingWlan.sqlite";
 var exists = fs.existsSync(file);
 var geojson = new Array();
 var outputPath = './dist/data/geojson/';
-if(process.env.TRAVIS) {
+if(process.env.TRAVIS === true) {
     console.log("running on Travis...");
+} else {
+    outputPath = './app/data/geojson/';
 }
 
 console.log("generates different geojson files from wigle wifi sqlite database. An alternative way to do this is to use gdal and vrt file format encapsulating the sqlite database");
