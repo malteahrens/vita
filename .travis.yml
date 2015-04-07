@@ -46,6 +46,7 @@ script:
   - mkdir dist/data
   - mkdir dist/data/geojson
   - node ./deploy/scripts/sqlite2geojson.js
+  - ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_BestLatLon.geojson app/data/geojson/PasingWlan_BestLatLon.vrt
   - ./deploy/scripts/github.sh
   
 env:

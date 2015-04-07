@@ -12,10 +12,10 @@ if(exists) {
     db.each("SELECT * FROM location, network WHERE location.bssid = network.bssid", function(err, row) {
         geojson.push(row);
     }, function(err, row) {
-
+        // wait until reading from db is finished...
         if(!err) {
             for(var i=0; i<geojson.length; i++) {
-                // test if the bssid is already in database
+                // test if the bssid is already available
                 var testHit = hit[geojson[i].bssid];
                 if(typeof testHit === 'undefined') {
                     initGeojsonArray(geojson[i]);
@@ -24,16 +24,16 @@ if(exists) {
             }
             var resGeojson = fillFeatures('Point');
             //console.log(resultPointGeojson);
-            var outputFile = "./dist/data/geojson/PasingWlan_Centroid.geojson";
+            var outputFile = "./app/data/geojson/PasingWlan_Centroid.geojson";
             writeGeojsonToFile(resGeojson, outputFile);
 
             resGeojson = fillFeatures('LineString');
-            outputFile = "./dist/data/geojson/PasingWlan_DifVector.geojson";
+            outputFile = "./app/data/geojson/PasingWlan_DifVector.geojson";
             writeGeojsonToFile(resGeojson, outputFile);
 
             // write geojson for values bestlon / bestlat
             resGeojson = fillFeatures('Point');
-            outputFile = "./dist/data/geojson/PasingWlan_BestLatLon.geojson";
+            outputFile = "./app/data/geojson/PasingWlan_BestLatLon.geojson";
             //console.log(resGeojson.OGRGeoJSON.features.length);
             // replace lat/lon (weighted centroid)
             for (var i=0;i<resGeojson.features.length; i++) {
