@@ -26,6 +26,26 @@ angular.module('angularApp')
         });
     }
 
+    $scope.loadAllGeojson = function() {
+        $scope.username = "should load all geojson json layer";
+        map.addSource("markersAll", {
+            "type": "geojson",
+            "maxzoom": 14,
+            "data": "/data/geojson/PasingWlan.geojson"
+        });
+
+        map.addLayer({
+            "id": "markerAll",
+            "type": "symbol",
+            "source": "markersAll",
+            "interactive": true,
+            "layout": {
+                "icon-image": "marker-24",
+                "icon-allow-overlap": true
+            }
+        });
+    }
+
     mapboxgl.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
 
     var map = new mapboxgl.Map({
