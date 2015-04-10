@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">53.05</p>
+      <p class="stat">52.30</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">402</p>
+      <p class="stat">430</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">66.34</p>
+      <p class="stat">69.30</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">4.56</p>
+      <p class="stat">4.83</p>
     </div>
   </div>
 </div>
@@ -97,22 +97,62 @@
     $scope.grid = function() {
         $scope.username = &quot;should load grid layer&quot;;
     }
-    $scope.json = function() {
-        $scope.username = &quot;should load json layer&quot;;
-        map.addSource(&quot;markers&quot;, {
+
+    mapboxgl.accessToken = &#039;pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q&#039;;
+    var map = new mapboxgl.Map({
+        container: &#039;map&#039;,
+        zoom: 12.5,
+        center: [48.14882451158226, 11.451873779296875],
+        style: &#039;https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json&#039;,
+        hash: true
+    });
+    map.addControl(new mapboxgl.Navigation());
+
+    $scope.addGeojsonLayer = function(layer) {
+        console.log(layer.type);
+        console.log(layer.name);
+        var type = &#039;symbol&#039;;
+        if(layer.type === &#039;polygon&#039;) {
+            type = &#039;fill&#039;
+        };
+        var layout = [
+            {
+                &quot;icon-image&quot;: &quot;circle-12&quot;,
+                &quot;icon-allow-overlap&quot;: true,
+                &quot;icon-max-size&quot;: 10,
+                &quot;icon-color&quot;: &quot;ff0000&quot;
+            },
+            {
+                &quot;fill-color&quot;: &quot;transparent&quot;,
+                &quot;fill-outline-color&quot;: &quot;#ff0000&quot;,
+                &quot;fill-opacity&quot;: 1
+            }
+        ]
+        console.log(layout[layer.lindex]);
+
+        map.addSource(layer.name, {
             &quot;type&quot;: &quot;geojson&quot;,
             &quot;maxzoom&quot;: 14,
-            &quot;data&quot;: &quot;/data/geojson/PasingWlan_BestLatLon.geojson&quot;
+            &quot;data&quot;: &quot;/data/geojson/&quot;+layer.name+&quot;.geojson&quot;
         });
 
         map.addLayer({
-            &quot;id&quot;: &quot;marker&quot;,
-            &quot;type&quot;: &quot;symbol&quot;,
-            &quot;source&quot;: &quot;markers&quot;,
+            &quot;id&quot;: layer.name,
+            &quot;type&quot;: type,
+            &quot;source&quot;: layer.name,
             &quot;interactive&quot;: true,
             &quot;layout&quot;: {
-                &quot;icon-image&quot;: &quot;marker-24&quot;,
-                &quot;icon-allow-overlap&quot;: true
+                &quot;icon-image&quot;: &quot;circle-12&quot;,
+                &quot;icon-allow-overlap&quot;: true,
+                &quot;icon-color&quot;: &quot;#669966&quot;,
+                &quot;icon-ignore-placement&quot;: true
+            },
+            &quot;paint&quot;: {
+                &quot;icon-size&quot;: 0.5,
+                &quot;icon-color&quot;: &#039;#669966&#039;,
+                &quot;fill-color&quot;: &quot;#ff0000&quot;,
+                &quot;fill-outline-color&quot;: &quot;#ff0000&quot;,
+                &quot;fill-opacity&quot;: 0.6
             }
         });
     }
@@ -136,18 +176,6 @@
             }
         });
     }
-
-    mapboxgl.accessToken = &#039;pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q&#039;;
-
-    var map = new mapboxgl.Map({
-        container: &#039;map&#039;,
-        zoom: 12.5,
-        center: [48.14882451158226, 11.451873779296875],
-        style: &#039;https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json&#039;,
-        hash: true
-    });
-
-    map.addControl(new mapboxgl.Navigation());
 
     map.on(&#039;mousemove&#039;, function(e) {
         map.featuresAt(e.point, {radius: 1, layer:&#039;poly&#039;}, function(err, features) {
@@ -193,7 +221,7 @@
         console.log(&quot;map moved&quot;);
         var bounds = map.getBounds();
         console.log(bounds);
-        $scope.hexTopology(20, 960, 900, bounds._sw);
+        //$scope.hexTopology(20, 960, 900, bounds._sw);
     });
 
    $scope.highlightSource = {}
