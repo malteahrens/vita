@@ -174,7 +174,7 @@ var measureDistance = function (lat1, lon1, lat2, lon2){  // generally used geo 
 
 var writeGeojsonToFile = function(geojson, outputFileName) {
     console.log("GeoJson saved to file: "+outputFileName);
-    var ogr = ogr2ogr(geojson).stream();
+    var ogr = ogr2ogr(geojson).options(['-clipdst', './app/data/geojson/Pasing.geojson']).timeout(30000).stream();
     ogr.pipe(fs.createWriteStream(outputPath+outputFileName));
     /**
      * fs.writeFile(outputFile, JSON.stringify(geojson, null, 4), function(err) {

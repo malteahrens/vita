@@ -42,8 +42,11 @@
                     <pre>{{username}}</pre>
                     <pre>{{jsonHighlight}}</pre>
                     <button ng-click="grid()">Create Grid</button>
-                    <button ng-click="json()">Load JSON</button>
-                    <button ng-click="loadAllGeojson()">Load ALL Geojson</button>
+                    <button ng-click="addGeojsonLayer({'name':'PasingWlan_BestLatLon','type':'symbol', 'lindex': 1})">BestLatLon</button>
+                    <button ng-click="addGeojsonLayer({'name':'PasingWlan_Centroid','type':'symbol', 'lindex': 1})">Centroid</button>
+                    <button ng-click="addGeojsonLayer({'name':'PasingWlan_DifVector','type':'symbol', 'lindex': 1})">Centroid</button>
+                    <button ng-click="addGeojsonLayer({'name':'PasingWlan','type':'symbol', 'lindex': 1})">PasingWlan</button>
+                    <button ng-click="addGeojsonLayer({'name':'Pasing','type':'polygon', 'lindex': 1})">Pasing</button>
                     <button ng-click="hexTopology(20, 960, 900)">Create Hexagon</button>
             </div>
             <div mouseover="images/grunt.png">

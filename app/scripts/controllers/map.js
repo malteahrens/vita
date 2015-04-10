@@ -6,22 +6,62 @@ angular.module('angularApp')
     $scope.grid = function() {
         $scope.username = "should load grid layer";
     }
-    $scope.json = function() {
-        $scope.username = "should load json layer";
-        map.addSource("markers", {
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        zoom: 12.5,
+        center: [48.14882451158226, 11.451873779296875],
+        style: 'https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json',
+        hash: true
+    });
+    map.addControl(new mapboxgl.Navigation());
+
+    $scope.addGeojsonLayer = function(layer) {
+        console.log(layer.type);
+        console.log(layer.name);
+        var type = 'symbol';
+        if(layer.type === 'polygon') {
+            type = 'fill'
+        };
+        var layout = [
+            {
+                "icon-image": "circle-12",
+                "icon-allow-overlap": true,
+                "icon-max-size": 10,
+                "icon-color": "ff0000"
+            },
+            {
+                "fill-color": "transparent",
+                "fill-outline-color": "#ff0000",
+                "fill-opacity": 1
+            }
+        ]
+        console.log(layout[layer.lindex]);
+
+        map.addSource(layer.name, {
             "type": "geojson",
             "maxzoom": 14,
-            "data": "/data/geojson/PasingWlan_BestLatLon.geojson"
+            "data": "/data/geojson/"+layer.name+".geojson"
         });
 
         map.addLayer({
-            "id": "marker",
-            "type": "symbol",
-            "source": "markers",
+            "id": layer.name,
+            "type": type,
+            "source": layer.name,
             "interactive": true,
             "layout": {
-                "icon-image": "marker-24",
-                "icon-allow-overlap": true
+                "icon-image": "circle-12",
+                "icon-allow-overlap": true,
+                "icon-color": "#669966",
+                "icon-ignore-placement": true
+            },
+            "paint": {
+                "icon-size": 0.5,
+                "icon-color": '#669966',
+                "fill-color": "#ff0000",
+                "fill-outline-color": "#ff0000",
+                "fill-opacity": 0.6
             }
         });
     }
@@ -45,18 +85,6 @@ angular.module('angularApp')
             }
         });
     }
-
-    mapboxgl.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
-
-    var map = new mapboxgl.Map({
-        container: 'map',
-        zoom: 12.5,
-        center: [48.14882451158226, 11.451873779296875],
-        style: 'https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json',
-        hash: true
-    });
-
-    map.addControl(new mapboxgl.Navigation());
 
     map.on('mousemove', function(e) {
         map.featuresAt(e.point, {radius: 1, layer:'poly'}, function(err, features) {
@@ -102,7 +130,7 @@ angular.module('angularApp')
         console.log("map moved");
         var bounds = map.getBounds();
         console.log(bounds);
-        $scope.hexTopology(20, 960, 900, bounds._sw);
+        //$scope.hexTopology(20, 960, 900, bounds._sw);
     });
 
    $scope.highlightSource = {}
