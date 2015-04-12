@@ -13,78 +13,87 @@ angular.module('angularApp')
         zoom: 12.5,
         center: [48.14882451158226, 11.451873779296875],
         style: 'https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json',
-        hash: true
+        hash: true,
+        interactive: true
     });
     map.addControl(new mapboxgl.Navigation());
 
+    // load default layers
+    map.on('load', function(e) {
+        console.log("map loaded...");
+        // lindex is the style index
+        $scope.addGeojsonLayer({'name':'Pasing'})
+    });
+
+    $scope.layerList = [];
     $scope.addGeojsonLayer = function(layer) {
-        console.log(layer.type);
-        console.log(layer.name);
-        var type = 'symbol';
-        if(layer.type === 'polygon') {
-            type = 'fill'
-        };
-        var layout = [
-            {
-                "icon-image": "circle-12",
-                "icon-allow-overlap": true,
-                "icon-max-size": 10,
-                "icon-color": "ff0000"
+        var style = {
+            "Pasing": {
+                "type": 'line',
+                "layout": {
+                },
+                "paint": {
+                    "line-color": "#ff0000",
+                    "line-width": 2
+                }
             },
-            {
-                "fill-color": "transparent",
-                "fill-outline-color": "#ff0000",
-                "fill-opacity": 1
+            "PasingWlan_BestLatLon": {
+                "type": 'symbol',
+                "layout": {
+                    "icon-image": "circle-12",
+                    "icon-allow-overlap": true,
+                    "icon-color": "#669966",
+                    "text-field": "{ssid}",
+                    "text-font": "Open Sans Semibold, Arial Unicode MS Bold",
+                    "text-anchor": "bottom-left",
+                    "text-optional": true,
+                    "text-allow-overlap": false
+                },
+                "paint": {
+                    "icon-size": 0.5,
+                    "icon-color": '#669966',
+                    "line-color": "#ff0000",
+                    "line-width": 2,
+                    "text-size": 10,
+                    "text-halo-color": "#ffffff",
+                    "text-translate": [4, 2],
+                    "text-halo-width": 4
+                }
             }
-        ]
-        console.log(layout[layer.lindex]);
+        }
 
         map.addSource(layer.name, {
             "type": "geojson",
-            "maxzoom": 14,
             "data": "/data/geojson/"+layer.name+".geojson"
         });
 
         map.addLayer({
             "id": layer.name,
-            "type": type,
+            "type": style[layer.name].type,
             "source": layer.name,
             "interactive": true,
-            "layout": {
-                "icon-image": "circle-12",
-                "icon-allow-overlap": true,
-                "icon-color": "#669966",
-                "icon-ignore-placement": true
-            },
-            "paint": {
-                "icon-size": 0.5,
-                "icon-color": '#669966',
-                "fill-color": "#ff0000",
-                "fill-outline-color": "#ff0000",
-                "fill-opacity": 0.6
-            }
+            "layout": style[layer.name].layout,
+            "paint": style[layer.name].paint
         });
+        $scope.layerList.push(layer.name);
     }
 
-    $scope.loadAllGeojson = function() {
-        $scope.username = "should load all geojson json layer";
-        map.addSource("markersAll", {
-            "type": "geojson",
-            "maxzoom": 14,
-            "data": "/data/geojson/PasingWlan.geojson"
-        });
-
-        map.addLayer({
-            "id": "markerAll",
-            "type": "symbol",
-            "source": "markersAll",
-            "interactive": true,
-            "layout": {
-                "icon-image": "marker-24",
-                "icon-allow-overlap": true
+    map.on('zoom', function () {
+        //console.log("zoomed: "+map.transform.zoom);
+        var layer = map.getSource('PasingWlan_BestLatLon');
+        if(layer !== undefined) {
+            console.log(layer);
+            var visibility = 'visible'
+            if (map.transform.zoom < 10) {
+                visibility = 'none';
             }
-        });
-    }
+            console.log(visibility);
+            map.setLayoutProperty('PasingWlan_BestLatLon', 'visibility', visibility);
+            map.setFilter('PasingWlan_BestLatLon', ["!=", 'ssid', 'Waldrebe']);
+        } else {
+            console.log('could not find layer');
+        }
+    });
 
     map.on('mousemove', function(e) {
         map.featuresAt(e.point, {radius: 1, layer:'poly'}, function(err, features) {
@@ -127,9 +136,9 @@ angular.module('angularApp')
     });
 
     map.on('moveend', function(e) {
-        console.log("map moved");
+        //console.log("map moved");
         var bounds = map.getBounds();
-        console.log(bounds);
+        //console.log(bounds);
         //$scope.hexTopology(20, 960, 900, bounds._sw);
     });
 

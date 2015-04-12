@@ -40,13 +40,12 @@
                     <div id="map" style="height:500px"></div>
 
                     <pre>{{username}}</pre>
-                    <pre>{{jsonHighlight}}</pre>
+                    <pre>{{layerList}}</pre>
                     <button ng-click="grid()">Create Grid</button>
-                    <button ng-click="addGeojsonLayer({'name':'PasingWlan_BestLatLon','type':'symbol', 'lindex': 1})">BestLatLon</button>
-                    <button ng-click="addGeojsonLayer({'name':'PasingWlan_Centroid','type':'symbol', 'lindex': 1})">Centroid</button>
-                    <button ng-click="addGeojsonLayer({'name':'PasingWlan_DifVector','type':'symbol', 'lindex': 1})">Centroid</button>
-                    <button ng-click="addGeojsonLayer({'name':'PasingWlan','type':'symbol', 'lindex': 1})">PasingWlan</button>
-                    <button ng-click="addGeojsonLayer({'name':'Pasing','type':'polygon', 'lindex': 1})">Pasing</button>
+                    <button ng-click="addGeojsonLayer({'name':'PasingWlan_BestLatLon'})">BestLatLon</button>
+                    <button ng-click="addGeojsonLayer({'name':'PasingWlan_Centroid'})">Centroid</button>
+                    <button ng-click="addGeojsonLayer({'name':'PasingWlan_DifVector'})">DifVector</button>
+                    <button ng-click="addGeojsonLayer({'name':'PasingWlan'})">PasingWlan</button>
                     <button ng-click="hexTopology(20, 960, 900)">Create Hexagon</button>
             </div>
             <div mouseover="images/grunt.png">
