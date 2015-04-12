@@ -7,7 +7,8 @@ var file = "./app/data/PasingWlan.sqlite";
 var exists = fs.existsSync(file);
 var geojson = new Array();
 var outputPath = './dist/data/geojson/';
-if(process.env.TRAVIS === true) {
+console.log(process.env.TRAVIS);
+if(process.env.TRAVIS) {
     console.log("running on Travis...");
 } else {
     outputPath = './app/data/geojson/';

@@ -47,7 +47,32 @@ angular.module('angularApp')
                     "text-font": "Open Sans Semibold, Arial Unicode MS Bold",
                     "text-anchor": "bottom-left",
                     "text-optional": true,
-                    "text-allow-overlap": false
+                    "text-allow-overlap": true,
+                    "text-ignore-placement": true
+                },
+                "paint": {
+                    "icon-size": 0.5,
+                    "icon-color": '#669966',
+                    "line-color": "#ff0000",
+                    "line-width": 2,
+                    "text-size": 10,
+                    "text-halo-color": "#ffffff",
+                    "text-translate": [4, 2],
+                    "text-halo-width": 4
+                }
+            },
+            "PasingWlan_Centroid": {
+                "type": 'symbol',
+                "layout": {
+                    "icon-image": "circle-12",
+                    "icon-allow-overlap": true,
+                    "icon-color": "#669966",
+                    "text-field": "{ssid}",
+                    "text-font": "Open Sans Semibold, Arial Unicode MS Bold",
+                    "text-anchor": "bottom-left",
+                    "text-optional": true,
+                    "text-allow-overlap": true,
+                    "text-ignore-placement": true
                 },
                 "paint": {
                     "icon-size": 0.5,
@@ -157,6 +182,12 @@ angular.module('angularApp')
             }
             $scope.highlightSource.setData(jsonHighlight);
         }
+    }
+
+    $scope.updateLabels = function() {
+        console.log("update");
+        console.log(map);
+        map.update();
     }
 
    $scope.highlightPoints = function(features) {
