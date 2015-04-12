@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">52.30</p>
+      <p class="stat">52.83</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">430</p>
+      <p class="stat">439</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">69.30</p>
+      <p class="stat">67.88</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">4.83</p>
+      <p class="stat">5.05</p>
     </div>
   </div>
 </div>
@@ -104,78 +104,87 @@
         zoom: 12.5,
         center: [48.14882451158226, 11.451873779296875],
         style: &#039;https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json&#039;,
-        hash: true
+        hash: true,
+        interactive: true
     });
     map.addControl(new mapboxgl.Navigation());
 
+    // load default layers
+    map.on(&#039;load&#039;, function(e) {
+        console.log(&quot;map loaded...&quot;);
+        // lindex is the style index
+        $scope.addGeojsonLayer({&#039;name&#039;:&#039;Pasing&#039;})
+    });
+
+    $scope.layerList = [];
     $scope.addGeojsonLayer = function(layer) {
-        console.log(layer.type);
-        console.log(layer.name);
-        var type = &#039;symbol&#039;;
-        if(layer.type === &#039;polygon&#039;) {
-            type = &#039;fill&#039;
-        };
-        var layout = [
-            {
-                &quot;icon-image&quot;: &quot;circle-12&quot;,
-                &quot;icon-allow-overlap&quot;: true,
-                &quot;icon-max-size&quot;: 10,
-                &quot;icon-color&quot;: &quot;ff0000&quot;
+        var style = {
+            &quot;Pasing&quot;: {
+                &quot;type&quot;: &#039;line&#039;,
+                &quot;layout&quot;: {
+                },
+                &quot;paint&quot;: {
+                    &quot;line-color&quot;: &quot;#ff0000&quot;,
+                    &quot;line-width&quot;: 2
+                }
             },
-            {
-                &quot;fill-color&quot;: &quot;transparent&quot;,
-                &quot;fill-outline-color&quot;: &quot;#ff0000&quot;,
-                &quot;fill-opacity&quot;: 1
+            &quot;PasingWlan_BestLatLon&quot;: {
+                &quot;type&quot;: &#039;symbol&#039;,
+                &quot;layout&quot;: {
+                    &quot;icon-image&quot;: &quot;circle-12&quot;,
+                    &quot;icon-allow-overlap&quot;: true,
+                    &quot;icon-color&quot;: &quot;#669966&quot;,
+                    &quot;text-field&quot;: &quot;{ssid}&quot;,
+                    &quot;text-font&quot;: &quot;Open Sans Semibold, Arial Unicode MS Bold&quot;,
+                    &quot;text-anchor&quot;: &quot;bottom-left&quot;,
+                    &quot;text-optional&quot;: true,
+                    &quot;text-allow-overlap&quot;: false
+                },
+                &quot;paint&quot;: {
+                    &quot;icon-size&quot;: 0.5,
+                    &quot;icon-color&quot;: &#039;#669966&#039;,
+                    &quot;line-color&quot;: &quot;#ff0000&quot;,
+                    &quot;line-width&quot;: 2,
+                    &quot;text-size&quot;: 10,
+                    &quot;text-halo-color&quot;: &quot;#ffffff&quot;,
+                    &quot;text-translate&quot;: [4, 2],
+                    &quot;text-halo-width&quot;: 4
+                }
             }
-        ]
-        console.log(layout[layer.lindex]);
+        }
 
         map.addSource(layer.name, {
             &quot;type&quot;: &quot;geojson&quot;,
-            &quot;maxzoom&quot;: 14,
             &quot;data&quot;: &quot;/data/geojson/&quot;+layer.name+&quot;.geojson&quot;
         });
 
         map.addLayer({
             &quot;id&quot;: layer.name,
-            &quot;type&quot;: type,
+            &quot;type&quot;: style[layer.name].type,
             &quot;source&quot;: layer.name,
             &quot;interactive&quot;: true,
-            &quot;layout&quot;: {
-                &quot;icon-image&quot;: &quot;circle-12&quot;,
-                &quot;icon-allow-overlap&quot;: true,
-                &quot;icon-color&quot;: &quot;#669966&quot;,
-                &quot;icon-ignore-placement&quot;: true
-            },
-            &quot;paint&quot;: {
-                &quot;icon-size&quot;: 0.5,
-                &quot;icon-color&quot;: &#039;#669966&#039;,
-                &quot;fill-color&quot;: &quot;#ff0000&quot;,
-                &quot;fill-outline-color&quot;: &quot;#ff0000&quot;,
-                &quot;fill-opacity&quot;: 0.6
-            }
+            &quot;layout&quot;: style[layer.name].layout,
+            &quot;paint&quot;: style[layer.name].paint
         });
+        $scope.layerList.push(layer.name);
     }
 
-    $scope.loadAllGeojson = function() {
-        $scope.username = &quot;should load all geojson json layer&quot;;
-        map.addSource(&quot;markersAll&quot;, {
-            &quot;type&quot;: &quot;geojson&quot;,
-            &quot;maxzoom&quot;: 14,
-            &quot;data&quot;: &quot;/data/geojson/PasingWlan.geojson&quot;
-        });
-
-        map.addLayer({
-            &quot;id&quot;: &quot;markerAll&quot;,
-            &quot;type&quot;: &quot;symbol&quot;,
-            &quot;source&quot;: &quot;markersAll&quot;,
-            &quot;interactive&quot;: true,
-            &quot;layout&quot;: {
-                &quot;icon-image&quot;: &quot;marker-24&quot;,
-                &quot;icon-allow-overlap&quot;: true
+    map.on(&#039;zoom&#039;, function () {
+        //console.log(&quot;zoomed: &quot;+map.transform.zoom);
+        var layer = map.getSource(&#039;PasingWlan_BestLatLon&#039;);
+        if(layer !== undefined) {
+            console.log(layer);
+            var visibility = &#039;visible&#039;
+            if (map.transform.zoom &lt; 10) {
+                visibility = &#039;none&#039;;
             }
-        });
-    }
+            console.log(visibility);
+            map.setLayoutProperty(&#039;PasingWlan_BestLatLon&#039;, &#039;visibility&#039;, visibility);
+            map.setFilter(&#039;PasingWlan_BestLatLon&#039;, [&quot;!=&quot;, &#039;ssid&#039;, &#039;Waldrebe&#039;]);
+        } else {
+            console.log(&#039;could not find layer&#039;);
+        }
+    });
 
     map.on(&#039;mousemove&#039;, function(e) {
         map.featuresAt(e.point, {radius: 1, layer:&#039;poly&#039;}, function(err, features) {
@@ -218,9 +227,9 @@
     });
 
     map.on(&#039;moveend&#039;, function(e) {
-        console.log(&quot;map moved&quot;);
+        //console.log(&quot;map moved&quot;);
         var bounds = map.getBounds();
-        console.log(bounds);
+        //console.log(bounds);
         //$scope.hexTopology(20, 960, 900, bounds._sw);
     });
 
