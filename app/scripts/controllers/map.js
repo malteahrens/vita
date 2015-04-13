@@ -51,14 +51,7 @@ angular.module('angularApp')
                     "text-ignore-placement": true
                 },
                 "paint": {
-                    "icon-size": 0.5,
-                    "icon-color": '#669966',
-                    "line-color": "#ff0000",
-                    "line-width": 2,
-                    "text-size": 10,
-                    "text-halo-color": "#ffffff",
-                    "text-translate": [4, 2],
-                    "text-halo-width": 4
+                    "icon-size": 1
                 }
             },
             "PasingWlan_Centroid": {
@@ -72,7 +65,8 @@ angular.module('angularApp')
                     "text-anchor": "bottom-left",
                     "text-optional": true,
                     "text-allow-overlap": true,
-                    "text-ignore-placement": true
+                    "text-ignore-placement": true,
+                    "alwaysVisible": true
                 },
                 "paint": {
                     "icon-size": 0.5,
@@ -89,7 +83,7 @@ angular.module('angularApp')
 
         map.addSource(layer.name, {
             "type": "geojson",
-            "data": "/data/geojson/"+layer.name+".geojson"
+            "data": "http://malteahrens.de/data/geojson/"+layer.name+".geojson"
         });
 
         map.addLayer({
@@ -107,12 +101,12 @@ angular.module('angularApp')
         //console.log("zoomed: "+map.transform.zoom);
         var layer = map.getSource('PasingWlan_BestLatLon');
         if(layer !== undefined) {
-            console.log(layer);
+            //console.log(layer);
             var visibility = 'visible'
             if (map.transform.zoom < 10) {
                 visibility = 'none';
             }
-            console.log(visibility);
+            //console.log(visibility);
             map.setLayoutProperty('PasingWlan_BestLatLon', 'visibility', visibility);
             map.setFilter('PasingWlan_BestLatLon', ["!=", 'ssid', 'Waldrebe']);
         } else {
@@ -137,6 +131,8 @@ angular.module('angularApp')
 
     map.on('click', function(e) {
         // xmax - xmin of hexagon edges
+        var point = e.point;
+        /*
         var dx = $scope.features[0][1][0] - $scope.features[0][4][0];
         var dy = $scope.features[0][3][1] - $scope.features[0][0][1];
         var x = $scope.features[0][4][0] + dx/2;
@@ -151,11 +147,13 @@ angular.module('angularApp')
         var xMax = map.project([0, $scope.features[0][1][0]]);
         var xMin = map.project([0, $scope.features[0][4][0]]);
         var radius = (xMax.x-xMin.x)/2;
+        */
         //console.log(radius);
-        map.featuresAt(point, {radius: radius, layer: 'marker'}, function(err, features) {
+        map.featuresAt(point, {radius: 5, layer: 'PasingWlan_BestLatLon'}, function(err, features) {
             if (err) throw err;
             console.log(features.length);
-            $scope.highlightPoints(features);
+            console.log(features);
+            //$scope.highlightPoints(features);
             document.getElementById('features').innerHTML = features;
         });
     });
