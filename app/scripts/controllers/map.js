@@ -17,12 +17,14 @@ angular.module('angularApp')
         interactive: true
     });
     map.addControl(new mapboxgl.Navigation());
+    //map.collisionDebug = true;
 
     // load default layers
     map.on('load', function(e) {
         console.log("map loaded...");
         // lindex is the style index
-        $scope.addGeojsonLayer({'name':'Pasing'})
+        $scope.addGeojsonLayer({'name':'Pasing'});
+
     });
 
     $scope.layerList = [];
@@ -43,15 +45,46 @@ angular.module('angularApp')
                     "icon-image": "circle-12",
                     "icon-allow-overlap": true,
                     "icon-color": "#669966",
-                    "text-field": "{ssid}",
+                    "text-field": "{bssid}",
                     "text-font": "Open Sans Semibold, Arial Unicode MS Bold",
                     "text-anchor": "bottom-left",
+                    "icon-ignore-placement": true,
+                    "icon-padding": 0,
+                    "text-padding": 0,
                     "text-optional": true,
-                    "text-allow-overlap": true,
-                    "text-ignore-placement": true
+                    "text-allow-overlap": false,
+                    "text-ignore-placement": false
                 },
                 "paint": {
-                    "icon-size": 1
+                    "icon-size": 0.5,
+                    "text-size": 10,
+                    "text-halo-color": "#ffffff",
+                    "text-translate": [4, 2],
+                    "text-halo-width": 1
+                }
+            },
+            "PasingWlan_Sqlite": {
+                "type": 'symbol',
+                "layout": {
+                    "icon-image": "circle-12",
+                    "icon-allow-overlap": true,
+                    "icon-color": "#669966",
+                    "text-field": "{bssid}",
+                    "text-font": "Open Sans Semibold, Arial Unicode MS Bold",
+                    "text-anchor": "bottom-left",
+                    "icon-ignore-placement": true,
+                    "icon-padding": 0,
+                    "text-padding": 0,
+                    "text-optional": true,
+                    "text-allow-overlap": false,
+                    "text-ignore-placement": false
+                },
+                "paint": {
+                    "icon-size": 0.5,
+                    "text-size": 10,
+                    "text-halo-color": "#ffffff",
+                    "text-translate": [4, 2],
+                    "text-halo-width": 1
                 }
             },
             "PasingWlan_Centroid": {
@@ -108,7 +141,7 @@ angular.module('angularApp')
             }
             //console.log(visibility);
             map.setLayoutProperty('PasingWlan_BestLatLon', 'visibility', visibility);
-            map.setFilter('PasingWlan_BestLatLon', ["!=", 'ssid', 'Waldrebe']);
+            //map.setFilter('PasingWlan_BestLatLon', ["!=", 'ssid', 'Waldrebe']);
         } else {
             console.log('could not find layer');
         }
@@ -131,6 +164,7 @@ angular.module('angularApp')
 
     map.on('click', function(e) {
         // xmax - xmin of hexagon edges
+        console.log("click");
         var point = e.point;
         /*
         var dx = $scope.features[0][1][0] - $scope.features[0][4][0];
@@ -149,7 +183,7 @@ angular.module('angularApp')
         var radius = (xMax.x-xMin.x)/2;
         */
         //console.log(radius);
-        map.featuresAt(point, {radius: 5, layer: 'PasingWlan_BestLatLon'}, function(err, features) {
+        map.featuresAt(point, {radius: 10, layer: 'PasingWlan_BestLatLon'}, function(err, features) {
             if (err) throw err;
             console.log(features.length);
             console.log(features);
@@ -186,6 +220,15 @@ angular.module('angularApp')
         console.log("update");
         console.log(map);
         map.update();
+        map.render();
+
+        var layer = map.getSource('PasingWlan_BestLatLon');
+        if(layer !== undefined) {
+            console.log("reload");
+            console.log(layer);
+        } else {
+            console.log('could not find layer');
+        }
     }
 
    $scope.highlightPoints = function(features) {

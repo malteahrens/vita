@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16398e78-1bc0-4dfc-afe4-5ff2957d108c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data/PasingWlan.sqlite" afterPath="$PROJECT_DIR$/app/data/PasingWlan.sqlite" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data/PasingWlan_Sqlite.vrt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deploy/scripts/turf.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data/geojson/PasingWlan.geojson" afterPath="$PROJECT_DIR$/app/data/geojson/PasingWlan.geojson" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data/geojson/PasingWlan_BestLatLon.geojson" afterPath="$PROJECT_DIR$/app/data/geojson/PasingWlan_BestLatLon.geojson" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data/geojson/PasingWlan_Centroid.geojson" afterPath="$PROJECT_DIR$/app/data/geojson/PasingWlan_Centroid.geojson" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data/geojson/PasingWlan_DifVector.geojson" afterPath="$PROJECT_DIR$/app/data/geojson/PasingWlan_DifVector.geojson" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/map.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/map.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/lib/mapbox-gl.js" afterPath="$PROJECT_DIR$/app/scripts/lib/mapbox-gl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" afterPath="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="malteahrens.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,21 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="450">
-              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="735">
-              <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+            <state vertical-scroll-proportion="-6.375" vertical-offset="387" max-vertical-offset="765">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -57,21 +53,34 @@
       <file leaf-file-name="sqlite2geojson.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3795">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="3840">
+              <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
               <folding>
-                <marker date="1428871559000" expanded="true" signature="3312:3442" placeholder="//..." />
-                <marker date="1428871559000" expanded="true" signature="3503:3857" placeholder="{...}" />
+                <marker date="1429002332000" expanded="true" signature="3473:3603" placeholder="//..." />
+                <marker date="1429002332000" expanded="true" signature="3664:4018" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pasing.geojson" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/data/geojson/Pasing.geojson">
+      <file leaf-file-name="Readme.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/data/Readme.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="210">
-              <caret line="5" column="2784" selection-start-line="5" selection-start-column="2784" selection-end-line="5" selection-end-column="2784" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+              <caret line="0" column="94" selection-start-line="0" selection-start-column="94" selection-end-line="0" selection-end-column="94" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PasingWlan_BestLatLon.vrt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/data/PasingWlan_BestLatLon.vrt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="483" max-vertical-offset="885">
+              <caret line="2" column="80" selection-start-line="2" selection-start-column="80" selection-end-line="2" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -80,18 +89,18 @@
       <file leaf-file-name="PasingWlan.vrt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/data/PasingWlan.vrt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="315">
-              <caret line="6" column="160" selection-start-line="6" selection-start-column="138" selection-end-line="6" selection-end-column="160" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+              <caret line="7" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PasingWlan.geojson" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/data/geojson/PasingWlan.geojson">
+      <file leaf-file-name="PasingWlan_Sqlite.vrt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/data/PasingWlan_Sqlite.vrt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="862575" max-vertical-offset="872340">
-              <caret line="57505" column="0" selection-start-line="57505" selection-start-column="0" selection-end-line="57505" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
+              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -100,8 +109,18 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.625" vertical-offset="630" max-vertical-offset="2295">
-              <caret line="43" column="67" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
+            <state vertical-scroll-proportion="-7.625" vertical-offset="492" max-vertical-offset="2310">
+              <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mapbox-gl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/lib/mapbox-gl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="327345">
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -110,117 +129,107 @@
       <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7180851" vertical-offset="495" max-vertical-offset="7170">
-              <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.32180852" vertical-offset="854" max-vertical-offset="7815">
+              <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
               <folding>
-                <marker date="1428909137000" expanded="true" signature="52:16347" placeholder="[...]" />
-                <marker date="1428909137000" expanded="true" signature="97:16346" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="416:652" placeholder="{&quot;container&quot;: 'map'...}" />
-                <marker date="1428909137000" expanded="true" signature="761:893" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="969:3405" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="991:2926" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="1015:1235" placeholder="{&quot;type&quot;: 'line'...}" />
-                <marker date="1428909137000" expanded="true" signature="1075:1094" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="1121:1221" placeholder="{&quot;line-color&quot;: &quot;#ff0000&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="1274:1903" placeholder="{&quot;type&quot;: 'symbol'...}" />
-                <marker date="1428909137000" expanded="true" signature="1336:1808" placeholder="{&quot;icon-image&quot;: &quot;circle-12&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="1835:1889" placeholder="{&quot;icon-size&quot;: 0.5...}" />
-                <marker date="1428909137000" expanded="true" signature="2962:3084" placeholder="{&quot;type&quot;: &quot;geojson&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="3109:3354" placeholder="{&quot;interactive&quot;: true...}" />
-                <marker date="1428909137000" expanded="true" signature="3438:4041" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="4081:4651" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="4166:4643" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="4236:4633" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="4363:4547" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="4687:5871" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="5625:5863" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="5909:6077" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="5993:6071" placeholder="//..." />
-                <marker date="1428909137000" expanded="true" signature="6204:6567" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="6237:6561" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="6311:6492" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="6376:6478" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="6741:6890" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="6761:6843" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="6930:7259" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="6952:7210" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="7019:7200" placeholder="[...]" />
-                <marker date="1428909137000" expanded="true" signature="7020:7199" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="7085:7185" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="7322:16344" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="7413:8910" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="7427:7550" placeholder="//..." />
-                <marker date="1428909137000" expanded="true" signature="7852:8097" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="7900:8083" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="8154:8525" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="8208:8511" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="8246:8491" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="8539:8598" placeholder="//..." />
-                <marker date="1428909137000" expanded="true" signature="8685:8899" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="8969:9239" placeholder="/*...*/" />
-                <marker date="1428909137000" expanded="true" signature="9340:9831" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="9466:9792" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="9927:11747" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="10119:11114" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="10240:10493" placeholder="//..." />
-                <marker date="1428909137000" expanded="true" signature="10628:10963" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="10765:10911" placeholder="//..." />
-                <marker date="1428909137000" expanded="true" signature="11258:11683" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="11317:11669" placeholder="[...]" />
-                <marker date="1428909137000" expanded="true" signature="11339:11651" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="11396:11523" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="11563:11629" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="11831:12533" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="12009:12258" placeholder="/**console.log(&quot;----&quot;); ...*/" />
-                <marker date="1428909137000" expanded="true" signature="12318:12390" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="12451:12523" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="12699:12783" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="12933:13019" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="13076:13171" placeholder="{&quot;type&quot;: &quot;geojson&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="13196:13489" placeholder="{&quot;id&quot;: &quot;poly&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="13336:13479" placeholder="{&quot;fill-color&quot;: &quot;transparent&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="13561:14150" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="13581:14140" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="13656:14126" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="13729:14108" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="14237:14529" placeholder="{&quot;id&quot;: &quot;json&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="14378:14519" placeholder="{&quot;fill-color&quot;: &quot;#ff0000&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="14589:14943" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="14609:14933" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="14684:14919" placeholder="[...]" />
-                <marker date="1428909137000" expanded="true" signature="14685:14918" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="14758:14900" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="15019:15421" placeholder="{&quot;id&quot;: &quot;debug&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="15131:15341" placeholder="{&quot;icon-image&quot;: &quot;harbor-12&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="15364:15411" placeholder="{&quot;text-size&quot;: 12...}" />
-                <marker date="1428909137000" expanded="true" signature="15481:15835" placeholder="{...}" />
-                <marker date="1428909137000" expanded="true" signature="15501:15825" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="15576:15811" placeholder="[...]" />
-                <marker date="1428909137000" expanded="true" signature="15577:15810" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="15650:15792" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="15920:16336" placeholder="{&quot;id&quot;: &quot;pointLayer&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="16046:16256" placeholder="{&quot;icon-image&quot;: &quot;harbor-12&quot;...}" />
-                <marker date="1428909137000" expanded="true" signature="16279:16326" placeholder="{&quot;text-size&quot;: 12...}" />
+                <marker date="1429004135000" expanded="true" signature="52:17957" placeholder="[...]" />
+                <marker date="1429004135000" expanded="true" signature="97:17956" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="416:652" placeholder="{&quot;container&quot;: 'map'...}" />
+                <marker date="1429004135000" expanded="true" signature="794:928" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="1004:4722" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="1026:4243" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="1050:1270" placeholder="{&quot;type&quot;: 'line'...}" />
+                <marker date="1429004135000" expanded="true" signature="1110:1129" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="1156:1256" placeholder="{&quot;line-color&quot;: &quot;#ff0000&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="1309:2247" placeholder="{&quot;type&quot;: 'symbol'...}" />
+                <marker date="1429004135000" expanded="true" signature="1371:1975" placeholder="{&quot;icon-image&quot;: &quot;circle-12&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="2002:2233" placeholder="{&quot;icon-size&quot;: 0.5...}" />
+                <marker date="1429004135000" expanded="true" signature="4279:4401" placeholder="{&quot;type&quot;: &quot;geojson&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="4426:4671" placeholder="{&quot;interactive&quot;: true...}" />
+                <marker date="1429004135000" expanded="true" signature="4755:5360" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="5400:5970" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="5485:5962" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="5555:5952" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="5682:5866" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="6006:7221" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="6975:7213" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="7259:7427" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="7343:7421" placeholder="//..." />
+                <marker date="1429004135000" expanded="true" signature="7554:7917" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="7587:7911" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="7661:7842" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="7726:7828" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="8351:8500" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="8371:8453" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="8540:8869" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="8562:8820" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="8629:8810" placeholder="[...]" />
+                <marker date="1429004135000" expanded="true" signature="8630:8809" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="8695:8795" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="8932:17954" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="9023:10520" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="9037:9160" placeholder="//..." />
+                <marker date="1429004135000" expanded="true" signature="9462:9707" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="9510:9693" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="9764:10135" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="9818:10121" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="9856:10101" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="10149:10208" placeholder="//..." />
+                <marker date="1429004135000" expanded="true" signature="10295:10509" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="10579:10849" placeholder="/*...*/" />
+                <marker date="1429004135000" expanded="true" signature="10950:11441" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="11076:11402" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="11537:13357" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="11729:12724" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="11850:12103" placeholder="//..." />
+                <marker date="1429004135000" expanded="true" signature="12238:12573" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="12375:12521" placeholder="//..." />
+                <marker date="1429004135000" expanded="true" signature="12868:13293" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="12927:13279" placeholder="[...]" />
+                <marker date="1429004135000" expanded="true" signature="12949:13261" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="13006:13133" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="13173:13239" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="13441:14143" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="13619:13868" placeholder="/**console.log(&quot;----&quot;); ...*/" />
+                <marker date="1429004135000" expanded="true" signature="13928:14000" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="14061:14133" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="14309:14393" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="14543:14629" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="14686:14781" placeholder="{&quot;type&quot;: &quot;geojson&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="14806:15099" placeholder="{&quot;id&quot;: &quot;poly&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="14946:15089" placeholder="{&quot;fill-color&quot;: &quot;transparent&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="15171:15760" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="15191:15750" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="15266:15736" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="15339:15718" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="15847:16139" placeholder="{&quot;id&quot;: &quot;json&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="15988:16129" placeholder="{&quot;fill-color&quot;: &quot;#ff0000&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="16199:16553" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="16219:16543" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="16294:16529" placeholder="[...]" />
+                <marker date="1429004135000" expanded="true" signature="16295:16528" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="16368:16510" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="16629:17031" placeholder="{&quot;id&quot;: &quot;debug&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="16741:16951" placeholder="{&quot;icon-image&quot;: &quot;harbor-12&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="16974:17021" placeholder="{&quot;text-size&quot;: 12...}" />
+                <marker date="1429004135000" expanded="true" signature="17091:17445" placeholder="{...}" />
+                <marker date="1429004135000" expanded="true" signature="17111:17435" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="17186:17421" placeholder="[...]" />
+                <marker date="1429004135000" expanded="true" signature="17187:17420" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="17260:17402" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="17530:17946" placeholder="{&quot;id&quot;: &quot;pointLayer&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="17656:17866" placeholder="{&quot;icon-image&quot;: &quot;harbor-12&quot;...}" />
+                <marker date="1429004135000" expanded="true" signature="17889:17936" placeholder="{&quot;text-size&quot;: 12...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PasingWlan_DifVector.vrt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/data/PasingWlan_DifVector.vrt">
+      <file leaf-file-name="turf.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deploy/scripts/turf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="180">
-              <caret line="4" column="1690" selection-start-line="4" selection-start-column="1690" selection-end-line="4" selection-end-column="1690" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="github.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deploy/scripts/github.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -270,7 +279,6 @@
         <option value="$PROJECT_DIR$/app/scripts/lib/mapboxgl/mapbox-gl-dev.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/lib/mapboxgl/mapbox-gl.js" />
-        <option value="$PROJECT_DIR$/app/scripts/lib/mapbox-gl.js" />
         <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/app/data/PasingLocation.vrt" />
         <option value="$PROJECT_DIR$/app/data/PasingLocationDistinct.vrt" />
@@ -280,12 +288,16 @@
         <option value="$PROJECT_DIR$/app/data/PasingWlan_BestLatLon.vrt" />
         <option value="$PROJECT_DIR$/deploy/README.md" />
         <option value="$PROJECT_DIR$/deploy/scripts/Vrt2Geojson.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/app/data/PasingWlan.vrt" />
         <option value="$PROJECT_DIR$/app/data/geojson/Pasing.geojson" />
-        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/scripts/lib/mapbox-gl.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/deploy/scripts/turf.js" />
+        <option value="$PROJECT_DIR$/app/data/PasingWlan_Sqlite.vrt" />
         <option value="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" />
+        <option value="$PROJECT_DIR$/app/data/Readme.md" />
+        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/map.js" />
       </list>
     </option>
@@ -403,50 +415,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malteahrens.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vita" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shapfile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malteahrens.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vita" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geojson" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -571,10 +539,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="723" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32784185" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25370675" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25370675" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3261944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2494043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30976966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -616,36 +584,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/deploy/scripts/github.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/lib/mapbox-gl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306705" max-vertical-offset="306795">
-          <caret line="20447" column="0" selection-start-line="20447" selection-start-column="0" selection-end-line="20447" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="915">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="3390">
-          <caret line="132" column="51" selection-start-line="132" selection-start-column="51" selection-end-line="132" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="510">
@@ -671,6 +609,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4487" max-vertical-offset="6435">
           <caret line="312" column="31" selection-start-line="312" selection-start-column="31" selection-end-line="312" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -809,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/lib/mapbox-gl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306705" max-vertical-offset="306795">
-          <caret line="20447" column="0" selection-start-line="20447" selection-start-column="0" selection-end-line="20447" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deploy/scripts/vector.pbf">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
@@ -851,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/data/PasingWlan_BestLatLon.vrt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="2" column="80" selection-start-line="2" selection-start-column="80" selection-end-line="2" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/data/PasingWlan_Centroid.vrt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
@@ -882,33 +807,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4534" max-vertical-offset="6435">
-          <caret line="312" column="32" selection-start-line="312" selection-start-column="32" selection-end-line="312" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="450">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ogr2ogr/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="735">
-          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,14 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/data/PasingWlan.vrt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
-          <caret line="6" column="160" selection-start-line="6" selection-start-column="138" selection-end-line="6" selection-end-column="160" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/data/geojson/PasingWlan.geojson">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="862575" max-vertical-offset="872340">
@@ -966,118 +860,201 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/lib/mapbox-gl.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625" vertical-offset="630" max-vertical-offset="2295">
-          <caret line="43" column="67" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="3555">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0" vertical-offset="48" max-vertical-offset="450">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4534" max-vertical-offset="6435">
+          <caret line="312" column="32" selection-start-line="312" selection-start-column="32" selection-end-line="312" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.375" vertical-offset="387" max-vertical-offset="765">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy/scripts/turf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data/PasingWlan_BestLatLon.vrt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="483" max-vertical-offset="885">
+          <caret line="2" column="80" selection-start-line="2" selection-start-column="80" selection-end-line="2" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data/PasingWlan.vrt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+          <caret line="7" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data/PasingWlan_Sqlite.vrt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/lib/mapbox-gl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="327345">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data/Readme.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="94" selection-start-line="0" selection-start-column="94" selection-end-line="0" selection-end-column="94" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3795">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="3840">
+          <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
           <folding>
-            <marker date="1428871559000" expanded="true" signature="3312:3442" placeholder="//..." />
-            <marker date="1428871559000" expanded="true" signature="3503:3857" placeholder="{...}" />
+            <marker date="1429002332000" expanded="true" signature="3473:3603" placeholder="//..." />
+            <marker date="1429002332000" expanded="true" signature="3664:4018" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.625" vertical-offset="492" max-vertical-offset="2310">
+          <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7180851" vertical-offset="495" max-vertical-offset="7170">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.32180852" vertical-offset="854" max-vertical-offset="7815">
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
           <folding>
-            <marker date="1428909137000" expanded="true" signature="52:16347" placeholder="[...]" />
-            <marker date="1428909137000" expanded="true" signature="97:16346" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="416:652" placeholder="{&quot;container&quot;: 'map'...}" />
-            <marker date="1428909137000" expanded="true" signature="761:893" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="969:3405" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="991:2926" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="1015:1235" placeholder="{&quot;type&quot;: 'line'...}" />
-            <marker date="1428909137000" expanded="true" signature="1075:1094" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="1121:1221" placeholder="{&quot;line-color&quot;: &quot;#ff0000&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="1274:1903" placeholder="{&quot;type&quot;: 'symbol'...}" />
-            <marker date="1428909137000" expanded="true" signature="1336:1808" placeholder="{&quot;icon-image&quot;: &quot;circle-12&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="1835:1889" placeholder="{&quot;icon-size&quot;: 0.5...}" />
-            <marker date="1428909137000" expanded="true" signature="2962:3084" placeholder="{&quot;type&quot;: &quot;geojson&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="3109:3354" placeholder="{&quot;interactive&quot;: true...}" />
-            <marker date="1428909137000" expanded="true" signature="3438:4041" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="4081:4651" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="4166:4643" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="4236:4633" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="4363:4547" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="4687:5871" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="5625:5863" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="5909:6077" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="5993:6071" placeholder="//..." />
-            <marker date="1428909137000" expanded="true" signature="6204:6567" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="6237:6561" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="6311:6492" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="6376:6478" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="6741:6890" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="6761:6843" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="6930:7259" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="6952:7210" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="7019:7200" placeholder="[...]" />
-            <marker date="1428909137000" expanded="true" signature="7020:7199" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="7085:7185" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="7322:16344" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="7413:8910" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="7427:7550" placeholder="//..." />
-            <marker date="1428909137000" expanded="true" signature="7852:8097" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="7900:8083" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="8154:8525" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="8208:8511" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="8246:8491" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="8539:8598" placeholder="//..." />
-            <marker date="1428909137000" expanded="true" signature="8685:8899" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="8969:9239" placeholder="/*...*/" />
-            <marker date="1428909137000" expanded="true" signature="9340:9831" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="9466:9792" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="9927:11747" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="10119:11114" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="10240:10493" placeholder="//..." />
-            <marker date="1428909137000" expanded="true" signature="10628:10963" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="10765:10911" placeholder="//..." />
-            <marker date="1428909137000" expanded="true" signature="11258:11683" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="11317:11669" placeholder="[...]" />
-            <marker date="1428909137000" expanded="true" signature="11339:11651" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="11396:11523" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="11563:11629" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="11831:12533" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="12009:12258" placeholder="/**console.log(&quot;----&quot;); ...*/" />
-            <marker date="1428909137000" expanded="true" signature="12318:12390" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="12451:12523" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="12699:12783" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="12933:13019" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="13076:13171" placeholder="{&quot;type&quot;: &quot;geojson&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="13196:13489" placeholder="{&quot;id&quot;: &quot;poly&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="13336:13479" placeholder="{&quot;fill-color&quot;: &quot;transparent&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="13561:14150" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="13581:14140" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="13656:14126" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="13729:14108" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="14237:14529" placeholder="{&quot;id&quot;: &quot;json&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="14378:14519" placeholder="{&quot;fill-color&quot;: &quot;#ff0000&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="14589:14943" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="14609:14933" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="14684:14919" placeholder="[...]" />
-            <marker date="1428909137000" expanded="true" signature="14685:14918" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="14758:14900" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="15019:15421" placeholder="{&quot;id&quot;: &quot;debug&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="15131:15341" placeholder="{&quot;icon-image&quot;: &quot;harbor-12&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="15364:15411" placeholder="{&quot;text-size&quot;: 12...}" />
-            <marker date="1428909137000" expanded="true" signature="15481:15835" placeholder="{...}" />
-            <marker date="1428909137000" expanded="true" signature="15501:15825" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="15576:15811" placeholder="[...]" />
-            <marker date="1428909137000" expanded="true" signature="15577:15810" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="15650:15792" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="15920:16336" placeholder="{&quot;id&quot;: &quot;pointLayer&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="16046:16256" placeholder="{&quot;icon-image&quot;: &quot;harbor-12&quot;...}" />
-            <marker date="1428909137000" expanded="true" signature="16279:16326" placeholder="{&quot;text-size&quot;: 12...}" />
+            <marker date="1429004135000" expanded="true" signature="52:17957" placeholder="[...]" />
+            <marker date="1429004135000" expanded="true" signature="97:17956" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="416:652" placeholder="{&quot;container&quot;: 'map'...}" />
+            <marker date="1429004135000" expanded="true" signature="794:928" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="1004:4722" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="1026:4243" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="1050:1270" placeholder="{&quot;type&quot;: 'line'...}" />
+            <marker date="1429004135000" expanded="true" signature="1110:1129" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="1156:1256" placeholder="{&quot;line-color&quot;: &quot;#ff0000&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="1309:2247" placeholder="{&quot;type&quot;: 'symbol'...}" />
+            <marker date="1429004135000" expanded="true" signature="1371:1975" placeholder="{&quot;icon-image&quot;: &quot;circle-12&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="2002:2233" placeholder="{&quot;icon-size&quot;: 0.5...}" />
+            <marker date="1429004135000" expanded="true" signature="4279:4401" placeholder="{&quot;type&quot;: &quot;geojson&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="4426:4671" placeholder="{&quot;interactive&quot;: true...}" />
+            <marker date="1429004135000" expanded="true" signature="4755:5360" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="5400:5970" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="5485:5962" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="5555:5952" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="5682:5866" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="6006:7221" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="6975:7213" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="7259:7427" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="7343:7421" placeholder="//..." />
+            <marker date="1429004135000" expanded="true" signature="7554:7917" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="7587:7911" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="7661:7842" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="7726:7828" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="8351:8500" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="8371:8453" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="8540:8869" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="8562:8820" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="8629:8810" placeholder="[...]" />
+            <marker date="1429004135000" expanded="true" signature="8630:8809" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="8695:8795" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="8932:17954" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="9023:10520" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="9037:9160" placeholder="//..." />
+            <marker date="1429004135000" expanded="true" signature="9462:9707" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="9510:9693" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="9764:10135" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="9818:10121" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="9856:10101" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="10149:10208" placeholder="//..." />
+            <marker date="1429004135000" expanded="true" signature="10295:10509" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="10579:10849" placeholder="/*...*/" />
+            <marker date="1429004135000" expanded="true" signature="10950:11441" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="11076:11402" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="11537:13357" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="11729:12724" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="11850:12103" placeholder="//..." />
+            <marker date="1429004135000" expanded="true" signature="12238:12573" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="12375:12521" placeholder="//..." />
+            <marker date="1429004135000" expanded="true" signature="12868:13293" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="12927:13279" placeholder="[...]" />
+            <marker date="1429004135000" expanded="true" signature="12949:13261" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="13006:13133" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="13173:13239" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="13441:14143" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="13619:13868" placeholder="/**console.log(&quot;----&quot;); ...*/" />
+            <marker date="1429004135000" expanded="true" signature="13928:14000" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="14061:14133" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="14309:14393" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="14543:14629" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="14686:14781" placeholder="{&quot;type&quot;: &quot;geojson&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="14806:15099" placeholder="{&quot;id&quot;: &quot;poly&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="14946:15089" placeholder="{&quot;fill-color&quot;: &quot;transparent&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="15171:15760" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="15191:15750" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="15266:15736" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="15339:15718" placeholder="{&quot;type&quot;: &quot;Polygon&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="15847:16139" placeholder="{&quot;id&quot;: &quot;json&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="15988:16129" placeholder="{&quot;fill-color&quot;: &quot;#ff0000&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="16199:16553" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="16219:16543" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="16294:16529" placeholder="[...]" />
+            <marker date="1429004135000" expanded="true" signature="16295:16528" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="16368:16510" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="16629:17031" placeholder="{&quot;id&quot;: &quot;debug&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="16741:16951" placeholder="{&quot;icon-image&quot;: &quot;harbor-12&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="16974:17021" placeholder="{&quot;text-size&quot;: 12...}" />
+            <marker date="1429004135000" expanded="true" signature="17091:17445" placeholder="{...}" />
+            <marker date="1429004135000" expanded="true" signature="17111:17435" placeholder="{&quot;type&quot;: &quot;FeatureCollection&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="17186:17421" placeholder="[...]" />
+            <marker date="1429004135000" expanded="true" signature="17187:17420" placeholder="{&quot;type&quot;: &quot;Feature&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="17260:17402" placeholder="{&quot;type&quot;: &quot;Point&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="17530:17946" placeholder="{&quot;id&quot;: &quot;pointLayer&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="17656:17866" placeholder="{&quot;icon-image&quot;: &quot;harbor-12&quot;...}" />
+            <marker date="1429004135000" expanded="true" signature="17889:17936" placeholder="{&quot;text-size&quot;: 12...}" />
           </folding>
         </state>
       </provider>
