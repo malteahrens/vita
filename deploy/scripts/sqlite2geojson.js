@@ -17,10 +17,10 @@ if(process.env.TRAVIS) {
 console.log("generates different geojson files from wigle wifi sqlite database. An alternative way to do this is to use gdal and vrt file format encapsulating the sqlite database");
 
 var ogr = ogr2ogr('./app/data/PasingWlan.vrt').timeout(100000).stream();
-ogr.pipe(fs.createWriteStream('./app/data/geojson/PasingWlan.geojson'));
+ogr.pipe(fs.createWriteStream(outputPath+'/PasingWlan.geojson'));
 
 var ogr = ogr2ogr('./app/data/PasingWlan_Sqlite.vrt').timeout(100000).stream();
-ogr.pipe(fs.createWriteStream('./app/data/geojson/PasingWlan_Sqlite.geojson'));
+ogr.pipe(fs.createWriteStream(outputPath+'PasingWlan_Sqlite.geojson'));
 
 if(exists) {
     var db = new sqlite3.Database(file);
