@@ -4,7 +4,14 @@
        <OGRVRTLayer name="network">
         <SrcDataSource relativeToVRT="1">./PasingWlan.sqlite</SrcDataSource>
         <SrcLayer>network</SrcLayer>
-        <SrcSQL>SELECT bssid, ssid, bestlat, bestlon, bestlevel FROM network WHERE type='W' AND ABS(bestlat) != 9e999 AND ABS(bestlon) != 9e999 AND bssid != '02:0e:8e:1e:61:17' AND bssid != 'c0:25:06:6f:f5:73'</SrcSQL>
+        <SrcSQL dialect="SQLITE">
+            SELECT bssid, ssid, bestlat, bestlon, bestlevel FROM network
+                WHERE type='W'
+                AND ABS(bestlat) != 9e999
+                AND ABS(bestlon) != 9e999
+                AND bssid != '02:0e:8e:1e:61:17'
+                AND bssid != 'c0:25:06:6f:f5:73';
+        </SrcSQL>
         <GeometryType>wkbPoint</GeometryType>
         <LayerSRS>EPSG:4326</LayerSRS>
 
