@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">52.26</p>
+      <p class="stat">51.94</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">511</p>
+      <p class="stat">521</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">68.82</p>
+      <p class="stat">68.94</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">5.07</p>
+      <p class="stat">5.25</p>
     </div>
   </div>
 </div>
@@ -104,6 +104,8 @@
         zoom: 12.5,
         center: [48.14882451158226, 11.451873779296875],
         style: &#039;https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json&#039;,
+        minZoom: 9,
+        maxZoom: 20,
         hash: true,
         interactive: true
     });
@@ -166,7 +168,7 @@
                     &quot;icon-ignore-placement&quot;: true,
                     &quot;icon-padding&quot;: 0,
                     &quot;text-padding&quot;: 0,
-                    &quot;text-optional&quot;: false,
+                    &quot;text-optional&quot;: true,
                     &quot;text-allow-overlap&quot;: false,
                     &quot;text-ignore-placement&quot;: false
                 },
@@ -221,17 +223,24 @@
         $scope.layerList.push(layer.name);
     }
 
+    var textAllowOverlap = false;
+    var textIgnorePlacement = false
+    var prevZoom = map.transform.zoom;
     map.on(&#039;zoom&#039;, function () {
         //console.log(&quot;zoomed: &quot;+map.transform.zoom);
-        var layer = map.getSource(&#039;PasingWlan_BestLatLon&#039;);
+        var layer = map.getSource(&#039;PasingWlan_Sqlite&#039;);
         if(layer !== undefined) {
-            //console.log(layer);
-            var visibility = &#039;visible&#039;
-            if (map.transform.zoom &lt; 10) {
-                visibility = &#039;none&#039;;
+            if (map.transform.zoom &gt; 18.5 &amp;&amp; prevZoom &lt; 18.5) {
+                console.log(&quot;show labels&quot;);
+                map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-allow-overlap&#039;, true);
+            } else if(map.transform.zoom &lt; 18.5 &amp;&amp; prevZoom &gt; 18.5) {
+                console.log(&quot;hide labels&quot;);
+                map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-allow-overlap&#039;, false);
             }
+            prevZoom = map.transform.zoom;
+
+            //map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-ignore-placement&#039;, textIgnorePlacement);
             //console.log(visibility);
-            map.setLayoutProperty(&#039;PasingWlan_BestLatLon&#039;, &#039;visibility&#039;, visibility);
             //map.setFilter(&#039;PasingWlan_BestLatLon&#039;, [&quot;!=&quot;, &#039;ssid&#039;, &#039;Waldrebe&#039;]);
         } else {
             console.log(&#039;could not find layer&#039;);
@@ -317,6 +326,7 @@
         if(layer !== undefined) {
             console.log(&quot;reload&quot;);
             console.log(layer);
+            layer.reload();
         } else {
             console.log(&#039;could not find layer&#039;);
         }
