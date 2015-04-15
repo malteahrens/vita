@@ -13,6 +13,8 @@ angular.module('angularApp')
         zoom: 12.5,
         center: [48.14882451158226, 11.451873779296875],
         style: 'https://www.mapbox.com/mapbox-gl-styles/styles/bright-v7.json',
+        minZoom: 9,
+        maxZoom: 20,
         hash: true,
         interactive: true
     });
@@ -75,7 +77,7 @@ angular.module('angularApp')
                     "icon-ignore-placement": true,
                     "icon-padding": 0,
                     "text-padding": 0,
-                    "text-optional": false,
+                    "text-optional": true,
                     "text-allow-overlap": false,
                     "text-ignore-placement": false
                 },
@@ -130,17 +132,24 @@ angular.module('angularApp')
         $scope.layerList.push(layer.name);
     }
 
+    var textAllowOverlap = false;
+    var textIgnorePlacement = false
+    var prevZoom = map.transform.zoom;
     map.on('zoom', function () {
         //console.log("zoomed: "+map.transform.zoom);
-        var layer = map.getSource('PasingWlan_BestLatLon');
+        var layer = map.getSource('PasingWlan_Sqlite');
         if(layer !== undefined) {
-            //console.log(layer);
-            var visibility = 'visible'
-            if (map.transform.zoom < 10) {
-                visibility = 'none';
+            if (map.transform.zoom > 18.5 && prevZoom < 18.5) {
+                console.log("show labels");
+                map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', true);
+            } else if(map.transform.zoom < 18.5 && prevZoom > 18.5) {
+                console.log("hide labels");
+                map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', false);
             }
+            prevZoom = map.transform.zoom;
+
+            //map.setLayoutProperty('PasingWlan_Sqlite', 'text-ignore-placement', textIgnorePlacement);
             //console.log(visibility);
-            map.setLayoutProperty('PasingWlan_BestLatLon', 'visibility', visibility);
             //map.setFilter('PasingWlan_BestLatLon', ["!=", 'ssid', 'Waldrebe']);
         } else {
             console.log('could not find layer');
@@ -226,6 +235,7 @@ angular.module('angularApp')
         if(layer !== undefined) {
             console.log("reload");
             console.log(layer);
+            layer.reload();
         } else {
             console.log('could not find layer');
         }
