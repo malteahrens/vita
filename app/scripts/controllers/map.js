@@ -21,6 +21,20 @@ angular.module('angularApp')
     map.addControl(new mapboxgl.Navigation());
     //map.collisionDebug = true;
 
+    var int=self.setInterval(getLocation, 10000);
+    function getLocation() {
+        if (navigator && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        } else {
+            console.log('Geolocation is not supported');
+        }
+    }
+
+    function errorCallback() {}
+    function successCallback(position) {
+        map.easeTo([position.coords.latitude, position.coords.longitude]);
+    }
+
     // load default layers
     map.on('load', function(e) {
         console.log("map loaded...");

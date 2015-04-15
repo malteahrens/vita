@@ -29,9 +29,9 @@ ogr.exec(function (er, data) {
     var random = 0;
     for(var i=0; i<data.features.length; i++) {
         var feature = data.features[i];
-        random = (Math.random() * (-0.000200 - 0.000200) + 0.000200);
+        random = (Math.random() * (-0.000150 - 0.000150) + 0.000150);
         data.features[i].geometry.coordinates[0] += random;
-        random = (Math.random() * (-0.000200 - 0.000200) + 0.000200);
+        random = (Math.random() * (-0.000150 - 0.000150) + 0.000150);
         data.features[i].geometry.coordinates[1] += random;
     }
     fs.writeFileSync(outputPath+'PasingWlan_Sqlite.geojson', JSON.stringify(data));
