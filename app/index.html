@@ -39,12 +39,13 @@
                     <pre id='features'></pre>
                     <div id="map" style="height:500px"></div>
 
-                    <pre>{{username}}</pre>
+                    <pre>
+                        <input type="checkbox" ng-model="trackLockation" ng-click="toggleTrackLocation()"> Track Location
+                    </pre>
                     <pre>{{layerList}}</pre>
                     <button ng-click="updateLabels()">Update Labels</button>
                     <button ng-click="addGeojsonLayer({'name':'PasingWlan_BestLatLon'})">BestLatLon</button>
                     <button ng-click="addGeojsonLayer({'name':'PasingWlan_Sqlite'})">Sqlite</button>
-                    <button ng-click="initLocation()">Geolocation</button>
                     <button ng-click="hexTopology(20, 960, 900)">Create Hexagon</button>
             </div>
             <div mouseover="images/grunt.png">

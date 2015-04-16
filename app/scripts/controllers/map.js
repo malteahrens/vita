@@ -21,35 +21,17 @@ angular.module('angularApp')
     map.addControl(new mapboxgl.Navigation());
     //map.collisionDebug = true;
 
-    var int=self.setInterval(getLocation, 10000);
-    function getLocation() {
-        if (navigator && navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-        } else {
-            console.log('Geolocation is not supported');
-        }
-    }
-
-    function errorCallback() {}
-    function successCallback(position) {
-        var location1 = [position.coords.latitude, position.coords.longitude];
-        var location2 = [position.coords.longitude, position.coords.latitude];
-        $scope.setData("location", location2)
-        map.easeTo(location1);
-    }
-
     // load default layers
     map.on('load', function(e) {
         console.log("map loaded...");
         // lindex is the style index
         $scope.addGeojsonLayer({'name':'Pasing'});
-
+        $scope.addGeojsonLayer({'name':'location'});
     });
 
     $scope.setData = function(layerId, data) {
         var layer = map.getSource(layerId);
         if(layer !== undefined) {
-            console.log("update data: "+data);
             layer.setData({
                 "type": "Feature",
                 "geometry": {
@@ -122,27 +104,6 @@ angular.module('angularApp')
                     "text-halo-width": 1
                 }
             },
-            "Location": {
-                "type": 'symbol',
-                "layout": {
-                    "icon-image": "circle-12",
-                    "icon-allow-overlap": true,
-                    "icon-ignore-placement": true,
-                    "icon-padding": 0,
-                    "text-padding": 0,
-                    "text-optional": true,
-                    "text-allow-overlap": false,
-                    "text-ignore-placement": false
-                },
-                "paint": {
-                    "icon-size": 1,
-                    "icon-color": "#669966",
-                    "text-size": 10,
-                    "text-halo-color": "#ffffff",
-                    "text-translate": [4, 2],
-                    "text-halo-width": 1
-                }
-            },
             "PasingWlan_Centroid": {
                 "type": 'symbol',
                 "layout": {
@@ -167,12 +128,28 @@ angular.module('angularApp')
                     "text-translate": [4, 2],
                     "text-halo-width": 4
                 }
+            },
+            "location": {
+                "type": 'symbol',
+                "layout": {
+                    "icon-image": "circle-12"
+                },
+                "paint": {
+                    "icon-size": 1,
+                    "icon-color": "#669966"
+                }
             }
         }
 
+        var data = "";
+        if(layer.name !== "location") {
+            data = "http://malteahrens.de/data/geojson/"+layer.name+".geojson"
+        } else {
+            data = [0, 0]
+        }
         map.addSource(layer.name, {
             "type": "geojson",
-            "data": "http://malteahrens.de/data/geojson/"+layer.name+".geojson"
+            "data": data
         });
 
         map.addLayer({
@@ -186,39 +163,6 @@ angular.module('angularApp')
         $scope.layerList.push(layer.name);
     }
 
-    $scope.initLocation = function() {
-        var style = {
-            "type": 'symbol',
-            "layout": {
-                "icon-image": "circle-12"
-            },
-            "paint": {
-                "icon-size": 1,
-                "icon-color": "#669966"
-            }
-         }
-
-        map.addSource("location", {
-            "type": "geojson",
-            "data": {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [0, 0]
-                }
-            }
-        });
-
-        map.addLayer({
-            "id": "location",
-            "type": "symbol",
-            "source": "location",
-            "layout": style.layout,
-            "paint": style.paint
-        });
-        $scope.layerList.push("location");
-    };
-
     var textAllowOverlap = false;
     var textIgnorePlacement = false
     var prevZoom = map.transform.zoom;
@@ -228,10 +172,10 @@ angular.module('angularApp')
         if(layer !== undefined) {
             if (map.transform.zoom > 18.5 && prevZoom < 18.5) {
                 console.log("show labels");
-                //map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', true);
+                map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', true);
             } else if(map.transform.zoom < 18.5 && prevZoom > 18.5) {
                 console.log("hide labels");
-                //map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', false);
+                map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', false);
             }
             prevZoom = map.transform.zoom;
 
@@ -242,6 +186,37 @@ angular.module('angularApp')
             console.log('could not find layer');
         }
     });
+
+    $scope.trackLocation = false;
+    var intervalId = 0;
+    $scope.toggleTrackLocation = function() {
+        //console.log("was: "+$scope.trackLocation);
+        $scope.trackLocation = !$scope.trackLocation;
+        //console.log("now: "+$scope.trackLocation);
+
+        // enable disable track location
+        if($scope.trackLocation) {
+            intervalId=self.setInterval(getLocation, 2000);
+        } else {
+            clearInterval(intervalId);
+        }
+
+        function getLocation() {
+            if (navigator && navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+            } else {
+                console.log('Geolocation is not supported');
+            }
+        }
+
+        function errorCallback() {}
+        function successCallback(position) {
+            var location1 = [position.coords.latitude, position.coords.longitude];
+            var location2 = [position.coords.longitude, position.coords.latitude];
+            $scope.setData("location", location2)
+            map.easeTo(location1);
+        }
+    }
 
     map.on('mousemove', function(e) {
         map.featuresAt(e.point, {radius: 1, layer:'poly'}, function(err, features) {
