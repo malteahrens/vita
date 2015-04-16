@@ -32,7 +32,10 @@ angular.module('angularApp')
 
     function errorCallback() {}
     function successCallback(position) {
-        map.easeTo([position.coords.latitude, position.coords.longitude]);
+        var location1 = [position.coords.latitude, position.coords.longitude];
+        var location2 = [position.coords.longitude, position.coords.latitude];
+        $scope.setData("location", location2)
+        map.easeTo(location1);
     }
 
     // load default layers
@@ -42,6 +45,22 @@ angular.module('angularApp')
         $scope.addGeojsonLayer({'name':'Pasing'});
 
     });
+
+    $scope.setData = function(layerId, data) {
+        var layer = map.getSource(layerId);
+        if(layer !== undefined) {
+            console.log("update data: "+data);
+            layer.setData({
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": data
+                }
+            });
+        } else {
+            console.log("Couldn't update data: layer not found");
+        }
+    };
 
     $scope.layerList = [];
     $scope.addGeojsonLayer = function(layer) {
@@ -103,6 +122,27 @@ angular.module('angularApp')
                     "text-halo-width": 1
                 }
             },
+            "Location": {
+                "type": 'symbol',
+                "layout": {
+                    "icon-image": "circle-12",
+                    "icon-allow-overlap": true,
+                    "icon-ignore-placement": true,
+                    "icon-padding": 0,
+                    "text-padding": 0,
+                    "text-optional": true,
+                    "text-allow-overlap": false,
+                    "text-ignore-placement": false
+                },
+                "paint": {
+                    "icon-size": 1,
+                    "icon-color": "#669966",
+                    "text-size": 10,
+                    "text-halo-color": "#ffffff",
+                    "text-translate": [4, 2],
+                    "text-halo-width": 1
+                }
+            },
             "PasingWlan_Centroid": {
                 "type": 'symbol',
                 "layout": {
@@ -145,6 +185,63 @@ angular.module('angularApp')
         });
         $scope.layerList.push(layer.name);
     }
+
+    $scope.initLocation = function() {
+        var style = {
+            "type": 'symbol',
+            "layout": {
+                "icon-image": "circle-12"
+            },
+            "paint": {
+                "icon-size": 1,
+                "icon-color": "#669966"
+            }
+         }
+
+        map.addSource("location", {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [0, 0]
+                }
+            }
+        });
+
+        map.addLayer({
+            "id": "location",
+            "type": "symbol",
+            "source": "location",
+            "layout": style.layout,
+            "paint": style.paint
+        });
+        $scope.layerList.push("location");
+    };
+
+    var textAllowOverlap = false;
+    var textIgnorePlacement = false
+    var prevZoom = map.transform.zoom;
+    map.on('zoom', function () {
+        //console.log("zoomed: "+map.transform.zoom);
+        var layer = map.getSource('PasingWlan_Sqlite');
+        if(layer !== undefined) {
+            if (map.transform.zoom > 18.5 && prevZoom < 18.5) {
+                console.log("show labels");
+                //map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', true);
+            } else if(map.transform.zoom < 18.5 && prevZoom > 18.5) {
+                console.log("hide labels");
+                //map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', false);
+            }
+            prevZoom = map.transform.zoom;
+
+            //map.setLayoutProperty('PasingWlan_Sqlite', 'text-ignore-placement', textIgnorePlacement);
+            //console.log(visibility);
+            //map.setFilter('PasingWlan_BestLatLon', ["!=", 'ssid', 'Waldrebe']);
+        } else {
+            console.log('could not find layer');
+        }
+    });
 
     map.on('mousemove', function(e) {
         map.featuresAt(e.point, {radius: 1, layer:'poly'}, function(err, features) {
