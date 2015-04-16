@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">53.26</p>
+      <p class="stat">53.65</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">608</p>
+      <p class="stat">583</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">71.89</p>
+      <p class="stat">71.59</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">6.06</p>
+      <p class="stat">5.90</p>
     </div>
   </div>
 </div>
@@ -112,35 +112,17 @@
     map.addControl(new mapboxgl.Navigation());
     //map.collisionDebug = true;
 
-    var int=self.setInterval(getLocation, 10000);
-    function getLocation() {
-        if (navigator &amp;&amp; navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-        } else {
-            console.log(&#039;Geolocation is not supported&#039;);
-        }
-    }
-
-    function errorCallback() {}
-    function successCallback(position) {
-        var location1 = [position.coords.latitude, position.coords.longitude];
-        var location2 = [position.coords.longitude, position.coords.latitude];
-        $scope.setData(&quot;location&quot;, location2)
-        map.easeTo(location1);
-    }
-
     // load default layers
     map.on(&#039;load&#039;, function(e) {
         console.log(&quot;map loaded...&quot;);
         // lindex is the style index
         $scope.addGeojsonLayer({&#039;name&#039;:&#039;Pasing&#039;});
-
+        $scope.addGeojsonLayer({&#039;name&#039;:&#039;location&#039;});
     });
 
     $scope.setData = function(layerId, data) {
         var layer = map.getSource(layerId);
         if(layer !== undefined) {
-            console.log(&quot;update data: &quot;+data);
             layer.setData({
                 &quot;type&quot;: &quot;Feature&quot;,
                 &quot;geometry&quot;: {
@@ -213,27 +195,6 @@
                     &quot;text-halo-width&quot;: 1
                 }
             },
-            &quot;Location&quot;: {
-                &quot;type&quot;: &#039;symbol&#039;,
-                &quot;layout&quot;: {
-                    &quot;icon-image&quot;: &quot;circle-12&quot;,
-                    &quot;icon-allow-overlap&quot;: true,
-                    &quot;icon-ignore-placement&quot;: true,
-                    &quot;icon-padding&quot;: 0,
-                    &quot;text-padding&quot;: 0,
-                    &quot;text-optional&quot;: true,
-                    &quot;text-allow-overlap&quot;: false,
-                    &quot;text-ignore-placement&quot;: false
-                },
-                &quot;paint&quot;: {
-                    &quot;icon-size&quot;: 1,
-                    &quot;icon-color&quot;: &quot;#669966&quot;,
-                    &quot;text-size&quot;: 10,
-                    &quot;text-halo-color&quot;: &quot;#ffffff&quot;,
-                    &quot;text-translate&quot;: [4, 2],
-                    &quot;text-halo-width&quot;: 1
-                }
-            },
             &quot;PasingWlan_Centroid&quot;: {
                 &quot;type&quot;: &#039;symbol&#039;,
                 &quot;layout&quot;: {
@@ -258,12 +219,28 @@
                     &quot;text-translate&quot;: [4, 2],
                     &quot;text-halo-width&quot;: 4
                 }
+            },
+            &quot;location&quot;: {
+                &quot;type&quot;: &#039;symbol&#039;,
+                &quot;layout&quot;: {
+                    &quot;icon-image&quot;: &quot;circle-12&quot;
+                },
+                &quot;paint&quot;: {
+                    &quot;icon-size&quot;: 1,
+                    &quot;icon-color&quot;: &quot;#669966&quot;
+                }
             }
         }
 
+        var data = &quot;&quot;;
+        if(layer.name !== &quot;location&quot;) {
+            data = &quot;http://malteahrens.de/data/geojson/&quot;+layer.name+&quot;.geojson&quot;
+        } else {
+            data = [0, 0]
+        }
         map.addSource(layer.name, {
             &quot;type&quot;: &quot;geojson&quot;,
-            &quot;data&quot;: &quot;http://malteahrens.de/data/geojson/&quot;+layer.name+&quot;.geojson&quot;
+            &quot;data&quot;: data
         });
 
         map.addLayer({
@@ -277,39 +254,6 @@
         $scope.layerList.push(layer.name);
     }
 
-    $scope.initLocation = function() {
-        var style = {
-            &quot;type&quot;: &#039;symbol&#039;,
-            &quot;layout&quot;: {
-                &quot;icon-image&quot;: &quot;circle-12&quot;
-            },
-            &quot;paint&quot;: {
-                &quot;icon-size&quot;: 1,
-                &quot;icon-color&quot;: &quot;#669966&quot;
-            }
-         }
-
-        map.addSource(&quot;location&quot;, {
-            &quot;type&quot;: &quot;geojson&quot;,
-            &quot;data&quot;: {
-                &quot;type&quot;: &quot;Feature&quot;,
-                &quot;geometry&quot;: {
-                    &quot;type&quot;: &quot;Point&quot;,
-                    &quot;coordinates&quot;: [0, 0]
-                }
-            }
-        });
-
-        map.addLayer({
-            &quot;id&quot;: &quot;location&quot;,
-            &quot;type&quot;: &quot;symbol&quot;,
-            &quot;source&quot;: &quot;location&quot;,
-            &quot;layout&quot;: style.layout,
-            &quot;paint&quot;: style.paint
-        });
-        $scope.layerList.push(&quot;location&quot;);
-    };
-
     var textAllowOverlap = false;
     var textIgnorePlacement = false
     var prevZoom = map.transform.zoom;
@@ -319,10 +263,10 @@
         if(layer !== undefined) {
             if (map.transform.zoom &gt; 18.5 &amp;&amp; prevZoom &lt; 18.5) {
                 console.log(&quot;show labels&quot;);
-                //map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-allow-overlap&#039;, true);
+                map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-allow-overlap&#039;, true);
             } else if(map.transform.zoom &lt; 18.5 &amp;&amp; prevZoom &gt; 18.5) {
                 console.log(&quot;hide labels&quot;);
-                //map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-allow-overlap&#039;, false);
+                map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-allow-overlap&#039;, false);
             }
             prevZoom = map.transform.zoom;
 
@@ -333,6 +277,37 @@
             console.log(&#039;could not find layer&#039;);
         }
     });
+
+    $scope.trackLocation = false;
+    var intervalId = 0;
+    $scope.toggleTrackLocation = function() {
+        //console.log(&quot;was: &quot;+$scope.trackLocation);
+        $scope.trackLocation = !$scope.trackLocation;
+        //console.log(&quot;now: &quot;+$scope.trackLocation);
+
+        // enable disable track location
+        if($scope.trackLocation) {
+            intervalId=self.setInterval(getLocation, 2000);
+        } else {
+            clearInterval(intervalId);
+        }
+
+        function getLocation() {
+            if (navigator &amp;&amp; navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+            } else {
+                console.log(&#039;Geolocation is not supported&#039;);
+            }
+        }
+
+        function errorCallback() {}
+        function successCallback(position) {
+            var location1 = [position.coords.latitude, position.coords.longitude];
+            var location2 = [position.coords.longitude, position.coords.latitude];
+            $scope.setData(&quot;location&quot;, location2)
+            map.easeTo(location1);
+        }
+    }
 
     map.on(&#039;mousemove&#039;, function(e) {
         map.featuresAt(e.point, {radius: 1, layer:&#039;poly&#039;}, function(err, features) {
