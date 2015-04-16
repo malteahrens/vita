@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">53.46</p>
+      <p class="stat">53.26</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">511</p>
+      <p class="stat">608</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">65.33</p>
+      <p class="stat">71.89</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">5.16</p>
+      <p class="stat">6.06</p>
     </div>
   </div>
 </div>
@@ -123,7 +123,10 @@
 
     function errorCallback() {}
     function successCallback(position) {
-        map.easeTo([position.coords.latitude, position.coords.longitude]);
+        var location1 = [position.coords.latitude, position.coords.longitude];
+        var location2 = [position.coords.longitude, position.coords.latitude];
+        $scope.setData(&quot;location&quot;, location2)
+        map.easeTo(location1);
     }
 
     // load default layers
@@ -133,6 +136,22 @@
         $scope.addGeojsonLayer({&#039;name&#039;:&#039;Pasing&#039;});
 
     });
+
+    $scope.setData = function(layerId, data) {
+        var layer = map.getSource(layerId);
+        if(layer !== undefined) {
+            console.log(&quot;update data: &quot;+data);
+            layer.setData({
+                &quot;type&quot;: &quot;Feature&quot;,
+                &quot;geometry&quot;: {
+                    &quot;type&quot;: &quot;Point&quot;,
+                    &quot;coordinates&quot;: data
+                }
+            });
+        } else {
+            console.log(&quot;Couldn&#039;t update data: layer not found&quot;);
+        }
+    };
 
     $scope.layerList = [];
     $scope.addGeojsonLayer = function(layer) {
@@ -194,6 +213,27 @@
                     &quot;text-halo-width&quot;: 1
                 }
             },
+            &quot;Location&quot;: {
+                &quot;type&quot;: &#039;symbol&#039;,
+                &quot;layout&quot;: {
+                    &quot;icon-image&quot;: &quot;circle-12&quot;,
+                    &quot;icon-allow-overlap&quot;: true,
+                    &quot;icon-ignore-placement&quot;: true,
+                    &quot;icon-padding&quot;: 0,
+                    &quot;text-padding&quot;: 0,
+                    &quot;text-optional&quot;: true,
+                    &quot;text-allow-overlap&quot;: false,
+                    &quot;text-ignore-placement&quot;: false
+                },
+                &quot;paint&quot;: {
+                    &quot;icon-size&quot;: 1,
+                    &quot;icon-color&quot;: &quot;#669966&quot;,
+                    &quot;text-size&quot;: 10,
+                    &quot;text-halo-color&quot;: &quot;#ffffff&quot;,
+                    &quot;text-translate&quot;: [4, 2],
+                    &quot;text-halo-width&quot;: 1
+                }
+            },
             &quot;PasingWlan_Centroid&quot;: {
                 &quot;type&quot;: &#039;symbol&#039;,
                 &quot;layout&quot;: {
@@ -236,6 +276,63 @@
         });
         $scope.layerList.push(layer.name);
     }
+
+    $scope.initLocation = function() {
+        var style = {
+            &quot;type&quot;: &#039;symbol&#039;,
+            &quot;layout&quot;: {
+                &quot;icon-image&quot;: &quot;circle-12&quot;
+            },
+            &quot;paint&quot;: {
+                &quot;icon-size&quot;: 1,
+                &quot;icon-color&quot;: &quot;#669966&quot;
+            }
+         }
+
+        map.addSource(&quot;location&quot;, {
+            &quot;type&quot;: &quot;geojson&quot;,
+            &quot;data&quot;: {
+                &quot;type&quot;: &quot;Feature&quot;,
+                &quot;geometry&quot;: {
+                    &quot;type&quot;: &quot;Point&quot;,
+                    &quot;coordinates&quot;: [0, 0]
+                }
+            }
+        });
+
+        map.addLayer({
+            &quot;id&quot;: &quot;location&quot;,
+            &quot;type&quot;: &quot;symbol&quot;,
+            &quot;source&quot;: &quot;location&quot;,
+            &quot;layout&quot;: style.layout,
+            &quot;paint&quot;: style.paint
+        });
+        $scope.layerList.push(&quot;location&quot;);
+    };
+
+    var textAllowOverlap = false;
+    var textIgnorePlacement = false
+    var prevZoom = map.transform.zoom;
+    map.on(&#039;zoom&#039;, function () {
+        //console.log(&quot;zoomed: &quot;+map.transform.zoom);
+        var layer = map.getSource(&#039;PasingWlan_Sqlite&#039;);
+        if(layer !== undefined) {
+            if (map.transform.zoom &gt; 18.5 &amp;&amp; prevZoom &lt; 18.5) {
+                console.log(&quot;show labels&quot;);
+                //map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-allow-overlap&#039;, true);
+            } else if(map.transform.zoom &lt; 18.5 &amp;&amp; prevZoom &gt; 18.5) {
+                console.log(&quot;hide labels&quot;);
+                //map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-allow-overlap&#039;, false);
+            }
+            prevZoom = map.transform.zoom;
+
+            //map.setLayoutProperty(&#039;PasingWlan_Sqlite&#039;, &#039;text-ignore-placement&#039;, textIgnorePlacement);
+            //console.log(visibility);
+            //map.setFilter(&#039;PasingWlan_BestLatLon&#039;, [&quot;!=&quot;, &#039;ssid&#039;, &#039;Waldrebe&#039;]);
+        } else {
+            console.log(&#039;could not find layer&#039;);
+        }
+    });
 
     map.on(&#039;mousemove&#039;, function(e) {
         map.featuresAt(e.point, {radius: 1, layer:&#039;poly&#039;}, function(err, features) {
