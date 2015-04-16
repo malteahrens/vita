@@ -146,30 +146,6 @@ angular.module('angularApp')
         $scope.layerList.push(layer.name);
     }
 
-    var textAllowOverlap = false;
-    var textIgnorePlacement = false
-    var prevZoom = map.transform.zoom;
-    map.on('zoom', function () {
-        //console.log("zoomed: "+map.transform.zoom);
-        var layer = map.getSource('PasingWlan_Sqlite');
-        if(layer !== undefined) {
-            if (map.transform.zoom > 18.5 && prevZoom < 18.5) {
-                console.log("show labels");
-                map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', true);
-            } else if(map.transform.zoom < 18.5 && prevZoom > 18.5) {
-                console.log("hide labels");
-                map.setLayoutProperty('PasingWlan_Sqlite', 'text-allow-overlap', false);
-            }
-            prevZoom = map.transform.zoom;
-
-            //map.setLayoutProperty('PasingWlan_Sqlite', 'text-ignore-placement', textIgnorePlacement);
-            //console.log(visibility);
-            //map.setFilter('PasingWlan_BestLatLon', ["!=", 'ssid', 'Waldrebe']);
-        } else {
-            console.log('could not find layer');
-        }
-    });
-
     map.on('mousemove', function(e) {
         map.featuresAt(e.point, {radius: 1, layer:'poly'}, function(err, features) {
             if (err) throw err;
