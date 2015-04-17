@@ -43,7 +43,6 @@ angular.module('angularApp')
             console.log("Couldn't update data: layer not found");
         }
     };
-
     $scope.layerList = [];
     $scope.toggleLayer = function(layerId) {
         console.log("toggle layer: "+layerId);
