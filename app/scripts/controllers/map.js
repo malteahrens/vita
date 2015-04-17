@@ -45,6 +45,15 @@ angular.module('angularApp')
     };
 
     $scope.layerList = [];
+    $scope.toggleLayer = function(layerId) {
+        console.log("toggle layer: "+layerId);
+        var layerVisibility = map.getLayoutProperty(layerId, 'visibility');
+        var newLayerVisibility = 'none';
+        if(layerVisibility === 'none') {
+            newLayerVisibility = 'visible';
+        }
+        map.setLayoutProperty(layerId, 'visibility', newLayerVisibility)
+    }
     $scope.addGeojsonLayer = function(layer) {
         var style = {
             "Pasing": {
