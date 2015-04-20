@@ -214,14 +214,22 @@ angular.module('angularApp')
         }
 
         function getLocation() {
+            var options = {timeout:60000};
             if (navigator && navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+                navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options);
             } else {
                 console.log('Geolocation is not supported');
             }
         }
 
-        function errorCallback() {}
+        function errorCallback(err) {
+            if(err.code == 1) {
+                alert("Error: Access is denied!");
+            }else if( err.code == 2) {
+                alert("Error: Position is unavailable!");
+            }
+        }
+
         function successCallback(position) {
             var location1 = [position.coords.latitude, position.coords.longitude];
             var location2 = [position.coords.longitude, position.coords.latitude];
