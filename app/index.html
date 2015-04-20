@@ -40,7 +40,7 @@
                     <div id="map" style="height:500px"></div>
 
                     <pre>
-                        <input type="checkbox" ng-model="trackLockation" ng-click="toggleTrackLocation()"> Track Location
+                        <input type="checkbox" ng-model="trackLockation" ng-click="toggleTrackLocation()"> Track Location, Speed: {{speed}}, Heading: {{heading}}
                     </pre>
                     <pre>
                         <div ng-repeat="layer in layerList"><input type="checkbox" ng-click="toggleLayer('{{layer}}')"> {{layer}}</div>

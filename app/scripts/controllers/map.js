@@ -19,6 +19,7 @@ angular.module('angularApp')
         interactive: true
     });
     map.addControl(new mapboxgl.Navigation());
+    map.setPitch(60);
     //map.collisionDebug = true;
 
     // load default layers
@@ -196,6 +197,8 @@ angular.module('angularApp')
     });
 
     $scope.trackLocation = false;
+    $scope.speed = 0;
+    $scope.heading = 0;
     var intervalId = 0;
     $scope.toggleTrackLocation = function() {
         //console.log("was: "+$scope.trackLocation);
@@ -221,6 +224,14 @@ angular.module('angularApp')
         function successCallback(position) {
             var location1 = [position.coords.latitude, position.coords.longitude];
             var location2 = [position.coords.longitude, position.coords.latitude];
+
+            if(position.heading !== 'undefined') {
+                console.log("heading: "+position.heading);
+            }
+            if(position.speed !== 'undefined') {
+                console.log("speed: "+position.speed);
+            }
+
             $scope.setData("location", location2)
             map.easeTo(location1);
         }

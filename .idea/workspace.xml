@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16398e78-1bc0-4dfc-afe4-5ff2957d108c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/map.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/map.js" />
     </list>
     <ignored path="malteahrens.github.io.iws" />
@@ -68,21 +69,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45212767" vertical-offset="490" max-vertical-offset="9015">
-              <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+            <state vertical-scroll-proportion="-5.769231" vertical-offset="2850" max-vertical-offset="9180">
+              <caret line="200" column="23" selection-start-line="200" selection-start-column="23" selection-end-line="200" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875" vertical-offset="510" max-vertical-offset="2355">
-              <caret line="45" column="106" selection-start-line="45" selection-start-column="106" selection-end-line="45" selection-end-column="106" />
+            <state vertical-scroll-proportion="0.5555556" vertical-offset="450" max-vertical-offset="2355">
+              <caret line="42" column="161" selection-start-line="42" selection-start-column="161" selection-end-line="42" selection-end-column="161" />
               <folding />
             </state>
           </provider>
@@ -180,8 +181,8 @@
         <option value="$PROJECT_DIR$/app/scripts/lib/mapbox-gl.css" />
         <option value="$PROJECT_DIR$/app/scripts/lib/mapbox-gl.js" />
         <option value="$PROJECT_DIR$/deploy/scripts/sqlite2geojson.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/map.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
   </component>
@@ -917,18 +918,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="510" max-vertical-offset="2355">
-          <caret line="45" column="106" selection-start-line="45" selection-start-column="106" selection-end-line="45" selection-end-column="106" />
+        <state vertical-scroll-proportion="-5.769231" vertical-offset="2850" max-vertical-offset="9180">
+          <caret line="200" column="23" selection-start-line="200" selection-start-column="23" selection-end-line="200" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/map.js">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45212767" vertical-offset="490" max-vertical-offset="9015">
-          <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.5555556" vertical-offset="450" max-vertical-offset="2355">
+          <caret line="42" column="161" selection-start-line="42" selection-start-column="161" selection-end-line="42" selection-end-column="161" />
           <folding />
         </state>
       </provider>
