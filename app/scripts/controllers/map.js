@@ -199,6 +199,7 @@ angular.module('angularApp')
     $scope.trackLocation = false;
     $scope.speed = 0;
     $scope.heading = 0;
+    $scope.accuracy = 0;
     var intervalId = 0;
     $scope.toggleTrackLocation = function() {
         //console.log("was: "+$scope.trackLocation);
@@ -225,11 +226,17 @@ angular.module('angularApp')
             var location1 = [position.coords.latitude, position.coords.longitude];
             var location2 = [position.coords.longitude, position.coords.latitude];
 
-            if(position.heading !== 'undefined') {
+            if(position.heading !== undefined) {
                 console.log("heading: "+position.heading);
+                $scope.heading = position.heading;
             }
-            if(position.speed !== 'undefined') {
+            if(position.speed !== undefined) {
                 console.log("speed: "+position.speed);
+                $scope.speed = position.speed;
+            }
+            if(position.accuracy !== undefined) {
+                console.log("accuracy: "+position.accuracy);
+                $scope.accuracy = position.accuracy;
             }
 
             $scope.setData("location", location2)
