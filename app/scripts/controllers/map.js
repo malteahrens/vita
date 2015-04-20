@@ -27,23 +27,44 @@ angular.module('angularApp')
         console.log("map loaded...");
         // lindex is the style index
         $scope.addGeojsonLayer({'name':'Pasing'});
+        $scope.addGeojsonLayer({'name':'locationAccuracy'});
         $scope.addGeojsonLayer({'name':'location'});
     });
 
-    $scope.setData = function(layerId, data) {
+    $scope.setPointData = function(layerId, data) {
         var layer = map.getSource(layerId);
         if(layer !== undefined) {
-            layer.setData({
+            var locationPoint = {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": data
                 }
-            });
+            }
+            layer.setData(locationPoint);
         } else {
             console.log("Couldn't update data: layer not found");
         }
     };
+    $scope.setBufferData = function(layerId, data, radius) {
+        var layer = map.getSource(layerId);
+        if(layer !== undefined) {
+            var point = {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": data
+                }
+            }
+
+            var buffered = turf.buffer(point, radius, 'kilometers')
+            console.log(buffered);
+            layer.setData(buffered);
+        } else {
+            console.log("Couldn't update data: layer not found");
+        }
+    };
+
     $scope.layerList = [];
     $scope.toggleLayer = function(layerId) {
         console.log("toggle layer: "+layerId);
@@ -92,7 +113,7 @@ angular.module('angularApp')
             "PasingWlan_Sqlite": {
                 "type": 'symbol',
                 "layout": {
-                    "icon-image": "circle-12",
+                    "icon-image": "{maki}-12",
                     "icon-allow-overlap": true,
                     "icon-color": "#669966",
                     "text-field": "{ssid}",
@@ -147,11 +168,21 @@ angular.module('angularApp')
                     "icon-size": 1,
                     "icon-color": "#669966"
                 }
-            }
+            },
+            "locationAccuracy": {
+                "type": 'fill',
+                "layout": {
+                },
+                "paint": {
+                    "fill-outline-color": "#ff0000",
+                    "fill-color": "#ff0000",
+                    "fill-opacity": 0.2
+                }
+            },
         }
 
         var data = "";
-        if(layer.name !== "location") {
+        if(layer.name !== "location" && layer.name !== "locationAccuracy") {
             data = "http://malteahrens.de/data/geojson/"+layer.name+".geojson"
         } else {
             data = [0, 0]
@@ -234,20 +265,22 @@ angular.module('angularApp')
             var location1 = [position.coords.latitude, position.coords.longitude];
             var location2 = [position.coords.longitude, position.coords.latitude];
 
-            if(position.heading !== undefined) {
-                console.log("heading: "+position.heading);
-                $scope.heading = position.heading;
+            if(!isNaN(position.coords.heading)) {
+                console.log("heading: "+position.coords.heading);
+                $scope.heading = position.coords.heading;
             }
-            if(position.speed !== undefined) {
-                console.log("speed: "+position.speed);
-                $scope.speed = position.speed;
+            if(!isNaN(position.coords.speed)) {
+                console.log("speed: "+position.coords.speed);
+                $scope.speed = position.coords.speed;
             }
-            if(position.accuracy !== undefined) {
-                console.log("accuracy: "+position.accuracy);
-                $scope.accuracy = position.accuracy;
+            if(!isNaN(position.coords.accuracy)) {
+                console.log("accuracy: "+position.coords.accuracy);
+                $scope.accuracy = position.coords.accuracy;
             }
 
-            $scope.setData("location", location2)
+            $scope.setPointData("location", location2)
+            var radius = position.coords.accuracy * 0.001
+            $scope.setBufferData("locationAccuracy", location2, radius);
             map.easeTo(location1);
         }
     }
