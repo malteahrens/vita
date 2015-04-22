@@ -64,6 +64,28 @@ angular.module('angularApp')
             console.log("Couldn't update data: layer not found");
         }
     };
+    $scope.setLineData = function(layerId, data) {
+        var layer = map.getSource(layerId);
+        if(layer !== undefined) {
+            var line = {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        data,
+                        [
+                            27.0703125,
+                            53.5403073915002
+                        ]
+                    ]
+                }
+
+            }
+            layer.setData(line);
+        } else {
+            console.log("Couldn't update data: layer not found");
+        }
+    };
 
     $scope.layerList = [];
     $scope.toggleLayer = function(layerId) {
@@ -232,6 +254,7 @@ angular.module('angularApp')
             "paint": style[layer.name].paint
         });
         $scope.layerList.push(layer.name);
+        $scope.$apply();
     }
 
     var textAllowOverlap = false;
@@ -310,6 +333,7 @@ angular.module('angularApp')
             $scope.setPointData("location", location2)
             var radius = position.coords.accuracy * 0.001
             $scope.setBufferData("locationAccuracy", location2, radius);
+            $scope.setLineData("locationHeading", location2);
             $scope.$apply()
             map.easeTo(location1);
         }
