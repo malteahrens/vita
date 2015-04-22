@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">52.90</p>
+      <p class="stat">52.95</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">704</p>
+      <p class="stat">692</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">76.86</p>
+      <p class="stat">77.25</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">7.24</p>
+      <p class="stat">7.22</p>
     </div>
   </div>
 </div>
@@ -158,21 +158,7 @@
     $scope.setLineData = function(layerId, data) {
         var layer = map.getSource(layerId);
         if(layer !== undefined) {
-            var line = {
-                &quot;type&quot;: &quot;Feature&quot;,
-                &quot;geometry&quot;: {
-                    &quot;type&quot;: &quot;LineString&quot;,
-                    &quot;coordinates&quot;: [
-                        data,
-                        [
-                            27.0703125,
-                            53.5403073915002
-                        ]
-                    ]
-                }
-
-            }
-            layer.setData(line);
+            layer.setData(data);
         } else {
             console.log(&quot;Couldn&#039;t update data: layer not found&quot;);
         }
@@ -413,6 +399,9 @@
             if(!isNaN(position.coords.heading)) {
                 console.log(&quot;heading: &quot;+position.coords.heading);
                 $scope.heading = position.coords.heading;
+                var heading = turf.destination(location2, 0.01, position.coords.heading, &quot;kilometers&quot;);
+                console.log(heading)
+                $scope.setLineData(&quot;locationHeading&quot;, heading);
             }
             if(!isNaN(position.coords.speed)) {
                 $scope.speed = position.coords.speed;
@@ -422,9 +411,8 @@
             }
 
             $scope.setPointData(&quot;location&quot;, location2)
-            var radius = position.coords.accuracy * 0.001
+            var radius = position.coords.accuracy * 0.01
             $scope.setBufferData(&quot;locationAccuracy&quot;, location2, radius);
-            $scope.setLineData(&quot;locationHeading&quot;, location2);
             $scope.$apply()
             map.easeTo(location1);
         }
