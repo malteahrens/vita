@@ -308,7 +308,7 @@ angular.module('angularApp')
             if(!isNaN(position.coords.heading)) {
                 console.log("heading: "+position.coords.heading);
                 $scope.heading = position.coords.heading;
-                var heading = turf.destination(location2, 0.01, position.coords.heading, "kilometers");
+                var heading = turf.destination(location2, 1, position.coords.heading, "kilometers");
                 console.log(heading)
                 $scope.setLineData("locationHeading", heading);
             }
