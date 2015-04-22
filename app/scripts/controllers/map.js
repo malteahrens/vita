@@ -28,6 +28,7 @@ angular.module('angularApp')
         // lindex is the style index
         $scope.addGeojsonLayer({'name':'Pasing'});
         $scope.addGeojsonLayer({'name':'locationAccuracy'});
+        $scope.addGeojsonLayer({'name':'locationHeading'});
         $scope.addGeojsonLayer({'name':'location'});
     });
 
@@ -74,11 +75,28 @@ angular.module('angularApp')
         }
         map.setLayoutProperty(layerId, 'visibility', newLayerVisibility)
     }
-    $scope.addGeojsonLayer = function(layer) {
+    $scope.addGeojsonLayer = function(layer, visibility) {
+        if(visibility === undefined){
+            visibility = true;
+        }
+        var symbolTemplate = {}
+        var lineTemplate = {
+            "type": 'line',
+            "layout": {
+                "visibility": visibility
+            },
+            "paint": {
+                "line-color": "#ff0000",
+                "line-width": 2
+            }
+        }
+        var fillTemplate = {}
+
         var style = {
             "Pasing": {
                 "type": 'line',
                 "layout": {
+                    "visibility": visibility
                 },
                 "paint": {
                     "line-color": "#ff0000",
@@ -99,7 +117,8 @@ angular.module('angularApp')
                     "text-padding": 0,
                     "text-optional": true,
                     "text-allow-overlap": false,
-                    "text-ignore-placement": false
+                    "text-ignore-placement": false,
+                    "visibility": visibility
                 },
                 "paint": {
                     "icon-size": 0.5,
@@ -123,7 +142,8 @@ angular.module('angularApp')
                     "text-padding": 0,
                     "text-optional": true,
                     "text-allow-overlap": false,
-                    "text-ignore-placement": false
+                    "text-ignore-placement": false,
+                    "visibility": visibility
                 },
                 "paint": {
                     "icon-size": 0.5,
@@ -145,7 +165,8 @@ angular.module('angularApp')
                     "text-optional": true,
                     "text-allow-overlap": true,
                     "text-ignore-placement": true,
-                    "alwaysVisible": true
+                    "alwaysVisible": true,
+                    "visibility": visibility
                 },
                 "paint": {
                     "icon-size": 0.5,
@@ -171,6 +192,7 @@ angular.module('angularApp')
             "locationAccuracy": {
                 "type": 'fill',
                 "layout": {
+                    "visibility": visibility
                 },
                 "paint": {
                     "fill-outline-color": "#ff0000",
@@ -178,6 +200,16 @@ angular.module('angularApp')
                     "fill-opacity": 0.2
                 }
             },
+            "locationHeading": {
+                "type": 'line',
+                "layout": {
+                    "visibility": visibility
+                },
+                "paint": {
+                    "line-color": "#ff0000",
+                    "line-width": 2
+                }
+            }
         }
 
         var data = "";
