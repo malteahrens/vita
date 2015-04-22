@@ -308,9 +308,12 @@ angular.module('angularApp')
             if(!isNaN(position.coords.heading)) {
                 console.log("heading: "+position.coords.heading);
                 $scope.heading = position.coords.heading;
-                var heading = turf.destination(location2, 1, position.coords.heading, "kilometers");
-                console.log(heading)
-                $scope.setLineData("locationHeading", heading);
+                try {
+                    var heading = turf.destination(location2, 1, position.coords.heading, "kilometers");
+                    $scope.setLineData("locationHeading", heading);
+                } catch(err) {
+                    document.getElementById("features").innerHTML = err.message;
+                }
             }
             if(!isNaN(position.coords.speed)) {
                 $scope.speed = position.coords.speed;
