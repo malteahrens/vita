@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">53.37</p>
+      <p class="stat">52.71</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">648</p>
+      <p class="stat">680</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">74.55</p>
+      <p class="stat">76.13</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">6.77</p>
+      <p class="stat">7.04</p>
     </div>
   </div>
 </div>
@@ -119,6 +119,7 @@
         // lindex is the style index
         $scope.addGeojsonLayer({&#039;name&#039;:&#039;Pasing&#039;});
         $scope.addGeojsonLayer({&#039;name&#039;:&#039;locationAccuracy&#039;});
+        $scope.addGeojsonLayer({&#039;name&#039;:&#039;locationHeading&#039;});
         $scope.addGeojsonLayer({&#039;name&#039;:&#039;location&#039;});
     });
 
@@ -165,11 +166,28 @@
         }
         map.setLayoutProperty(layerId, &#039;visibility&#039;, newLayerVisibility)
     }
-    $scope.addGeojsonLayer = function(layer) {
+    $scope.addGeojsonLayer = function(layer, visibility) {
+        if(visibility === undefined){
+            visibility = true;
+        }
+        var symbolTemplate = {}
+        var lineTemplate = {
+            &quot;type&quot;: &#039;line&#039;,
+            &quot;layout&quot;: {
+                &quot;visibility&quot;: visibility
+            },
+            &quot;paint&quot;: {
+                &quot;line-color&quot;: &quot;#ff0000&quot;,
+                &quot;line-width&quot;: 2
+            }
+        }
+        var fillTemplate = {}
+
         var style = {
             &quot;Pasing&quot;: {
                 &quot;type&quot;: &#039;line&#039;,
                 &quot;layout&quot;: {
+                    &quot;visibility&quot;: visibility
                 },
                 &quot;paint&quot;: {
                     &quot;line-color&quot;: &quot;#ff0000&quot;,
@@ -190,7 +208,8 @@
                     &quot;text-padding&quot;: 0,
                     &quot;text-optional&quot;: true,
                     &quot;text-allow-overlap&quot;: false,
-                    &quot;text-ignore-placement&quot;: false
+                    &quot;text-ignore-placement&quot;: false,
+                    &quot;visibility&quot;: visibility
                 },
                 &quot;paint&quot;: {
                     &quot;icon-size&quot;: 0.5,
@@ -214,7 +233,8 @@
                     &quot;text-padding&quot;: 0,
                     &quot;text-optional&quot;: true,
                     &quot;text-allow-overlap&quot;: false,
-                    &quot;text-ignore-placement&quot;: false
+                    &quot;text-ignore-placement&quot;: false,
+                    &quot;visibility&quot;: visibility
                 },
                 &quot;paint&quot;: {
                     &quot;icon-size&quot;: 0.5,
@@ -236,7 +256,8 @@
                     &quot;text-optional&quot;: true,
                     &quot;text-allow-overlap&quot;: true,
                     &quot;text-ignore-placement&quot;: true,
-                    &quot;alwaysVisible&quot;: true
+                    &quot;alwaysVisible&quot;: true,
+                    &quot;visibility&quot;: visibility
                 },
                 &quot;paint&quot;: {
                     &quot;icon-size&quot;: 0.5,
@@ -262,6 +283,7 @@
             &quot;locationAccuracy&quot;: {
                 &quot;type&quot;: &#039;fill&#039;,
                 &quot;layout&quot;: {
+                    &quot;visibility&quot;: visibility
                 },
                 &quot;paint&quot;: {
                     &quot;fill-outline-color&quot;: &quot;#ff0000&quot;,
@@ -269,6 +291,16 @@
                     &quot;fill-opacity&quot;: 0.2
                 }
             },
+            &quot;locationHeading&quot;: {
+                &quot;type&quot;: &#039;line&#039;,
+                &quot;layout&quot;: {
+                    &quot;visibility&quot;: visibility
+                },
+                &quot;paint&quot;: {
+                    &quot;line-color&quot;: &quot;#ff0000&quot;,
+                    &quot;line-width&quot;: 2
+                }
+            }
         }
 
         var data = &quot;&quot;;
