@@ -320,7 +320,7 @@ angular.module('angularApp')
             if(!isNaN(position.coords.accuracy)) {
                 $scope.accuracy = position.coords.accuracy;
                 try {
-                    var radius = position.coords.accuracy * 0.001
+                    var radius = position.coords.accuracy * 0.01
                     $scope.setBufferData("locationAccuracy", location2, radius);
                 } catch(err) {
                     document.getElementById("features").innerHTML = err.message;
