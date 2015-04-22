@@ -305,12 +305,27 @@ angular.module('angularApp')
             var location1 = [position.coords.latitude, position.coords.longitude];
             var location2 = [position.coords.longitude, position.coords.latitude];
 
+            var point = {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#0f0"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": location2
+                }
+            };
+
             if(!isNaN(position.coords.heading)) {
                 console.log("heading: "+position.coords.heading);
                 $scope.heading = position.coords.heading;
                 try {
-                    var heading = turf.destination(location2, 1, position.coords.heading, "kilometers");
-                    $scope.setLineData("locationHeading", heading);
+                    var headingDirection = turf.destination(point, 0.1, position.coords.heading, "kilometers");
+                    var headingDirectionLine = turf.linestring([
+                        location2,
+                        headingDirection.geometry.coordinates
+                    ]);
+                    $scope.setLineData("locationHeading", headingDirectionLine);
                 } catch(err) {
                     document.getElementById("features").innerHTML = err.message;
                 }
