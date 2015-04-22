@@ -19,7 +19,7 @@ angular.module('angularApp')
         interactive: true
     });
     map.addControl(new mapboxgl.Navigation());
-    map.setPitch(60);
+    //map.setPitch(60);
     //map.collisionDebug = true;
 
     // load default layers
@@ -58,7 +58,6 @@ angular.module('angularApp')
             }
 
             var buffered = turf.buffer(point, radius, 'kilometers')
-            console.log(buffered);
             layer.setData(buffered);
         } else {
             console.log("Couldn't update data: layer not found");
@@ -270,11 +269,9 @@ angular.module('angularApp')
                 $scope.heading = position.coords.heading;
             }
             if(!isNaN(position.coords.speed)) {
-                console.log("speed: "+position.coords.speed);
                 $scope.speed = position.coords.speed;
             }
             if(!isNaN(position.coords.accuracy)) {
-                console.log("accuracy: "+position.coords.accuracy);
                 $scope.accuracy = position.coords.accuracy;
             }
 
