@@ -50,14 +50,7 @@ angular.module('angularApp')
     $scope.setBufferData = function(layerId, data, radius) {
         var layer = map.getSource(layerId);
         if(layer !== undefined) {
-            var point = {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": data
-                }
-            }
-
+            var point = turf.point(data);
             var buffered = turf.buffer(point, radius, 'kilometers')
             layer.setData(buffered);
         } else {
@@ -305,26 +298,12 @@ angular.module('angularApp')
             var location1 = [position.coords.latitude, position.coords.longitude];
             var location2 = [position.coords.longitude, position.coords.latitude];
 
-            var point = {
-                "type": "Feature",
-                "properties": {
-                    "marker-color": "#0f0"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": location2
-                }
-            };
-
             if(!isNaN(position.coords.heading)) {
                 console.log("heading: "+position.coords.heading);
                 $scope.heading = position.coords.heading;
                 try {
                     var headingDirection = turf.destination(point, 0.1, position.coords.heading, "kilometers");
-                    var headingDirectionLine = turf.linestring([
-                        location2,
-                        headingDirection.geometry.coordinates
-                    ]);
+                    var headingDirectionLine = turf.linestring([location2, headingDirection.geometry.coordinates]);
                     $scope.setLineData("locationHeading", headingDirectionLine);
                 } catch(err) {
                     document.getElementById("features").innerHTML = err.message;
@@ -335,11 +314,15 @@ angular.module('angularApp')
             }
             if(!isNaN(position.coords.accuracy)) {
                 $scope.accuracy = position.coords.accuracy;
+                try {
+                    var radius = position.coords.accuracy * 0.001
+                    $scope.setBufferData("locationAccuracy", location2, radius);
+                } catch(err) {
+                    document.getElementById("features").innerHTML = err.message;
+                }
             }
 
             //$scope.setPointData("location", location2)
-            var radius = position.coords.accuracy * 0.001
-            $scope.setBufferData("locationAccuracy", location2, radius);
             $scope.$apply()
             map.easeTo(location1);
         }
