@@ -67,21 +67,7 @@ angular.module('angularApp')
     $scope.setLineData = function(layerId, data) {
         var layer = map.getSource(layerId);
         if(layer !== undefined) {
-            var line = {
-                "type": "Feature",
-                "geometry": {
-                    "type": "LineString",
-                    "coordinates": [
-                        data,
-                        [
-                            27.0703125,
-                            53.5403073915002
-                        ]
-                    ]
-                }
-
-            }
-            layer.setData(line);
+            layer.setData(data);
         } else {
             console.log("Couldn't update data: layer not found");
         }
@@ -322,6 +308,9 @@ angular.module('angularApp')
             if(!isNaN(position.coords.heading)) {
                 console.log("heading: "+position.coords.heading);
                 $scope.heading = position.coords.heading;
+                var heading = turf.destination(location2, 0.01, position.coords.heading, "kilometers");
+                console.log(heading)
+                $scope.setLineData("locationHeading", heading);
             }
             if(!isNaN(position.coords.speed)) {
                 $scope.speed = position.coords.speed;
@@ -331,9 +320,8 @@ angular.module('angularApp')
             }
 
             $scope.setPointData("location", location2)
-            var radius = position.coords.accuracy * 0.001
+            var radius = position.coords.accuracy * 0.01
             $scope.setBufferData("locationAccuracy", location2, radius);
-            $scope.setLineData("locationHeading", location2);
             $scope.$apply()
             map.easeTo(location1);
         }
