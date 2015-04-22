@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">56.75</p>
+      <p class="stat">52.89</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">405</p>
+      <p class="stat">695</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">45.76</p>
+      <p class="stat">79.66</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">3.73</p>
+      <p class="stat">7.35</p>
     </div>
   </div>
 </div>
@@ -391,17 +391,11 @@
 
             if(!isNaN(position.coords.heading)) {
                 console.log(&quot;heading: &quot;+position.coords.heading);
-
+                $scope.heading = position.coords.heading;
                 try {
-                    var headingDirection = position.coords.heading;
-                    if(headingDirection &gt; 180) {
-                        headingDirection = (headingDirection - 180) * -1
-                    }
-                    var currentPoint = turf.point(location2);
-                    var headingTarget = turf.destination(currentPoint, 0.1, headingDirection, &quot;kilometers&quot;);
-                    var headingDirectionLine = turf.linestring([location2, headingTarget]);
+                    var headingDirection = turf.destination(point, 0.1, position.coords.heading, &quot;kilometers&quot;);
+                    var headingDirectionLine = turf.linestring([location2, headingDirection.geometry.coordinates]);
                     $scope.setLineData(&quot;locationHeading&quot;, headingDirectionLine);
-                    $scope.heading = headingDirection;
                 } catch(err) {
                     document.getElementById(&quot;features&quot;).innerHTML = err.message;
                 }
@@ -412,14 +406,16 @@
             if(!isNaN(position.coords.accuracy)) {
                 $scope.accuracy = position.coords.accuracy;
                 try {
-                    var radius = position.coords.accuracy * 0.01
-                    $scope.setBufferData(&quot;locationAccuracy&quot;, location2, radius);
+                    var headingDirection = turf.destination(point, 0.1, position.coords.heading, &quot;kilometers&quot;);
+                    var headingDirectionLine = turf.linestring([location2, headingDirection.geometry.coordinates]);
+                    $scope.setLineData(&quot;locationHeading&quot;, headingDirectionLine);
                 } catch(err) {
                     document.getElementById(&quot;features&quot;).innerHTML = err.message;
                 }
             }
 
             //$scope.setPointData(&quot;location&quot;, location2)
+
             $scope.$apply()
             map.easeTo(location1);
         }
@@ -477,6 +473,23 @@
         //$scope.hexTopology(20, 960, 900, bounds._sw);
     });
 
+   $scope.highlightSource = {}
+   $scope.debugSource = {}
+   $scope.features = {}
+   $scope.highlight = function(features) {
+        if(features.length==1) {
+            $scope.features = features;
+            var jsonHighlight = {
+                &quot;type&quot;: &quot;Feature&quot;,
+                &quot;geometry&quot;: {
+                    &quot;type&quot;: &quot;Polygon&quot;,
+                    &quot;coordinates&quot;: features
+                }
+            }
+            $scope.highlightSource.setData(jsonHighlight);
+        }
+    }
+
     $scope.updateLabels = function() {
         console.log(&quot;update&quot;);
         console.log(map);
@@ -493,6 +506,283 @@
         }
     }
 
+   $scope.highlightPoints = function(features) {
+       var json = {
+           &quot;type&quot;: &quot;FeatureCollection&quot;,
+           &quot;features&quot;: features
+       }
+
+       $scope.pointSource.setData(json);
+   }
+
+    $scope.debug = function(features) {
+        var debug = {
+            &quot;type&quot;: &quot;FeatureCollection&quot;,
+            &quot;features&quot;: [{
+                &quot;type&quot;: &quot;Feature&quot;,
+                &quot;geometry&quot;: {
+                    &quot;type&quot;: &quot;Point&quot;,
+                    &quot;coordinates&quot;: features
+                }
+            }]
+        }
+        $scope.debugSource.setData(debug);
+    }
+
+    $scope.hexTopology = function(radius, width, height, sw) {
+        $scope.username = &quot;started&quot;;
+
+        var test = function(radius, width, height) {
+            //console.log(&quot;radius: &quot;+radius);
+            //console.log(&quot;width: &quot;+width);
+            //console.log(&quot;height: &quot;+height);
+            var dx = radius * 2 * Math.sin(Math.PI / 3),
+                dy = radius * 1.5,
+                m = Math.ceil((height + radius) / dy) + 1,
+                n = Math.ceil(width / dx) + 1,
+                geometries = [],
+                arcs = [];
+
+            for (var j = -1; j &lt;= m; ++j) {
+                for (var i = -1; i &lt;= n; ++i) {
+                    var y = j * 2, x = (i + (j &amp; 1) / 2) * 2;
+                    arcs.push([[x, y - 1], [1, 1]], [[x + 1, y], [0, 1]], [[x + 1, y + 1], [-1, 1]]);
+                }
+            }
+
+            for (var j = 0, q = 3; j &lt; m; ++j, q += 6) {
+                for (var i = 0; i &lt; n; ++i, q += 3) {
+                    geometries.push({
+                        type: &quot;Polygon&quot;,
+                        arcs: [[q, q + 1, q + 2, ~(q + (n + 2 - (j &amp; 1)) * 3), ~(q - 2), ~(q - (n + 2 + (j &amp; 1)) * 3 + 2)]],
+                        fill: Math.random() &gt; i / n * 2
+                    });
+                }
+            }
+
+            //console.log(arcs);
+            //console.log(geometries);
+            console.log(sw.lat);
+            console.log(sw.lng);
+
+            return {
+                transform: {translate: [sw.lng, sw.lat], scale: [0.002, 0.001]},
+                objects: {hexagons: {type: &quot;GeometryCollection&quot;, geometries: geometries}},
+                arcs: arcs
+            };
+        };
+
+        var topo = test(radius, width, height);
+        /*console.log(topo.objects.hexagons.geometries[0].arcs);
+        console.log(topo.arcs[3]);
+        console.log(topo.arcs[4]);
+        console.log(topo.arcs[5]);
+        console.log(topo.arcs[96]);
+        console.log(topo.arcs[1]);
+        console.log(topo.arcs[87]);*/
+        //console.log(JSON.stringify(topo));
+
+        var flipCoordinates = function(flip, gjCoord) {
+            console.log(&quot;flip: &quot;+flip);
+            console.log(&quot;gj: &quot;+gjCoord);
+            for(var i=0;i&lt;flip.length;i++) {
+
+                var coord1 = gjCoord[(flip[i])*2];
+                var coord2 = gjCoord[(flip[i]*2+1)];
+
+                console.log(coord1+&quot; / &quot;+coord2);
+                gjCoord[(flip[i])*2] = [coord1[0]+coord2[0], coord1[1]+coord2[1]] ;
+                gjCoord[(flip[i])*2+1] = [coord2[0]*-1, coord2[1]*-1];
+            }
+
+            return gjCoord;
+        }
+
+        //for(var i=0;i&lt;topo.objects.hexagons.geometries.length;i++){
+        for(i=0;i&lt;1;i++){
+            var geom = topo.objects.hexagons.geometries[i].arcs[0];
+            var gj = [];
+            var flip = [];
+
+            console.log(geom);
+            for(j=0;j&lt;geom.length;j++){
+                var arcIndex = geom[j];
+                //console.log(&quot;Processing &quot;+j+&quot; element...&quot;);
+
+                // A negative arc index indicates that the arc at the ones’ complement of the index
+                // must be reversed to reconstruct the geometry: -1 refers to the reversed first arc,
+                // -2 refers to the reversed second arc, and so on.
+
+                // test if number is negative, if yes multiply by -1 and add one, flip coordinates
+                if (arcIndex &lt; 0) {
+                    // detected negative number and find index
+                    arcIndex = (arcIndex * (-1))-1;
+                    // flip coordinates
+                    //console.log(&quot;found negative number at index &quot;+j+&quot;, &quot;+geom[j]+&quot;, corrected to &quot;+arcIndex+&quot; and flipped&quot;);
+                    flip.push(j);
+                }
+
+                var tjCoord = topo.arcs[arcIndex];
+                gj.push([tjCoord[0][0],tjCoord[0][1]],[tjCoord[1][0],tjCoord[1][1]])
+            }
+
+            console.log(gj);
+            var flipped = flipCoordinates(flip, gj);
+            console.log(flipped);
+            var geojson = { &quot;type&quot;: &quot;FeatureCollection&quot;,
+                &quot;features&quot;: [
+                    { &quot;type&quot;: &quot;Feature&quot;,
+                        &quot;geometry&quot;: {
+                            &quot;type&quot;: &quot;Polygon&quot;,
+                            &quot;coordinates&quot;: [flipped]
+                        },
+                        &quot;properties&quot;: {
+                            &quot;index&quot;: j
+                        }
+                    }
+                ]
+            }
+
+
+            //console.log(JSON.stringify(geojson));
+        }
+
+        // search in array for two entries
+        for(i=0;i&lt;topo.arcs.length;i++){
+            var x1 = topo.arcs[i][0][0];
+            var y1 = topo.arcs[i][0][1];
+            var x2 = topo.arcs[i][1][0];
+            var y2 = topo.arcs[i][1][1];
+            /**
+            console.log(&quot;----&quot;);
+            console.log(&quot;x1: &quot;+x1);
+            console.log(&quot;y1: &quot;+y1);
+            console.log(&quot;----&quot;);
+            console.log(&quot;x2: &quot;+x2);
+            console.log(&quot;y2: &quot;+y2);
+            console.log(&quot;----&quot;);**/
+            if(x1 == 1 &amp;&amp; y1 == -3 &amp;&amp; x2 == -1 &amp;&amp; y2 == 1) {
+                //console.log(&quot;!!! HIT !!! at index &quot;+i)
+            }
+
+            if(x1 == 0 &amp;&amp; y1 == -2 &amp;&amp; x2 == 1 &amp;&amp; y2 == -3) {
+                //console.log(&quot;!!! HIT !!! at index &quot;+i)
+            }
+        }
+
+        var geojson = topojson.feature(topo, topo.objects.hexagons).features
+        //var geojson = topojson.mesh(topo, topo.objects.hexagon);
+        var final = {
+            &quot;type&quot;: &quot;FeatureCollection&quot;,
+            &quot;features&quot;: geojson
+        }
+        $scope.username = final;
+        var source = map.getSource(&quot;grid&quot;);
+        console.log(&quot;source: &quot;+source);
+        if(source != undefined) {
+            map.removeSource(&quot;grid&quot;);
+            map.removeLayer(&quot;poly&quot;);
+        };
+        $scope.highlightSource = map.addSource(&quot;grid&quot;, {
+            &quot;type&quot;: &quot;geojson&quot;,
+            &quot;maxzoom&quot;: 14,
+            &quot;data&quot;: final
+        });
+
+        map.addLayer({
+            &quot;id&quot;: &quot;poly&quot;,
+            &quot;type&quot;: &quot;fill&quot;,
+            &quot;source&quot;: &quot;grid&quot;,
+            &quot;interactive&quot;: true,
+            &quot;paint&quot;: {
+                &quot;fill-color&quot;: &quot;transparent&quot;,
+                &quot;fill-outline-color&quot;: &quot;#ff0000&quot;,
+                &quot;fill-opacity&quot;: 1
+            }
+        }, &quot;poly&quot;);
+
+        $scope.highlightSource = new mapboxgl.GeoJSONSource({
+            data: {
+                &quot;type&quot;: &quot;FeatureCollection&quot;,
+                &quot;features&quot;: {
+                    &quot;type&quot;: &quot;Feature&quot;,
+                    &quot;geometry&quot;: {
+                        &quot;type&quot;: &quot;Polygon&quot;,
+                        &quot;coordinates&quot;: [[[11.44200325012207,48.124994388698326],[11.44399881362915,48.12599700035483],[11.44399881362915,48.126999592440086],[11.44200325012207,48.12800216495421],[11.44000768661499,48.126999592440086],[11.44000768661499,48.12599700035483],[11.44200325012207,48.124994388698326]]]
+                    }
+                }
+            }
+        });
+        map.addSource(&#039;json&#039;, $scope.highlightSource); // add
+
+        map.addLayer({
+            &quot;id&quot;: &quot;json&quot;,
+            &quot;type&quot;: &quot;fill&quot;,
+            &quot;source&quot;: &quot;json&quot;,
+            &quot;interactive&quot;: false,
+            &quot;paint&quot;: {
+                &quot;fill-color&quot;: &quot;#ff0000&quot;,
+                &quot;fill-outline-color&quot;: &quot;#ff0000&quot;,
+                &quot;fill-opacity&quot;: 0.6
+            }
+        });
+
+        $scope.debugSource = new mapboxgl.GeoJSONSource({
+            data: {
+                &quot;type&quot;: &quot;FeatureCollection&quot;,
+                &quot;features&quot;: [{
+                    &quot;type&quot;: &quot;Feature&quot;,
+                    &quot;geometry&quot;: {
+                        &quot;type&quot;: &quot;Point&quot;,
+                        &quot;coordinates&quot;: [11.44200325012207,48.124994388698326]
+                    }
+                }]
+            }
+        });
+        map.addSource(&#039;debug&#039;, $scope.debugSource);
+        map.addLayer({
+            &quot;id&quot;: &quot;debug&quot;,
+            &quot;type&quot;: &quot;symbol&quot;,
+            &quot;source&quot;: &quot;debug&quot;,
+            &quot;layout&quot;: {
+                &quot;icon-image&quot;: &quot;harbor-12&quot;,
+                &quot;text-font&quot;: &quot;Open Sans Semibold, Arial Unicode MS Bold&quot;,
+                &quot;text-offset&quot;: [0, 0.6],
+                &quot;text-anchor&quot;: &quot;top&quot;
+            },
+            &quot;paint&quot;: {
+                &quot;text-size&quot;: 12
+            }
+        });
+
+        $scope.pointSource = new mapboxgl.GeoJSONSource({
+            data: {
+                &quot;type&quot;: &quot;FeatureCollection&quot;,
+                &quot;features&quot;: [{
+                    &quot;type&quot;: &quot;Feature&quot;,
+                    &quot;geometry&quot;: {
+                        &quot;type&quot;: &quot;Point&quot;,
+                        &quot;coordinates&quot;: [11.44200325012207,48.124994388698326]
+                    }
+                }]
+            }
+        });
+        map.addSource(&#039;pointHighlight&#039;, $scope.pointSource);
+        map.addLayer({
+            &quot;id&quot;: &quot;pointLayer&quot;,
+            &quot;type&quot;: &quot;symbol&quot;,
+            &quot;source&quot;: &quot;pointHighlight&quot;,
+            &quot;layout&quot;: {
+                &quot;icon-image&quot;: &quot;harbor-12&quot;,
+                &quot;text-font&quot;: &quot;Open Sans Semibold, Arial Unicode MS Bold&quot;,
+                &quot;text-offset&quot;: [0, 0.6],
+                &quot;text-anchor&quot;: &quot;top&quot;
+            },
+            &quot;paint&quot;: {
+                &quot;text-size&quot;: 12
+            }
+        });
+    }
 }]);</textarea>
   </div>
 </div>
