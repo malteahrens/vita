@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">52.93</p>
+      <p class="stat">52.75</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">695</p>
+      <p class="stat">710</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">79.59</p>
+      <p class="stat">79.26</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">7.23</p>
+      <p class="stat">7.36</p>
     </div>
   </div>
 </div>
@@ -396,12 +396,27 @@
             var location1 = [position.coords.latitude, position.coords.longitude];
             var location2 = [position.coords.longitude, position.coords.latitude];
 
+            var point = {
+                &quot;type&quot;: &quot;Feature&quot;,
+                &quot;properties&quot;: {
+                    &quot;marker-color&quot;: &quot;#0f0&quot;
+                },
+                &quot;geometry&quot;: {
+                    &quot;type&quot;: &quot;Point&quot;,
+                    &quot;coordinates&quot;: location2
+                }
+            };
+
             if(!isNaN(position.coords.heading)) {
                 console.log(&quot;heading: &quot;+position.coords.heading);
                 $scope.heading = position.coords.heading;
                 try {
-                    var heading = turf.destination(location2, 1, position.coords.heading, &quot;kilometers&quot;);
-                    $scope.setLineData(&quot;locationHeading&quot;, heading);
+                    var headingDirection = turf.destination(point, 0.1, position.coords.heading, &quot;kilometers&quot;);
+                    var headingDirectionLine = turf.linestring([
+                        location2,
+                        headingDirection.geometry.coordinates
+                    ]);
+                    $scope.setLineData(&quot;locationHeading&quot;, headingDirectionLine);
                 } catch(err) {
                     document.getElementById(&quot;features&quot;).innerHTML = err.message;
                 }
