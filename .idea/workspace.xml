@@ -41,8 +41,8 @@
       <file leaf-file-name="map.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7148289" vertical-offset="10537" max-vertical-offset="10815">
-              <caret line="709" column="8" selection-start-line="709" selection-start-column="8" selection-end-line="709" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.82889736" vertical-offset="4717" max-vertical-offset="10860">
+              <caret line="329" column="40" selection-start-line="329" selection-start-column="40" selection-end-line="329" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -818,8 +818,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7148289" vertical-offset="10537" max-vertical-offset="10815">
-          <caret line="709" column="8" selection-start-line="709" selection-start-column="8" selection-end-line="709" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.82889736" vertical-offset="4717" max-vertical-offset="10860">
+          <caret line="329" column="40" selection-start-line="329" selection-start-column="40" selection-end-line="329" selection-end-column="40" />
           <folding />
         </state>
       </provider>
