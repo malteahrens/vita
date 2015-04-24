@@ -323,7 +323,7 @@ angular.module('angularApp')
                         var headingDirection = turf.destination(point, 0.1, position.coords.heading, "kilometers");
                         var headingDirectionLine = turf.linestring([
                             location2,
-                            headingDirection.geometry.coordinates
+                           headingDirection.geometry.coordinates
                         ]);
                         $scope.setLineData("locationHeading", headingDirectionLine);
                     } catch(err) {
