@@ -320,14 +320,10 @@ angular.module('angularApp')
                     console.log("heading: "+position.coords.heading);
                     $scope.heading = position.coords.heading;
                     try {
-                        var headingDirection = position.coords.heading;
-                        if(headingDirection > 180) {
-                            headingDirection = (headingDirection - 180) * -1
-                        }
-                        var headingPoint = turf.destination(point, 0.1, headingDirection, "kilometers");
+                        var headingDirection = turf.destination(point, 0.1, position.coords.heading, "kilometers");
                         var headingDirectionLine = turf.linestring([
                             location2,
-                            headingPoint.geometry.coordinates
+                            headingDirection.geometry.coordinates
                         ]);
                         $scope.setLineData("locationHeading", headingDirectionLine);
                     } catch(err) {
