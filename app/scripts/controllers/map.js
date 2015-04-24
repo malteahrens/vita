@@ -320,6 +320,7 @@ angular.module('angularApp')
                     console.log("heading: "+position.coords.heading);
                     $scope.heading = position.coords.heading;
                     try {
+                        
                         var heading = position.coords.heading;
                         if(heading > 180) {
                             heading = (heading - 180) * -1;
