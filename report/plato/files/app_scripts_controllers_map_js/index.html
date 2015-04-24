@@ -414,7 +414,7 @@
                         var headingDirection = turf.destination(point, 0.1, position.coords.heading, &quot;kilometers&quot;);
                         var headingDirectionLine = turf.linestring([
                             location2,
-                            headingDirection.geometry.coordinates
+                           headingDirection.geometry.coordinates
                         ]);
                         $scope.setLineData(&quot;locationHeading&quot;, headingDirectionLine);
                     } catch(err) {
