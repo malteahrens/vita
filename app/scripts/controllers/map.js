@@ -48,20 +48,24 @@ angular.module('angularApp')
             }
         };
         $scope.setBufferData = function(layerId, data, radius) {
-            var layer = map.getSource(layerId);
-            if(layer !== undefined) {
-                var point = {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": data
+            try {
+                var layer = map.getSource(layerId);
+                if (layer !== undefined) {
+                    var point = {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": data
+                        }
                     }
-                }
 
-                var buffered = turf.buffer(point, radius, 'kilometers')
-                layer.setData(buffered);
-            } else {
-                console.log("Couldn't update data: layer not found");
+                    var buffered = turf.buffer(point, radius, 'kilometers')
+                    layer.setData(buffered);
+                } else {
+                    console.log("Couldn't update data: layer not found");
+                }
+            } catch(err) {
+                document.getElementById("features").innerHTML = err.message;
             }
         };
         $scope.setLineData = function(layerId, data) {
@@ -320,7 +324,7 @@ angular.module('angularApp')
                     console.log("heading: "+position.coords.heading);
                     $scope.heading = position.coords.heading;
                     try {
-                        
+
                         var heading = position.coords.heading;
                         if(heading > 180) {
                             heading = (heading - 180) * -1;
