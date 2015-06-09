@@ -7,6 +7,12 @@ angular.module('angularApp')
             $scope.username = "should load grid layer";
         }
 
+        // access the device compass sensor
+        $scope.headingSensor = 0;
+        angular.element($window).bind('orientationchange', function () {
+            $scope.headingSensor = $window.orientation;
+        });
+
         mapboxgl.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
         var map = new mapboxgl.Map({
             container: 'map',
