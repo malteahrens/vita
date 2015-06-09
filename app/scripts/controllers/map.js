@@ -10,7 +10,7 @@ angular.module('angularApp')
         // access the device compass sensor
         $scope.headingSensor = 0;
         angular.element($window).bind('orientationchange', function () {
-            $scope.headingSensor = $window.orientation;
+            $scope.headingSensor = 1;
         });
 
         mapboxgl.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
