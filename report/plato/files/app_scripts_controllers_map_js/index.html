@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">79.02</p>
+      <p class="stat">79.21</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">7.54</p>
+      <p class="stat">7.53</p>
     </div>
   </div>
 </div>
@@ -101,7 +101,7 @@
         // access the device compass sensor
         $scope.headingSensor = 0;
         angular.element($window).bind(&#039;orientationchange&#039;, function () {
-            $scope.headingSensor = $window.orientation;
+            $scope.headingSensor = 1;
         });
 
         mapboxgl.accessToken = &#039;pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q&#039;;
