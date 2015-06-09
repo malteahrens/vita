@@ -1,5 +1,5 @@
 angular.module('angularApp')
-    .controller('MapCtrl', [ '$scope', '$http', function($scope, $http) {
+    .controller('MapCtrl', [ '$scope', '$http', function($scope, $http, $window) {
         $scope.dataPoints = [];
         $scope.map = {};
         $scope.username = 'Press a button...';
@@ -10,7 +10,7 @@ angular.module('angularApp')
         // access the device compass sensor
         $scope.headingSensor = 0;
         angular.element($window).bind('orientationchange', function () {
-            $scope.headingSensor = 1;
+            $scope.headingSensor = $window.orientation;
         });
 
         mapboxgl.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
