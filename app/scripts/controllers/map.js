@@ -1,5 +1,5 @@
 angular.module('angularApp')
-    .controller('MapCtrl', [ '$scope', '$http', function($scope, $http, $window) {
+    .controller('MapCtrl', [ '$scope', '$http', '$window', function($scope, $http, $window) {
         $scope.dataPoints = [];
         $scope.map = {};
         $scope.username = 'Press a button...';
