@@ -37,7 +37,7 @@ before_script:
   - npm install sqlite3
   - npm install node-sqlite3
 # phonegap to produce a native android app
-  - npm install phonegap
+  - npm install -g phonegap
 
 script:
 # this script branches the dist folder to the gh-pages branch
@@ -53,6 +53,8 @@ script:
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_BestLatLon.geojson app/data/PasingWlan_BestLatLon.vrt
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_Centroid.geojson app/data/PasingWlan_Centroid.vrt
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
+
+  - phonegap run android
 
   # Copy dist folder to gh-pages branch
   - ./deploy/scripts/github.sh
