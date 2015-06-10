@@ -336,7 +336,7 @@ angular.module('angularApp')
                         if(heading > 180) {
                             heading = (heading - 180) * -1;
                         }
-                        var headingDirection = turf.destination(point, 0.1, heading, "kilometers");
+                        var headingDirection = turf.destination(point, 0.1, $scope.headingSensor, "kilometers");
                         var headingDirectionLine = turf.linestring([
                             location2,
                            headingDirection.geometry.coordinates
