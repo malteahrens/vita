@@ -16,9 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'angular-vibrator'
   ])
-  .config(function ($routeProvider, $translateProvider) {
+  .config(function ($routeProvider, $translateProvider, vibratorProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -52,4 +53,12 @@ angular
     $translateProvider.preferredLanguage('de_DE');
 	$translateProvider.fallbackLanguage(['de_DE']);
     $translateProvider.useCookieStorage();
+
+    var sequences = {
+        default: 900,
+        twice: [200, 100, 300],
+        long: 2500
+    };
+
+    vibratorProvider.setSequences(sequences);
   });
