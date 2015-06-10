@@ -332,6 +332,7 @@ angular.module('angularApp')
                     $scope.heading = position.coords.heading;
                     try {
 
+
                         // heading direction from sensor
                         var heading = $scope.headingSensor;
                         // heading direction from GPS
