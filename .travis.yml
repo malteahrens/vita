@@ -62,6 +62,7 @@ script:
   - mkdir dist/android
   - pwd
   - phonegap create android
+  - cd android
   - phonegap build android --release
   - cp -R android dist
 
