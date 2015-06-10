@@ -43,7 +43,7 @@ script:
 # this script branches the dist folder to the gh-pages branch
   - node ./deploy/scripts/Geojson2VectorTiles.js
 
-  # Convert wigle wifi sqlite db to different geojson flavours... if the folders do not exist the script fails
+  # Convert wigle wifi sqlite db to different geojson flavours... if the folders do not exist, the script fails
   - mkdir dist/data
   - mkdir dist/data/geojson
   - node ./deploy/scripts/sqlite2geojson.js
@@ -54,7 +54,10 @@ script:
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_Centroid.geojson app/data/PasingWlan_Centroid.vrt
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
 
+  - mkdir dist/android
+  - pwd
   - phonegap create android
+  - cp -R android dist
 
   # Copy dist folder to gh-pages branch
   - ./deploy/scripts/github.sh
