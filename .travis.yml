@@ -37,7 +37,7 @@ before_script:
   - npm install sqlite3
   - npm install node-sqlite3
 # phonegap to produce a native android app
-  - npm install -g phonegap
+  - sudo npm install -g phonegap
 # script to install the Android SDK (it is not possible to use to languages on travis the same time)
 #  - sudo apt-get install openjdk-7-jdk
   - sudo apt-get install -qq expect libstdc++6:i386 lib32z1
@@ -61,8 +61,7 @@ script:
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
 
   # build android apk
-  - phonegap create android
-  - cd android
+  - cd deploy/android
   - phonegap build android --release
 
   # Copy dist folder to gh-pages branch
