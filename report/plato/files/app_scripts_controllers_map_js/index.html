@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">78.98</p>
+      <p class="stat">79.04</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">7.55</p>
+      <p class="stat">7.56</p>
     </div>
   </div>
 </div>
@@ -427,7 +427,7 @@
                         if(heading &gt; 180) {
                             heading = (heading - 180) * -1;
                         }
-                        var headingDirection = turf.destination(point, 0.1, heading, &quot;kilometers&quot;);
+                        var headingDirection = turf.destination(point, 0.1, $scope.headingSensor, &quot;kilometers&quot;);
                         var headingDirectionLine = turf.linestring([
                             location2,
                            headingDirection.geometry.coordinates
