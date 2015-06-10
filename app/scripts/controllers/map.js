@@ -358,7 +358,7 @@ angular.module('angularApp')
                 }
 
                 //$scope.setPointData("location", location2)
-                map.easeTo(location1);
+                map.easeTo({ center: location1, duration: 0 });
                 var radius = position.coords.accuracy * 0.001
                 $scope.setBufferData("locationAccuracy", location2, radius);
                 $scope.$apply()
