@@ -54,7 +54,7 @@ script:
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_Centroid.geojson app/data/PasingWlan_Centroid.vrt
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
 
-  - phonegap run android
+  - phonegap create android
 
   # Copy dist folder to gh-pages branch
   - ./deploy/scripts/github.sh
