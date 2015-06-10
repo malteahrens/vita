@@ -11,7 +11,6 @@ angular.module('angularApp')
         $scope.headingSensor = 0;
         $window.addEventListener('deviceorientation', function(event) {
             $scope.headingSensor = event.alpha;
-            $scope.$apply();
         }, false);
 
         mapboxgl.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
