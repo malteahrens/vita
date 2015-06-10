@@ -337,9 +337,9 @@ angular.module('angularApp')
                         var heading = $scope.headingSensor;
                         // heading direction from GPS
                         //var heading = position.coords.heading;
-                        //if(heading > 180) {
-                        //    heading = (heading - 180) * -1;
-                        //}
+                        if(heading > 180) {
+                            heading = (heading - 180) * -1;
+                        }
                         var headingDirection = turf.destination(point, 0.1, heading, "kilometers");
                         var headingDirectionLine = turf.linestring([
                             location2,
