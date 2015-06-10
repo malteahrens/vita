@@ -54,12 +54,6 @@
             </div>
             <div mouseover="images/grunt.png">
                 <h3>Headline 3</h3>
-                <p ng-controller="VibrationsCtrl">
-                    <input type="text" ng-model="duration">
-                    <button ng-click="vibrate(duration)">
-                        Click me (I'll vibrate for {{duration}} ms)
-                    </button>
-                </p>
             </div>
             <div mouseover="images/bower.png">
                 <h4>Headline 4</h4>
@@ -108,7 +102,6 @@
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
     <script src="bower_components/topojson/topojson.js"></script>
-    <script src="bower_components/angular-vibrator/src/vibrator.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -119,7 +112,6 @@
     <script src="scripts/controllers/lang.js"></script>
     <script src="scripts/directives/mouseover.js"></script>
     <script src="scripts/controllers/map.js"></script>
-    <script src="scripts/controllers/vibration.js"></script>
     <!-- endbuild -->
 
     <link href='scripts/lib/mapbox-gl.css' rel='stylesheet' />
