@@ -61,9 +61,8 @@ script:
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
 
   # build android apk
-  - npm install shelljs
   - cd deploy/android
-  - phonegap local build android --release
+  - phonegap build android --release
 
   # Copy dist folder to gh-pages branch
   - ./deploy/scripts/github.sh
