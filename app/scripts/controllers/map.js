@@ -337,9 +337,9 @@ angular.module('angularApp')
                         var heading = $scope.headingSensor;
                         // heading direction from GPS
                         //var heading = position.coords.heading;
-                        if(heading > 180) {
-                            heading = (heading - 180) * -1;
-                        }
+                        //if(heading > 180) {
+                        //    heading = (heading - 180) * -1;
+                        //}
                         var headingDirection = turf.destination(point, 0.1, heading, "kilometers");
                         var headingDirectionLine = turf.linestring([
                             location2,
@@ -358,10 +358,10 @@ angular.module('angularApp')
                 }
 
                 //$scope.setPointData("location", location2)
+                map.easeTo(location1);
                 var radius = position.coords.accuracy * 0.001
                 $scope.setBufferData("locationAccuracy", location2, radius);
                 $scope.$apply()
-                map.easeTo(location1);
             }
         }
 
