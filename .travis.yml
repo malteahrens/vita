@@ -39,7 +39,7 @@ before_script:
 # phonegap to produce a native android app
   - npm install -g phonegap
 # script to install the Android SDK (it is not possible to use to languages on travis the same time)
-  - sudo apt-get install openjdk-7-jdk
+#  - sudo apt-get install openjdk-7-jdk
   - sudo apt-get install -qq expect libstdc++6:i386 lib32z1
   - export COMPONENTS=build-tools-22.0.1 ,android-22,sysimg-19,extra-android-support
   - curl -L https://raw.github.com/embarkmobile/android-sdk-installer/master/android-sdk-installer | bash /dev/stdin --install=$COMPONENTS
