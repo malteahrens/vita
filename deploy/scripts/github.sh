@@ -9,12 +9,12 @@ git config --global user.name "Your Name"
 repo=https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
 
 # clear and re-create the out directory
-rm -rf release || exit 0;
-mkdir release;
+# rm -rf release || exit 0;
+# mkdir release;
 
 git clone --quiet --branch=mobile repo mobile > /dev/null
 git status
 git checkout mobile
-git add hello
-git commit -m "Deploy to GitHub Pages [ci skip]"
+git add android
+git commit -m "Created phonegap project [ci skip]"
 git push

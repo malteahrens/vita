@@ -23,7 +23,7 @@ before_install:
 
 script:
   - phonegap create hello com.example.hello HelloWorld
-  - cd hello
+  - cd android
   - phonegap platform add android
   #- phonegap build
   - pwd
