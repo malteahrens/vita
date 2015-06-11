@@ -26,15 +26,10 @@ script:
   - cd android
   #- phonegap platform add android
   - phonegap build --release
-  - ls
-  - cd platforms/android
-  - ls
+  - cp platforms/android/build/outputs/apk/*.apk release/
+  - cd ..
 
   # copy apk to release folder
-  - cd ..
-  - cd ..
-  - cd ..
-  - ls
   - sh ./deploy/scripts/github.sh
 
 env:
