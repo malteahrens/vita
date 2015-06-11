@@ -12,7 +12,7 @@ repo=https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
 rm -rf release || exit 0;
 mkdir release;
 
-git remote set-url origin $repo
+git clone --quiet --branch=mobile repo mobile > /dev/null
 git status
 git checkout mobile
 git add hello
