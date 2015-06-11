@@ -25,7 +25,7 @@ script:
   - phonegap create hello com.example.hello HelloWorld
   - cd hello
   - phonegap platform add android
-  - phonegap build
+  #- phonegap build
 
   # copy apk to release folder
   - ./deploy/scripts/github.sh
