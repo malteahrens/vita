@@ -12,9 +12,9 @@ repo=https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
 rm -rf release || exit 0;
 mkdir release;
 
-git remote set-url origin $repo
-git status
-git checkout mobile
-git add android
-git commit -m "Deploy to GitHub Pages [ci skip]"
-git push
+#git remote set-url origin $repo
+#git status
+#git checkout mobile
+#git add android
+#git commit -m "Deploy to GitHub Pages [ci skip]"
+#git push
