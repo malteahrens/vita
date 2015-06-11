@@ -61,9 +61,9 @@ script:
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
 
   # build android apk
-  - echo $NODE_PATH
-  - phonegap create android
-  - cd android
+  - export NODE_PATH=/home/travis/.nvm/v0.10.38/lib/node_modules/
+  - cd deploy/android
+  #- cordova platform add --save android
   - phonegap build android --release
 
   # Copy dist folder to gh-pages branch
