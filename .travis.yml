@@ -29,7 +29,8 @@ script:
   - pwd
 
   # copy apk to release folder
-  - ./deploy/scripts/github.sh
+  - cd ..
+  - sh ./deploy/scripts/github.sh
 
 env:
   global:
