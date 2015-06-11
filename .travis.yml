@@ -65,6 +65,7 @@ script:
   - export NODE_PATH=/home/travis/.nvm/v0.10.38/lib/node_modules/
   - echo $NODE_PATH
   - ls $NODE_PATH
+  - echo $PATH
   - cd deploy/android
   - cordova platform update android
   - phonegap build android --release
