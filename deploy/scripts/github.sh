@@ -14,6 +14,6 @@ mkdir release;
 
 git remote set-url origin $repo
 git status
-git add .
+git add hello
 git commit -m "Deploy to GitHub Pages [ci skip]"
 git push
