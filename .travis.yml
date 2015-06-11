@@ -30,4 +30,7 @@ android:
 
 # install grunt globally
 before_install:
-  - echo "HALLLLOOOOO"
+  - echo "before script"
+
+script:
+  - echo "script"
