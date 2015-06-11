@@ -14,7 +14,7 @@ mkdir release;
 
 git remote set-url origin $repo
 git status
-get checkout mobile
+git checkout mobile
 git add hello
 git commit -m "Deploy to GitHub Pages [ci skip]"
 git push
