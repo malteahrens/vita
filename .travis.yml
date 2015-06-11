@@ -37,7 +37,7 @@ script:
   - phonegap create hello com.example.hello HelloWorld
   - cd hello
   - phonegap platform add android
-  - phonepag build
+  - phonepap build
   - git status
 
 env:
