@@ -12,13 +12,7 @@ repo=https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
 rm -rf release || exit 0;
 mkdir release;
 
-# go to the out directory and create a *new* Git repo
-cd release
-git init
-
-# inside this git repo we'll pretend to be a new user
-git config user.name "Travis CI"
-git config user.email "<you>@<your-email>"
-
+git remote set-url origin $repo
 git add .
 git commit -m "Deploy to GitHub Pages"
+git push
