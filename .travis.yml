@@ -66,6 +66,7 @@ script:
   - echo $NODE_PATH
   - ls $NODE_PATH
   - cd deploy/android
+  - cordova platform update android
   - npm install
   - phonegap build android --release
 
