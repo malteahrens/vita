@@ -27,8 +27,11 @@ script:
   #- phonegap platform add android
   - phonegap build
   - ls
+  - cd platforms
+  - ls
 
   # copy apk to release folder
+  - cd ..
   - cd ..
   - ls
   - sh ./deploy/scripts/github.sh
