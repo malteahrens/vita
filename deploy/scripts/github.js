@@ -8,5 +8,6 @@ default_email=xyz@test.de
 #repository to deploy to. must be readable and writable.
 repo=https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
 
+git remote add origin $repo
 git add .
 git status
