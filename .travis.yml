@@ -22,7 +22,7 @@ before_install:
   - npm install phonegap -g
 
 script:
-  - phonegap create hello com.example.hello HelloWorld
+  - phonegap create android com.example.hello HelloWorld
   - cd android
   - phonegap platform add android
   #- phonegap build
