@@ -37,9 +37,10 @@ script:
   - phonegap create hello com.example.hello HelloWorld
   - cd hello
   - phonegap platform add android
-  - phonepap build
-  - git add .
-  - git status
+  - phonegap build
+
+  # Copy dist folder to gh-pages branch
+  - ./deploy/scripts/github.sh
 
 env:
   global:
