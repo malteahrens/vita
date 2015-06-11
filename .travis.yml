@@ -67,7 +67,6 @@ script:
   - ls $NODE_PATH
   - echo $PATH
   - cd deploy/android
-  - cordova platform update android
   - phonegap build android --release
 
   # Copy dist folder to gh-pages branch
