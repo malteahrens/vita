@@ -12,8 +12,8 @@ repo=https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
 rm -rf release || exit 0;
 mkdir release;
 
-git status
 git remote set-url origin $repo
+git status
 git add .
-git commit -m "Deploy to GitHub Pages"
+git commit -m "Deploy to GitHub Pages [ci skip]"
 git push
