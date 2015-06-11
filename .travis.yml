@@ -63,6 +63,7 @@ script:
 
   # build android apk
   - export NODE_PATH=/home/travis/.nvm/v0.10.38/lib/node_modules/
+  - echo $NODE_PATH
   - cd deploy/android
   - cordova platform remove android
   - cordova platform add --save android
