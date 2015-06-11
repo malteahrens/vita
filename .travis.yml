@@ -27,10 +27,12 @@ script:
   #- phonegap platform add android
   - phonegap build --release
   - ls
-  - cd platforms
+  - cd platforms/android/bin
   - ls
 
   # copy apk to release folder
+  - cd ..
+  - cd ..
   - cd ..
   - cd ..
   - ls
