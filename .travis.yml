@@ -65,6 +65,7 @@ script:
   - export NODE_PATH=/home/travis/.nvm/v0.10.38/lib/node_modules/
   - echo $NODE_PATH
   - cd deploy/android
+  - npm install
   - phonegap build android --release
 
   # Copy dist folder to gh-pages branch
