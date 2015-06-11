@@ -25,7 +25,7 @@ script:
   #- phonegap create android com.example.hello HelloWorld
   - cd android
   #- phonegap platform add android
-  - phonegap build --save
+  - phonegap build --release
   - ls
   - cd platforms
   - ls
