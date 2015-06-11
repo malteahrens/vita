@@ -38,6 +38,7 @@ script:
   - cd hello
   - phonegap platform add android
   - phonepap build
+  - git add .
   - git status
 
 env:
