@@ -30,6 +30,7 @@ script:
 
   # copy apk to release folder
   - cd ..
+  - ls
   - sh ./deploy/scripts/github.sh
 
 env:
