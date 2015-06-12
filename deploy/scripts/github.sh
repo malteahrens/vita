@@ -16,5 +16,5 @@ git remote set-url origin $repo
 git status
 git checkout mobile
 git add release
-git commit -m "Android release for SDK 21 [ci skip]"
+git commit -m "Android release for SDK 22 [ci skip]"
 git push
