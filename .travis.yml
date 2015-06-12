@@ -22,9 +22,9 @@ before_install:
   - npm install phonegap -g
 
 script:
-  #- phonegap create android com.example.hello HelloWorld
-  - cd android
-  #- phonegap platform add android
+  - phonegap create android com.example.mapdis MapDis
+  - cd MapDis
+  - phonegap platform add android
   - phonegap build --release
   - '/bin/cp -rf platforms/android/build/outputs/apk/*.apk ../release'
   - cd ..
