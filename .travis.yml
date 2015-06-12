@@ -25,7 +25,7 @@ script:
   #- phonegap create mapdis com.example.mapdis MapDis
   - cd mapdis
   #- phonegap platform add android
-  - phonegap build --release
+  - phonegap build
   - '/bin/cp -rf platforms/android/build/outputs/apk/*.apk ../release'
   - cd ..
 
