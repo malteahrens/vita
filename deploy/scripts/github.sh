@@ -15,6 +15,6 @@ repo=https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
 git remote set-url origin $repo
 git status
 git checkout mobile
-git add mapdis
+git add release
 git commit -m "Android release for SDK 21 [ci skip]"
 git push
