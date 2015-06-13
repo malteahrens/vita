@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "0.10"
+
+branches:
+  only:
+  - gh-pages
+
+# install grunt globally
+before_install:
+  - npm install -g npm@2
+
+# install dev dependencies
+install:
+  - npm install
+
+before_script:
+  - echo "Hallo from gh-pages"
+
+script:
+  - echo "should push the branch to mobile branch www folder..."
+
+env:
+  global:
+    # this is for Travis to be able to push to github to assemble gh-branch
+    - secure: "P0SFVXYMJhNb3dX/Hx4rxjL/toViP0Vo0yXbMK/vwOsSrixkU84ltMGykBYTUztdAFJvsO0xrhKsdPbBmdjEF48emrmoymknxKYPIJ6NL1N6fy0EUoE6o7vBX+agthD/uhSNCJgXRK+giqxP5Htz3BkrU9VgdFdVrSqU9bsm4Bc="
