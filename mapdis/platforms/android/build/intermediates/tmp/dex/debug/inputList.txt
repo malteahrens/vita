@@ -1,2 +1,0 @@
-/Users/crunsh/Documents/Bewerbung/Referenzen/vita/vita/mapdis/platforms/android/build/intermediates/classes/debug
-/Users/crunsh/Documents/Bewerbung/Referenzen/vita/vita/mapdis/platforms/android/build/intermediates/pre-dexed/debug/classes-07ba54c047ba40f28b37cfae5ece9305ed872006.jar
