@@ -51,8 +51,10 @@ script:
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_Centroid.geojson app/data/PasingWlan_Centroid.vrt
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
 
-  # Copy dist folder to gh-pages branch
+  # copy dist folder to gh-pages branch
   - ./deploy/scripts/github.sh
+
+  # copy gh-pages branch to phonegap www folder in mobile branch which will trigger apk generation
   - git clone --depth=50 --branch=mobile git://github.com/malteahrens/vita.git
   - cd vita
   - git show-ref
