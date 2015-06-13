@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/crunsh/Documents/Bewerbung/Referenzen/vita/vita/mapdis/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01a32c50de68bf4c787518cb08af9cfdfe299842">
+        <dex dex="/Users/crunsh/Documents/Bewerbung/Referenzen/vita/vita/mapdis/platforms/android/build/intermediates/pre-dexed/debug/classes-07ba54c047ba40f28b37cfae5ece9305ed872006.jar" />
+    </item>
+
+</items>

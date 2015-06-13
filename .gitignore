@@ -1,9 +1,3 @@
 .idea/libraries/vita_node_modules.xml
 .idea/scopes/scope_settings.xml
 .idea/workspace.xml
-mapdis/platforms/android/.gradle/*
-mapdis/platforms/android/*
-mapdis/www/*
-mapdis/platforms/android/**
-mapdis/platforms/android/assets/*
-mapdis/www_backup/*
