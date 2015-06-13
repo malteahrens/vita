@@ -59,6 +59,7 @@ script:
 
   # Copy dist folder to gh-pages branch
   - ./deploy/scripts/github.sh
+  - git clone --depth=50 --branch=mobile git://github.com/malteahrens/vita.git
   - git show-ref
   - git checkout mobile
   - "rm -R mapdis/www"
