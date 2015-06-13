@@ -55,7 +55,7 @@ script:
   - ./deploy/scripts/github.sh
 
   # copy gh-pages branch to phonegap www folder in mobile branch which will trigger apk generation
-  - git clone --depth=50 --branch=mobile git://github.com/malteahrens/vita.git
+  - git clone --depth=50 --branch=mobile https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
   - cd vita
   - git show-ref
   - git checkout mobile
