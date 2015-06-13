@@ -35,9 +35,6 @@ before_script:
 # sqlite
   - npm install sqlite3
   - npm install node-sqlite3
-# phonegap to produce a native android app
-  - npm install -g cordova
-  - npm install -g phonegap
 # script to install the Android SDK (it is not possible to use to languages on travis the same time)
 #  - sudo apt-get install openjdk-7-jdk
   - sudo apt-get install -qq expect libstdc++6:i386 lib32z1
@@ -59,14 +56,6 @@ script:
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_BestLatLon.geojson app/data/PasingWlan_BestLatLon.vrt
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_Centroid.geojson app/data/PasingWlan_Centroid.vrt
   #- ogr2ogr -f 'GEOJSON' dist/data/geojson/PasingWlan_PasingWlan_DifVector.geojson app/data/PasingWlan_DifVector.vrt
-
-  # build android apk
-  - export NODE_PATH=/home/travis/.nvm/v0.10.38/lib/node_modules/
-  - echo $NODE_PATH
-  - ls $NODE_PATH
-  - echo $PATH
-  - cd deploy/android
-  - phonegap build android --release
 
   # Copy dist folder to gh-pages branch
   - ./deploy/scripts/github.sh
