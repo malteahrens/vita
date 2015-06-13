@@ -35,12 +35,6 @@ before_script:
 # sqlite
   - npm install sqlite3
   - npm install node-sqlite3
-# script to install the Android SDK (it is not possible to use to languages on travis the same time)
-#  - sudo apt-get install openjdk-7-jdk
-  - sudo apt-get install -qq expect libstdc++6:i386 lib32z1
-  - export COMPONENTS=build-tools-22.0.1,android-22,sysimg-22,extra-android-support
-  - curl -L https://raw.github.com/embarkmobile/android-sdk-installer/master/android-sdk-installer | bash /dev/stdin --install=$COMPONENTS
-  - source ~/.android-sdk-installer/env
 
 script:
 # this script branches the dist folder to the gh-pages branch
@@ -65,6 +59,8 @@ script:
   - git checkout mobile
   - "rm -R mapdis/www"
   - "git clone https://github.com/malteahrens/vita.git --branch gh-pages --single-branch mapdis/www"
+  - git add .
+  - git push
   
 env:
   global:
