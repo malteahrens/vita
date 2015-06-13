@@ -61,8 +61,8 @@ script:
   - git checkout mobile
   - "rm -R mapdis/www"
   - "git clone https://github.com/malteahrens/vita.git --branch gh-pages --single-branch mapdis/www"
-  - git add --ignore-removal .
-  - git config --global push.default simple
+  - git add .
+  - git commit -m "Android App"
   - git push
   
 env:
