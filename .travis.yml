@@ -62,7 +62,10 @@ script:
   - "rm -R mapdis/www"
   - "git clone https://github.com/malteahrens/vita.git --branch gh-pages --single-branch mapdis/www"
   - git add .
+  - git config user.name blibla
+  - git config user.email blub@github.com
   - git commit -m "Android App"
+  - git config --global push.default simple
   - git push
   
 env:
