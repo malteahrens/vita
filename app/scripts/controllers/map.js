@@ -7,11 +7,10 @@ angular.module('angularApp')
             $scope.username = "should load grid layer";
         }
 
-        document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
             alert("device is ready...");
         }
-
+        document.addEventListener("deviceready", onDeviceReady, false);
 
         // access the device compass sensor
         $scope.headingSensor = 0;
