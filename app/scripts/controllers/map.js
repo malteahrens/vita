@@ -11,6 +11,7 @@ angular.module('angularApp')
         $scope.headingSensor = 0;
         $window.addEventListener('deviceorientation', function(event) {
             $scope.headingSensor = event.alpha;
+            alert("Device orientation");
             $scope.$apply();
         }, false);
 
