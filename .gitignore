@@ -3,6 +3,5 @@ node_modules/*
 mapdis/platforms/android/.gradle/*
 mapdis/platforms/android/assets/www/*
 mapdis/platforms/android/CordovaLib/*
-mapdis/www/*
 bower_components/*
 mapdis/plugins/*
