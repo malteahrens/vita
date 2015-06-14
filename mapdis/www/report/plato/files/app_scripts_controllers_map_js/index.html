@@ -48,7 +48,7 @@
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">743</p>
+      <p class="stat">742</p>
     </div>
   </div>
   <div class="row historical">
@@ -99,11 +99,10 @@
         }
 
         // this is for phonegap
-        document.addEventListener(&quot;deviceready&quot;, onDeviceReady, false);
         function onDeviceReady() {
             alert(&quot;running within phongap&quot;);
-        }
-
+        };
+        document.addEventListener(&quot;deviceready&quot;, onDeviceReady, false);
 
         // access the device compass sensor
         $scope.headingSensor = 0;
