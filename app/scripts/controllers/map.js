@@ -9,10 +9,6 @@ angular.module('angularApp')
 
         // access the device compass sensor
         $scope.headingSensor = 0;
-        var yourCallbackFunction = function() {
-            alert("device ready...");
-        };
-        document.addEventListener("deviceready", yourCallbackFunction, false);
 
         $window.addEventListener('deviceorientation', function(event) {
             $scope.headingSensor = event.alpha;
