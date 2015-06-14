@@ -5,3 +5,4 @@ mapdis/platforms/android/assets/www/*
 mapdis/platforms/android/CordovaLib/*
 bower_components/*
 mapdis/plugins/*
+.tmp/*
