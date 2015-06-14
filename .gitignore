@@ -1,2 +1,5 @@
 .idea/*
 node_modules/*
+mapdis/platforms/android/.gradle/*
+mapdis/platforms/android/assets/www/*
+mapdis/platforms/android/CordovaLib/*
