@@ -7,12 +7,6 @@ angular.module('angularApp')
             $scope.username = "should load grid layer";
         }
 
-        // this is for phonegap
-        function onDeviceReady() {
-            alert("running within phongap");
-        };
-        document.addEventListener("deviceready", onDeviceReady, false);
-
         // access the device compass sensor
         $scope.headingSensor = 0;
         if (window.DeviceOrientationEvent) {
