@@ -3,7 +3,7 @@
 describe('Controller: LangCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('angularApp'));
+  beforeEach(module('angularApp', ['angularApp.services.Geolocation']));
 
   var LangCtrl,
     scope;
