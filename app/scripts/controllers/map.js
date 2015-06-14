@@ -1,4 +1,4 @@
-angular.module('angularApp', ['angularApp.services.Geolocation'])
+angular.module('angularApp')
     .controller('MapCtrl', [ '$scope', '$http', '$window', function($scope, $http, $window) {
         $scope.dataPoints = [];
         $scope.map = {};
