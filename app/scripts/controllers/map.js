@@ -8,11 +8,10 @@ angular.module('angularApp')
         }
 
         // this is for phonegap
-        document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
             alert("running within phongap");
-        }
-
+        };
+        document.addEventListener("deviceready", onDeviceReady, false);
 
         // access the device compass sensor
         $scope.headingSensor = 0;
