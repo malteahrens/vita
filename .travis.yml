@@ -27,6 +27,7 @@ script:
   #- phonegap platform add android
   - phonegap plugin add cordova-plugin-device-orientation
   - phonegap plugin add cordova-plugin-network-information
+  - phonegap plugin add cordova-plugin-geolocation
   - phonegap build
   - '/bin/cp -rf platforms/android/build/outputs/apk/*.apk ../release'
   - cd ..
