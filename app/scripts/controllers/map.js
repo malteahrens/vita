@@ -9,11 +9,16 @@ angular.module('angularApp')
 
         // access the device compass sensor
         $scope.headingSensor = 0;
-        $window.addEventListener('deviceorientation', function(event) {
-            $scope.headingSensor = event.alpha;
-            alert("Device orientation");
-            $scope.$apply();
-        }, false);
+        if (window.DeviceOrientationEvent) {
+            $window.addEventListener('deviceorientation', function(event) {
+                $scope.headingSensor = event.alpha;
+                alert("Device orientation");
+                $scope.$apply();
+            }, false);
+        } else {
+            alert("no device orientation supported...");
+        }
+
 
         mapboxgl.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
         var map = new mapboxgl.Map({
