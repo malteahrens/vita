@@ -1,5 +1,5 @@
 angular.module('angularApp')
-    .controller('MapCtrl', [ '$scope', '$http', '$window', '$document', function($scope, $http, $window) {
+    .controller('MapCtrl', [ '$scope', '$http', '$window', 'angularApp.services.Geolocation', function($scope, $http, $window) {
         $scope.dataPoints = [];
         $scope.map = {};
         $scope.username = 'Press a button...';
