@@ -7,10 +7,6 @@ angular.module('angularApp')
             $scope.username = "should load grid layer";
         }
 
-        $document.addEventListener("deviceready", function() {
-            alert("ready");
-        })
-
         // access the device compass sensor
         $scope.headingSensor = 0;
         if (window.DeviceOrientationEvent) {

@@ -61,4 +61,9 @@ angular
     };
 
     vibratorProvider.setSequences(sequences);
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        alert("ready");
+    }
   });
