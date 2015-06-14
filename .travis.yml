@@ -67,7 +67,7 @@ script:
   - git commit -m "Android App"
   - git config --global push.default simple
   - git push
-  
+
 env:
   global:
     # this is for Travis to be able to push to github to assemble gh-branch
