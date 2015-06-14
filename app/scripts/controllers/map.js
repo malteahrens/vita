@@ -9,7 +9,7 @@ angular.module('angularApp')
 
         $document.addEventListener("deviceready", function() {
             alert("ready");
-        }
+        })
 
         // access the device compass sensor
         $scope.headingSensor = 0;
