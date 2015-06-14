@@ -26,6 +26,8 @@ script:
   - cd mapdis
   #- phonegap platform add android
   - phonegap plugin add org.apache.cordova.geolocation
+  - phonegap plugin add cordova-plugin-device-orientation
+  - phonegap plugin add cordova-plugin-network-information
   - phonegap build
   - '/bin/cp -rf platforms/android/build/outputs/apk/*.apk ../release'
   - cd ..
