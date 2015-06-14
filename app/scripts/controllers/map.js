@@ -1,5 +1,5 @@
 angular.module('angularApp')
-    .controller('MapCtrl', [ '$scope', '$http', '$window', function($scope, $http, $window) {
+    .controller('MapCtrl', [ '$scope', '$http', '$window', '$document', function($scope, $http, $window, $document) {
         $scope.dataPoints = [];
         $scope.map = {};
         $scope.username = 'Press a button...';
@@ -7,7 +7,7 @@ angular.module('angularApp')
             $scope.username = "should load grid layer";
         }
 
-        document.addEventListener("deviceready", function() {
+        $document.addEventListener("deviceready", function() {
             alert("ready");
         }
 
