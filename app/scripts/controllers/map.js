@@ -23,7 +23,7 @@ angular.module('angularApp')
             minZoom: 9,
             maxZoom: 20,
             hash: true,
-            interactive: true
+            interactive: false
         });
         map.addControl(new mapboxgl.Navigation());
         //map.setPitch(60);
