@@ -25,6 +25,7 @@ script:
   #- phonegap create mapdis com.example.mapdis MapDis
   - cd mapdis
   #- phonegap platform add android
+  - phonegap plugin add cordova-plugin-vibration
   #- phonegap plugin add cordova-plugin-device-orientation
   #- phonegap plugin add cordova-plugin-network-information
   #- phonegap plugin add cordova-plugin-geolocation
