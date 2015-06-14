@@ -9,11 +9,16 @@ angular.module('angularApp')
 
         // access the device compass sensor
         $scope.headingSensor = 0;
+        if (window.DeviceOrientationEvent) {
+            $window.addEventListener('deviceorientation', function(event) {
+                $scope.headingSensor = event.alpha;
+                alert("Device orientation");
+                $scope.$apply();
+            }, false);
+        } else {
+            alert("no device orientation supported...");
+        }
 
-        $window.addEventListener('deviceorientation', function(event) {
-            $scope.headingSensor = event.alpha;
-            $scope.$apply();
-        }, false);
 
         mapboxgl.accessToken = 'pk.eyJ1IjoiLS1tYWx0ZWFocmVucyIsImEiOiJGU21QX2VVIn0.GVZ36UsnwYc_JfiQ61lz7Q';
         var map = new mapboxgl.Map({
@@ -345,7 +350,7 @@ angular.module('angularApp')
                         var headingDirection = turf.destination(point, 0.1, heading, "kilometers");
                         var headingDirectionLine = turf.linestring([
                             location2,
-                           headingDirection.geometry.coordinates
+                            headingDirection.geometry.coordinates
                         ]);
                         $scope.setLineData("locationHeading", headingDirectionLine);
                     } catch(err) {
