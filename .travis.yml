@@ -26,6 +26,7 @@ script:
   - cd mapdis
   #- phonegap platform add android
   - phonegap plugin remove org.apache.cordova.geolocation
+  - phonegap plugin add org.apache.cordova.geolocation
   - phonegap plugin add cordova-plugin-geolocation
   - phonegap plugin add cordova-plugin-device-orientation
   - phonegap plugin add cordova-plugin-network-information
