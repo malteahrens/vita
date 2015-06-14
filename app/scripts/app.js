@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',
-    'angular-vibrator'
+    'angular-vibrator',
+    'angularApp.services.Geolocation'
   ])
   .config(function ($routeProvider, $translateProvider, vibratorProvider) {
     $routeProvider
@@ -61,9 +62,4 @@ angular
     };
 
     vibratorProvider.setSequences(sequences);
-
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        alert("ready");
-    }
   });
