@@ -89,8 +89,8 @@
 
 <div class="container">
   <div class="row">
-    <textarea id="file-source" class="col-md-12">angular.module(&#039;angularApp.services.Geolocation&#039;, [&#039;angularApp.services.Cordova&#039;])
-    .factory(&#039;getCurrentPosition&#039;, function(deviceReady, $document, $window, $rootScope){
+    <textarea id="file-source" class="col-md-12">angular.module(&#039;angularApp&#039;, [&#039;angularApp.services.Cordova&#039;])
+    .factory(&#039;Geolocation&#039;, function(deviceReady, $document, $window, $rootScope){
         return function(done) {
             deviceReady(function(){
                 navigator.geolocation.getCurrentPosition(function(position){
