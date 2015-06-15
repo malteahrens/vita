@@ -1,5 +1,5 @@
 angular.module('angularApp')
-    .controller('MapCtrl', [ '$scope', '$http', '$window', 'WeatherApp.services.Geolocation', function($scope, $http, $window) {
+    .controller('MapCtrl', [ '$scope', '$http', '$window', 'Geolocation', function($scope, $http, $window, Geolocation) {
         $scope.dataPoints = [];
         $scope.map = {};
         $scope.username = 'Press a button...';
