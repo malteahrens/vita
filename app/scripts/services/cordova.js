@@ -3,7 +3,7 @@ angular.module('angularApp.services.Cordova', [])
         return function(done) {
             if (typeof window.cordova === 'object') {
                 document.addEventListener('deviceready', function () {
-                    alert("device ready");
+                    alert("device ready")
                     done();
                 }, false);
             } else {
