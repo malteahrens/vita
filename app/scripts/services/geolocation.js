@@ -1,5 +1,7 @@
-angular.module('angularApp', ['angularApp.services.Cordova'])
-    .factory('Geolocation', function(deviceReady, $document, $window, $rootScope){
+angular.module('WeatherApp.services.Geolocation', [
+    'WeatherApp.services.Cordova'
+])
+    .factory('getCurrentPosition', function(deviceReady, $document, $window, $rootScope){
         return function(done) {
             deviceReady(function(){
                 navigator.geolocation.getCurrentPosition(function(position){
