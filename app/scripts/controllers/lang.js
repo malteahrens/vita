@@ -16,4 +16,10 @@ angular.module('angularApp')
                 console.log('Could not find key.'+key);
             });
         };
+
+        $scope.awesomeThings = [
+            'HTML5 Boilerplate',
+            'AngularJS',
+            'Karma'
+        ];
     });
