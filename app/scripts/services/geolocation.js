@@ -1,4 +1,4 @@
-angular.module('angularApp.services.Geolocation', ['angularApp.services.Cordova'])
+angular.module('angularApp', ['angularApp.services.Cordova'])
     .factory('Geolocation', function(deviceReady, $document, $window, $rootScope){
         return function(done) {
             deviceReady(function(){
