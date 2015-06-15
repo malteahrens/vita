@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',
-    'angular-vibrator'
+    'angular-vibrator',
+    'Geolocation'
   ])
   .config(function ($routeProvider, $translateProvider, vibratorProvider) {
     $routeProvider
