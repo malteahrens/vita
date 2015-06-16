@@ -7,6 +7,7 @@ angular.module('WeatherApp.services.Cordova', [])
                     done();
                 }, false);
             } else {
+                console.log("running in browser...")
                 done();
             }
         };
