@@ -18,7 +18,7 @@ angular
     'ngTouch',
     'pascalprecht.translate',
     'angular-vibrator',
-    'WeatherApp.services.Geolocation'
+    'geolocation'
   ])
   .config(function ($routeProvider, $translateProvider, vibratorProvider) {
     $routeProvider

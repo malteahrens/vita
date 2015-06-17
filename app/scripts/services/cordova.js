@@ -1,4 +1,4 @@
-angular.module('WeatherApp.services.Cordova', [])
+angular.module('cordova', [])
 
     .factory('deviceReady', function(){
         return function(done) {
