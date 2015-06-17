@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('cordova', [])
 
     .factory('deviceReady', function(){
