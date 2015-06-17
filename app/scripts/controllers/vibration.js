@@ -13,5 +13,5 @@ angular.module('angularApp')
     $scope.vibrate = function(duration) {
         vibrator.vibrate(duration);
     };
-    setInterval($scope.vibrate, 5000)
+    //setInterval($scope.vibrate, 5000)
 }]);
