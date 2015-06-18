@@ -6,6 +6,7 @@ angular.module('angularApp')
         $scope.grid = function() {
             $scope.username = "should load grid layer";
         }
+        getCurrentPosition();
 
         // access the device compass sensor
         $scope.headingSensor = 0;

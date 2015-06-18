@@ -2,7 +2,9 @@ angular.module('geolocation', [
     'cordova'
 ])
     .factory('getCurrentPosition', function(deviceReady, $document, $window, $rootScope){
+        console.log("device ready...");
         return function(done) {
+            console.log("function call");
             deviceReady(function(){
                 navigator.geolocation.getCurrentPosition(function(position){
                     $rootScope.$apply(function(){
