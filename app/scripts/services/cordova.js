@@ -4,9 +4,9 @@ angular.module('cordova', [])
         console.log("factory loaded");
         return function(done) {
             console.log("inside factory");
-            if (typeof window.cordova === 'object') {
-                alert("running inside phonegap");
+            if (typeof window.PhoneGap === 'object') {
                 document.addEventListener('deviceready', function () {
+                    alert("running inside phonegap");
                     done();
                 }, false);
             } else {
