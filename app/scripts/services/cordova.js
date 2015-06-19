@@ -5,7 +5,7 @@ angular.module('cordova', [])
         return function(done) {
             console.log("inside factory");
             var app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
-            if ( app ) {
+            if ( app ) { 
                 document.addEventListener('deviceready', function () {
                     alert("running inside phonegap");
                     done();
