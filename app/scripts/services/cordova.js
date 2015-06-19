@@ -5,9 +5,10 @@ angular.module('cordova', [])
         return function(done) {
             console.log("inside factory");
             var app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
-            if ( app ) { 
+            if ( app ) {
+                alert("running inside phonegap");
                 document.addEventListener('deviceready', function () {
-                    alert("running inside phonegap");
+
                     done();
                 }, false);
             } else {
