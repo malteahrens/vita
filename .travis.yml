@@ -62,7 +62,7 @@ script:
   - "rm -R mapdis/www"
   - "git clone https://github.com/malteahrens/vita.git --branch gh-pages --single-branch mapdis/www"
   - ls mapdis/www
-  - git add m.
+  - "git add --all"
   - git status --ignored
   - git status
   - git config user.name blibla
