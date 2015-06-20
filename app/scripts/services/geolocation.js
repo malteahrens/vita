@@ -7,10 +7,12 @@ geolocationModule.factory('getCurrentPosition', function(deviceReady, $document,
             deviceReady(function(){
                 navigator.geolocation.getCurrentPosition(function(position){
                     $rootScope.$apply(function(){
+                        alert("oh hell yeaaah");
                         done(position);
                     });
                 }, function(error){
                     $rootScope.$apply(function(){
+                        alert("got error during locating")
                         throw new Error('Unable to retreive position');
                     });
                 });
