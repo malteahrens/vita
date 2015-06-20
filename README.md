@@ -8,3 +8,4 @@ The website will run with a browser and as a native smartphone app. The differen
 ## Cordova Plugins
 * cordova-plugin-background-mode
 * cordova-plugin-background-geolocation
+ 
