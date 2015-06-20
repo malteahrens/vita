@@ -9,7 +9,7 @@ cordovaModule.factory('deviceReady', function(){
            //alert("running inside phonegap");
             done();
         } else {
-            //alert("running in browser...")
+            // alert("running in browser...")
             done();
         }
     };
