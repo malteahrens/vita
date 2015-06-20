@@ -6,10 +6,8 @@
  * @description
  * If there is a value attached to the directive this will be the id for the mouseover action, otherwise it will try to read the id from the translation directive (if present)
  */
-angular.module('geolocation', [
-    'cordova'
-])
-    .factory('getCurrentPosition', function(deviceReady, $document, $window, $rootScope){
+var geolocationModule = angular.module('geolocation', ['cordova']);
+geolocationModule.factory('getCurrentPosition', function(deviceReady, $document, $window, $rootScope){
         console.log("device ready...");
         return function(done) {
             console.log("function call");

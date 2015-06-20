@@ -6,8 +6,8 @@
  * @description
  * If there is a value attached to the directive this will be the id for the mouseover action, otherwise it will try to read the id from the translation directive (if present)
  */
-angular.module('cordova', [])
-.factory('deviceReady', function(){
+var cordovaModule = angular.module('cordova', []);
+cordovaModule.factory('deviceReady', function(){
     console.log("factory loaded");
     return function(done) {
         console.log("inside factory");
