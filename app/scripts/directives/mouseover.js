@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * @ngdoc directive
  * @name angularApp.directive:mouseover

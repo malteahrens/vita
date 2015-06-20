@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var cordovaModule = angular.module('cordova', []);
 cordovaModule.factory('deviceReady', function(){
     console.log("factory loaded");

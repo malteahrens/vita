@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var geolocationModule = angular.module('geolocation', ['cordova']);
 geolocationModule.factory('getCurrentPosition', function(deviceReady, $document, $window, $rootScope){
         console.log("device ready...");
