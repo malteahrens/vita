@@ -21,18 +21,6 @@ angular
     'geolocation'
   ])
   .config(function ($routeProvider, $translateProvider, vibratorProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
 
     $translateProvider.translations('de_DE', {
         APP_HEADLINE:  'Bewerbung',
