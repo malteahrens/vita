@@ -10,7 +10,7 @@
 angular.module('angularApp')
     .controller('CordovaCtrl', function ($scope, $cordovaDevice) {
         console.log("controller loaded...");
-        alert("device");
+        console.log("device");
         var device = $cordovaDevice.getDevice();
-        alert(device);
+        console.log(device);
     });
