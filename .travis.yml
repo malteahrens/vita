@@ -60,9 +60,7 @@ script:
   - cd vita
   - git show-ref
   - git checkout mobile
-  - ls mapdis/www
   - "rm -R mapdis/www"
-  - mkdir mapdis/www
   - "git clone https://github.com/malteahrens/vita.git --branch gh-pages --single-branch mapdis/www"
   - ls mapdis/www
   - pwd
