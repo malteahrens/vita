@@ -60,7 +60,7 @@ script:
   - git clone --depth=50 --branch=mobile https://malteahrens:${GH_TOKEN}@github.com/malteahrens/vita
   - cd vita
   - git show-ref
-  - git checkout mobile
+  - git checkout origin/mobile
   - "rm -R mapdis/www"
   - "git clone https://github.com/malteahrens/vita.git --branch gh-pages --single-branch mapdis/www"
   - ls mapdis/www
