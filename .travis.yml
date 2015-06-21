@@ -71,7 +71,7 @@ script:
   - git config user.email blub@github.com
   - git commit . -m "Android App"
   - git config --global push.default simple
-  - git push origin/mobile
+  - git push
 
 env:
   global:
