@@ -67,7 +67,7 @@ script:
   - ls mapdis/www
   - pwd
   - git add mapdis/www
-  - git commit . -am "Android App"
+  - git commit . -m "Android App"
   - git config --global push.default simple
   - git push
 
