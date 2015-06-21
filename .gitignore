@@ -1,6 +1,4 @@
 .idea/*
 node_modules/*
-mapdis/platforms/android/.gradle/*
-mapdis/platforms/android/assets/www/*
 bower_components/*
 .tmp/*
