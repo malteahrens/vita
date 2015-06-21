@@ -7,7 +7,7 @@ geolocationModule.factory('getCurrentPosition', function(deviceReady, $document,
             deviceReady(function(){
                 navigator.geolocation.getCurrentPosition(function(position){
                     $rootScope.$apply(function(){
-                        alert(position);
+                        //alert(position);
                         //done();
                     });
                 }, function(error){
