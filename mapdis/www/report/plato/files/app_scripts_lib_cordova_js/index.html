@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - app/scripts/lib/cordova.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>app/scripts/lib/cordova.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">73.23</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">224</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">38.70</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">1.65</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">/*
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * &quot;License&quot;); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+ */
+
+if(window.cordova){
+    throw new Error(&quot;cordova already defined&quot;);
+}
+
+
+var channel = require(&#039;cordova/channel&#039;);
+var platform = require(&#039;cordova/platform&#039;);
+
+
+/**
+ * Intercept calls to addEventListener + removeEventListener and handle deviceready,
+ * resume, and pause events.
+ */
+var m_document_addEventListener = document.addEventListener;
+var m_document_removeEventListener = document.removeEventListener;
+var m_window_addEventListener = window.addEventListener;
+var m_window_removeEventListener = window.removeEventListener;
+
+/**
+ * Houses custom event handlers to intercept on document + window event listeners.
+ */
+var documentEventHandlers = {},
+    windowEventHandlers = {};
+
+document.addEventListener = function(evt, handler, capture) {
+    var e = evt.toLowerCase();
+    if (typeof documentEventHandlers[e] != &#039;undefined&#039;) {
+        documentEventHandlers[e].subscribe(handler);
+    } else {
+        m_document_addEventListener.call(document, evt, handler, capture);
+    }
+};
+
+window.addEventListener = function(evt, handler, capture) {
+    var e = evt.toLowerCase();
+    if (typeof windowEventHandlers[e] != &#039;undefined&#039;) {
+        windowEventHandlers[e].subscribe(handler);
+    } else {
+        m_window_addEventListener.call(window, evt, handler, capture);
+    }
+};
+
+document.removeEventListener = function(evt, handler, capture) {
+    var e = evt.toLowerCase();
+    // If unsubscribing from an event that is handled by a plugin
+    if (typeof documentEventHandlers[e] != &quot;undefined&quot;) {
+        documentEventHandlers[e].unsubscribe(handler);
+    } else {
+        m_document_removeEventListener.call(document, evt, handler, capture);
+    }
+};
+
+window.removeEventListener = function(evt, handler, capture) {
+    var e = evt.toLowerCase();
+    // If unsubscribing from an event that is handled by a plugin
+    if (typeof windowEventHandlers[e] != &quot;undefined&quot;) {
+        windowEventHandlers[e].unsubscribe(handler);
+    } else {
+        m_window_removeEventListener.call(window, evt, handler, capture);
+    }
+};
+
+function createEvent(type, data) {
+    var event = document.createEvent(&#039;Events&#039;);
+    event.initEvent(type, false, false);
+    if (data) {
+        for (var i in data) {
+            if (data.hasOwnProperty(i)) {
+                event[i] = data[i];
+            }
+        }
+    }
+    return event;
+}
+
+
+var cordova = {
+    define:define,
+    require:require,
+    version:PLATFORM_VERSION_BUILD_LABEL,
+    platformVersion:PLATFORM_VERSION_BUILD_LABEL,
+    platformId:platform.id,
+    /**
+     * Methods to add/remove your own addEventListener hijacking on document + window.
+     */
+    addWindowEventHandler:function(event) {
+        return (windowEventHandlers[event] = channel.create(event));
+    },
+    addStickyDocumentEventHandler:function(event) {
+        return (documentEventHandlers[event] = channel.createSticky(event));
+    },
+    addDocumentEventHandler:function(event) {
+        return (documentEventHandlers[event] = channel.create(event));
+    },
+    removeWindowEventHandler:function(event) {
+        delete windowEventHandlers[event];
+    },
+    removeDocumentEventHandler:function(event) {
+        delete documentEventHandlers[event];
+    },
+    /**
+     * Retrieve original event handlers that were replaced by Cordova
+     *
+     * @return object
+     */
+    getOriginalHandlers: function() {
+        return {&#039;document&#039;: {&#039;addEventListener&#039;: m_document_addEventListener, &#039;removeEventListener&#039;: m_document_removeEventListener},
+            &#039;window&#039;: {&#039;addEventListener&#039;: m_window_addEventListener, &#039;removeEventListener&#039;: m_window_removeEventListener}};
+    },
+    /**
+     * Method to fire event from native code
+     * bNoDetach is required for events which cause an exception which needs to be caught in native code
+     */
+    fireDocumentEvent: function(type, data, bNoDetach) {
+        var evt = createEvent(type, data);
+        if (typeof documentEventHandlers[type] != &#039;undefined&#039;) {
+            if( bNoDetach ) {
+                documentEventHandlers[type].fire(evt);
+            }
+            else {
+                setTimeout(function() {
+                    // Fire deviceready on listeners that were registered before cordova.js was loaded.
+                    if (type == &#039;deviceready&#039;) {
+                        document.dispatchEvent(evt);
+                    }
+                    documentEventHandlers[type].fire(evt);
+                }, 0);
+            }
+        } else {
+            document.dispatchEvent(evt);
+        }
+    },
+    fireWindowEvent: function(type, data) {
+        var evt = createEvent(type,data);
+        if (typeof windowEventHandlers[type] != &#039;undefined&#039;) {
+            setTimeout(function() {
+                windowEventHandlers[type].fire(evt);
+            }, 0);
+        } else {
+            window.dispatchEvent(evt);
+        }
+    },
+
+    /**
+     * Plugin callback mechanism.
+     */
+    // Randomize the starting callbackId to avoid collisions after refreshing or navigating.
+    // This way, it&#039;s very unlikely that any new callback would get the same callbackId as an old callback.
+    callbackId: Math.floor(Math.random() * 2000000000),
+    callbacks:  {},
+    callbackStatus: {
+        NO_RESULT: 0,
+        OK: 1,
+        CLASS_NOT_FOUND_EXCEPTION: 2,
+        ILLEGAL_ACCESS_EXCEPTION: 3,
+        INSTANTIATION_EXCEPTION: 4,
+        MALFORMED_URL_EXCEPTION: 5,
+        IO_EXCEPTION: 6,
+        INVALID_ACTION: 7,
+        JSON_EXCEPTION: 8,
+        ERROR: 9
+    },
+
+    /**
+     * Called by native code when returning successful result from an action.
+     */
+    callbackSuccess: function(callbackId, args) {
+        cordova.callbackFromNative(callbackId, true, args.status, [args.message], args.keepCallback);
+    },
+
+    /**
+     * Called by native code when returning error result from an action.
+     */
+    callbackError: function(callbackId, args) {
+        // TODO: Deprecate callbackSuccess and callbackError in favour of callbackFromNative.
+        // Derive success from status.
+        cordova.callbackFromNative(callbackId, false, args.status, [args.message], args.keepCallback);
+    },
+
+    /**
+     * Called by native code when returning the result from an action.
+     */
+    callbackFromNative: function(callbackId, isSuccess, status, args, keepCallback) {
+        try {
+            var callback = cordova.callbacks[callbackId];
+            if (callback) {
+                if (isSuccess &amp;&amp; status == cordova.callbackStatus.OK) {
+                    callback.success &amp;&amp; callback.success.apply(null, args);
+                } else if (!isSuccess) {
+                    callback.fail &amp;&amp; callback.fail.apply(null, args);
+                }
+                /*
+                 else
+                 Note, this case is intentionally not caught.
+                 this can happen if isSuccess is true, but callbackStatus is NO_RESULT
+                 which is used to remove a callback from the list without calling the callbacks
+                 typically keepCallback is false in this case
+                 */
+                // Clear callback if not expecting any more results
+                if (!keepCallback) {
+                    delete cordova.callbacks[callbackId];
+                }
+            }
+        }
+        catch (err) {
+            var msg = &quot;Error in &quot; + (isSuccess ? &quot;Success&quot; : &quot;Error&quot;) + &quot; callbackId: &quot; + callbackId + &quot; : &quot; + err;
+            console &amp;&amp; console.log &amp;&amp; console.log(msg);
+            cordova.fireWindowEvent(&quot;cordovacallbackerror&quot;, { &#039;message&#039;: msg });
+            throw err;
+        }
+    },
+    addConstructor: function(func) {
+        channel.onCordovaReady.subscribe(function() {
+            try {
+                func();
+            } catch(e) {
+                console.log(&quot;Failed to run constructor: &quot; + e);
+            }
+        });
+    }
+};
+
+
+module.exports = cordova;</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ complexity.cyclomatic }} <br>
+    Length : {{ complexity.halstead.length }} <br>
+    Difficulty : {{ complexity.halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ complexity.halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>
