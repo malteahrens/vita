@@ -59,7 +59,7 @@ script:
 
   - cd vita
   - git show-ref
-  - git checkout origin/mobile
+  - git checkout mobile
   - ls mapdis/www
   - "rm -R mapdis/www"
   - mkdir mapdis/www
