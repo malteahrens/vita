@@ -59,7 +59,7 @@ script:
 
   - cd vita
   - git show-ref
-  - git checkout mobile
+  - git checkout origin/mobile
   - ls mapdis/www
   - "rm -R mapdis/www"
   - mkdir mapdis/www
@@ -71,7 +71,7 @@ script:
   - git config user.email blub@github.com
   - git commit . -m "Android App"
   - git config --global push.default simple
-  - git push
+  - git push origin/mobile
 
 env:
   global:
