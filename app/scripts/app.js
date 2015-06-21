@@ -16,6 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngCordova',
     'pascalprecht.translate',
     'angular-vibrator',
     'geolocation'
