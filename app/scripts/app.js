@@ -19,7 +19,8 @@ angular
     'ngCordova',
     'pascalprecht.translate',
     'angular-vibrator',
-    'geolocation'
+    'geolocation',
+    'ngCordova'
   ])
   .config(function ($routeProvider, $translateProvider, vibratorProvider) {
     $routeProvider
