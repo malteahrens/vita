@@ -64,7 +64,7 @@ script:
   - "git clone https://github.com/malteahrens/vita.git --branch gh-pages --single-branch mapdis/www"
   - ls mapdis/www
   - pwd
-  - git add -all mapdis/www
+  - git add --all mapdis/www
   - git config user.name blibla
   - git config user.email blub@github.com
   - git commit . -m "Android App"
