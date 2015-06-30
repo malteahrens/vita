@@ -27,7 +27,7 @@ before_script:
 # generate vector tiles
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   # https://github.com/systemed/tilemaker
-  - add-apt-repository ppa:afrank/boost
+  - sudo add-apt-repository ppa:afrank/boost
   - sudo apt-get install liblua5.1-0 liblua5.1-0-dev libprotobuf-dev libsqlite3-dev protobuf-c-compiler
   - sudo apt-get update -q
   - apt-get install libboost1.57-all-dev
@@ -37,7 +37,6 @@ before_script:
   - bjam install
   - ln -s /usr/local/lib/libluabindd.so /usr/local/lib/libluabind.so
   - ldconfig
-  - 
   # ---
   - sudo apt-get install -y libstdc++6
 # node-mapnik
