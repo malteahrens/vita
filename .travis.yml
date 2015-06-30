@@ -26,7 +26,19 @@ before_script:
   - grunt build
 # generate vector tiles
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  # https://github.com/systemed/tilemaker
+  - add-apt-repository ppa:afrank/boost
+  - sudo apt-get install liblua5.1-0 liblua5.1-0-dev libprotobuf-dev libsqlite3-dev protobuf-c-compiler
   - sudo apt-get update -q
+  - apt-get install libboost1.57-all-dev
+  - git clone https://github.com/rpavlik/luabind.git
+  - cd luabind
+  - ln -s /usr/lib/x86_64-linux-gnu/liblua5.1.so /usr/lib/
+  - bjam install
+  - ln -s /usr/local/lib/libluabindd.so /usr/local/lib/libluabind.so
+  - ldconfig
+  - 
+  # ---
   - sudo apt-get install -y libstdc++6
 # node-mapnik
   - npm install mapnik@3.x
