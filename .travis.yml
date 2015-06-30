@@ -35,6 +35,8 @@ before_script:
 # sqlite
   - npm install sqlite3
   - npm install node-sqlite3
+  - npm install tilelive
+  - npm install tilelive-vector
 
 script:
 # this script branches the dist folder to the gh-pages branch
